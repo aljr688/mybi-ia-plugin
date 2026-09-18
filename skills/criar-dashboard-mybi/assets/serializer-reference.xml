@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="pt-BR">
+  <Title Text="Dashboard" />
+  <DataSources>
+    <SqlDataSource Name="Dados" ComponentName="sqlDataSource1">
+      <Connection Name="CONEXAO_CLIENTE" FromAppConfig="true" />
+      <Query Type="SelectQuery" Name="Dados">
+        <Tables>
+          <Table Name="Dados" />
+        </Tables>
+        <Columns>
+          <AllColumns />
+        </Columns>
+      </Query>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Card ComponentName="cardDashboardItem1" Name="Receita" DataSource="sqlDataSource1" DataMember="Dados">
+      <DataItems>
+        <Measure DataMember="valor" DefaultId="DataItem0" />
+      </DataItems>
+      <Card>
+        <ActualValue DefaultId="DataItem0" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+      </Card>
+    </Card>
+    <Grid ComponentName="gridDashboardItem1" Name="Detalhe" DataSource="sqlDataSource1" DataMember="Dados">
+      <DataItems>
+        <Dimension DataMember="categoria" DefaultId="DataItem0" />
+        <Measure DataMember="valor" DefaultId="DataItem1" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridMeasureColumn>
+          <Measure DefaultId="DataItem1" />
+        </GridMeasureColumn>
+      </GridColumns>
+      <GridOptions />
+      <ColumnFilterOptions />
+    </Grid>
+    <CustomItem ComponentName="customDashboardItem1" Name="HTML" DataSource="sqlDataSource1" DataMember="Dados" CustomItemType="DashboardAutomatico">
+      <CustomProperties>
+        <AutomaticJavascript>root.textContent = 'Exemplo';</AutomaticJavascript>
+        <AutomaticFields>["categoria","valor"]</AutomaticFields>
+      </CustomProperties>
+      <DataItems>
+        <Dimension DataMember="categoria" DefaultId="DataItem0" />
+        <Measure DataMember="valor" DefaultId="DataItem1" />
+      </DataItems>
+      <CustomMetadata>
+        <Fields>
+          <Item1 ItemType="Dimension" DefaultId="DataItem0" />
+        </Fields>
+        <Measures>
+          <Item1 ItemType="Measure" DefaultId="DataItem1" />
+        </Measures>
+      </CustomMetadata>
+    </CustomItem>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical" Weight="100">
+      <LayoutItem DashboardItem="cardDashboardItem1" />
+      <LayoutItem DashboardItem="gridDashboardItem1" />
+      <LayoutItem DashboardItem="customDashboardItem1" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

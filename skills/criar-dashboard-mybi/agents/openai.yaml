@@ -1,0 +1,4 @@
+interface:
+  display_name: "MyBI IA"
+  short_description: "Crie dashboards importáveis para o MyBI."
+  default_prompt: "Use $criar-dashboard-mybi para criar um dashboard MyBI com os campos e/ou a imagem que anexei."
