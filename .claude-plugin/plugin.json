@@ -1,6 +1,6 @@
 {
   "name": "mybi-dashboard",
-  "version": "0.1.15",
+  "version": "0.1.18",
   "description": "MyBI IA: cria dashboards MyBI em XML e ZIP com aprovação de campos e componentes.",
   "author": {
     "name": "MyBI"
