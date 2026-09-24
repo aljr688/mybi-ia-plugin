@@ -1,0 +1,370 @@
+[
+  {
+    "internal_type": "card",
+    "native": true,
+    "xml": "Card",
+    "custom_item_type": null,
+    "bindings": {
+      "dimensions": {
+        "type": "Dimension",
+        "array": true
+      },
+      "measures": {
+        "type": "Measure",
+        "array": true
+      }
+    },
+    "version": "2.2.0 / plugin 0.1.16",
+    "confidence": "contrato do gerador confirmado",
+    "limitation": "Somente o perfil portátil; propriedades adicionais não estão autorizadas.",
+    "requires_extension": false,
+    "human_review": false
+  },
+  {
+    "internal_type": "grid",
+    "native": true,
+    "xml": "Grid",
+    "custom_item_type": null,
+    "bindings": {
+      "dimensions": {
+        "type": "Dimension",
+        "array": true
+      },
+      "measures": {
+        "type": "Measure",
+        "array": true
+      }
+    },
+    "version": "2.2.0 / plugin 0.1.16",
+    "confidence": "contrato do gerador confirmado",
+    "limitation": "Somente o perfil portátil; propriedades adicionais não estão autorizadas.",
+    "requires_extension": false,
+    "human_review": false
+  },
+  {
+    "internal_type": "EChartsGradientBar",
+    "native": false,
+    "xml": "CustomItem",
+    "custom_item_type": "EChartsGradientBar",
+    "bindings": {
+      "Values": {
+        "type": "Measure",
+        "array": true
+      },
+      "Arguments": {
+        "type": "Dimension",
+        "array": true
+      }
+    },
+    "version": "2.2.0 / plugin 0.1.16",
+    "confidence": "contrato do gerador confirmado",
+    "limitation": "Somente o perfil portátil; propriedades adicionais não estão autorizadas.",
+    "requires_extension": true,
+    "human_review": false
+  },
+  {
+    "internal_type": "EChartsAreaSimple",
+    "native": false,
+    "xml": "CustomItem",
+    "custom_item_type": "EChartsAreaSimple",
+    "bindings": {
+      "Arguments": {
+        "type": "Dimension",
+        "array": false
+      },
+      "Values": {
+        "type": "Measure",
+        "array": true
+      },
+      "Series": {
+        "type": "Dimension",
+        "array": false
+      }
+    },
+    "version": "2.2.0 / plugin 0.1.16",
+    "confidence": "contrato do gerador confirmado",
+    "limitation": "Somente o perfil portátil; propriedades adicionais não estão autorizadas.",
+    "requires_extension": true,
+    "human_review": false
+  },
+  {
+    "internal_type": "EChartsPieLine",
+    "native": false,
+    "xml": "CustomItem",
+    "custom_item_type": "EChartsPieLine",
+    "bindings": {
+      "Values": {
+        "type": "Measure",
+        "array": true
+      },
+      "Arguments": {
+        "type": "Dimension",
+        "array": false
+      },
+      "Series": {
+        "type": "Dimension",
+        "array": false
+      }
+    },
+    "version": "2.2.0 / plugin 0.1.16",
+    "confidence": "contrato do gerador confirmado",
+    "limitation": "Somente o perfil portátil; propriedades adicionais não estão autorizadas.",
+    "requires_extension": true,
+    "human_review": false
+  },
+  {
+    "internal_type": "EChartsNestedPie",
+    "native": false,
+    "xml": "CustomItem",
+    "custom_item_type": "EChartsNestedPie",
+    "bindings": {
+      "InnerValues": {
+        "type": "Measure",
+        "array": false
+      },
+      "InnerArguments": {
+        "type": "Dimension",
+        "array": false
+      },
+      "OuterValues": {
+        "type": "Measure",
+        "array": false
+      },
+      "OuterArguments": {
+        "type": "Dimension",
+        "array": false
+      }
+    },
+    "version": "2.2.0 / plugin 0.1.16",
+    "confidence": "contrato do gerador confirmado",
+    "limitation": "Somente o perfil portátil; propriedades adicionais não estão autorizadas.",
+    "requires_extension": true,
+    "human_review": false
+  },
+  {
+    "internal_type": "EChartsBarRace",
+    "native": false,
+    "xml": "CustomItem",
+    "custom_item_type": "EChartsBarRace",
+    "bindings": {
+      "Values": {
+        "type": "Measure",
+        "array": true
+      },
+      "Category": {
+        "type": "Dimension",
+        "array": true
+      },
+      "TimeDimension": {
+        "type": "Dimension",
+        "array": false
+      }
+    },
+    "version": "2.2.0 / plugin 0.1.16",
+    "confidence": "contrato do gerador confirmado",
+    "limitation": "Somente o perfil portátil; propriedades adicionais não estão autorizadas.",
+    "requires_extension": true,
+    "human_review": false
+  },
+  {
+    "internal_type": "EChartsLineRace",
+    "native": false,
+    "xml": "CustomItem",
+    "custom_item_type": "EChartsLineRace",
+    "bindings": {
+      "Arguments": {
+        "type": "Dimension",
+        "array": false
+      },
+      "Values": {
+        "type": "Measure",
+        "array": false
+      },
+      "Series": {
+        "type": "Dimension",
+        "array": false
+      }
+    },
+    "version": "2.2.0 / plugin 0.1.16",
+    "confidence": "contrato do gerador confirmado",
+    "limitation": "Somente o perfil portátil; propriedades adicionais não estão autorizadas.",
+    "requires_extension": true,
+    "human_review": false
+  },
+  {
+    "internal_type": "EChartsBarBrush",
+    "native": false,
+    "xml": "CustomItem",
+    "custom_item_type": "EChartsBarBrush",
+    "bindings": {
+      "Arguments": {
+        "type": "Dimension",
+        "array": true
+      },
+      "Values": {
+        "type": "Measure",
+        "array": true
+      },
+      "Series": {
+        "type": "Dimension",
+        "array": true
+      }
+    },
+    "version": "2.2.0 / plugin 0.1.16",
+    "confidence": "contrato do gerador confirmado",
+    "limitation": "Somente o perfil portátil; propriedades adicionais não estão autorizadas.",
+    "requires_extension": true,
+    "human_review": false
+  },
+  {
+    "internal_type": "EChartsBarNegative",
+    "native": false,
+    "xml": "CustomItem",
+    "custom_item_type": "EChartsBarNegative",
+    "bindings": {
+      "Arguments": {
+        "type": "Dimension",
+        "array": false
+      },
+      "Values": {
+        "type": "Measure",
+        "array": true
+      },
+      "Series": {
+        "type": "Dimension",
+        "array": false
+      }
+    },
+    "version": "2.2.0 / plugin 0.1.16",
+    "confidence": "contrato do gerador confirmado",
+    "limitation": "Somente o perfil portátil; propriedades adicionais não estão autorizadas.",
+    "requires_extension": true,
+    "human_review": false
+  },
+  {
+    "internal_type": "EChartsHorizontalBar",
+    "native": false,
+    "xml": "CustomItem",
+    "custom_item_type": "EChartsHorizontalBar",
+    "bindings": {
+      "Values": {
+        "type": "Measure",
+        "array": true
+      },
+      "Arguments": {
+        "type": "Dimension",
+        "array": false
+      },
+      "Series": {
+        "type": "Dimension",
+        "array": false
+      }
+    },
+    "version": "2.2.0 / plugin 0.1.16",
+    "confidence": "contrato do gerador confirmado",
+    "limitation": "Somente o perfil portátil; propriedades adicionais não estão autorizadas.",
+    "requires_extension": true,
+    "human_review": false
+  },
+  {
+    "internal_type": "EChartsWaterfall2",
+    "native": false,
+    "xml": "CustomItem",
+    "custom_item_type": "EChartsWaterfall2",
+    "bindings": {
+      "Value": {
+        "type": "Measure",
+        "array": false
+      },
+      "Arguments": {
+        "type": "Dimension",
+        "array": true
+      }
+    },
+    "version": "2.2.0 / plugin 0.1.16",
+    "confidence": "contrato do gerador confirmado",
+    "limitation": "Somente o perfil portátil; propriedades adicionais não estão autorizadas.",
+    "requires_extension": true,
+    "human_review": false
+  },
+  {
+    "internal_type": "tabulatorGridItem",
+    "native": false,
+    "xml": "CustomItem",
+    "custom_item_type": "tabulatorGridItem",
+    "bindings": {
+      "dimensionColumn": {
+        "type": "Dimension",
+        "array": true
+      },
+      "msrNumberColumn": {
+        "type": "Measure",
+        "array": true
+      }
+    },
+    "version": "2.2.0 / plugin 0.1.16",
+    "confidence": "contrato do gerador confirmado",
+    "limitation": "Somente o perfil portátil; propriedades adicionais não estão autorizadas.",
+    "requires_extension": true,
+    "human_review": false
+  },
+  {
+    "internal_type": "HtmlTemplate",
+    "native": false,
+    "xml": "CustomItem",
+    "custom_item_type": "HtmlTemplate",
+    "bindings": {
+      "Fields": {
+        "type": "Dimension",
+        "array": true
+      },
+      "Measures": {
+        "type": "Measure",
+        "array": true
+      }
+    },
+    "version": "2.2.0 / plugin 0.1.16",
+    "confidence": "contrato do gerador confirmado",
+    "limitation": "Somente o perfil portátil; propriedades adicionais não estão autorizadas.",
+    "requires_extension": true,
+    "human_review": false
+  },
+  {
+    "internal_type": "DashboardAutomatico",
+    "native": false,
+    "xml": "CustomItem",
+    "custom_item_type": "DashboardAutomatico",
+    "bindings": {
+      "Fields": {
+        "type": "Dimension",
+        "array": true
+      },
+      "Measures": {
+        "type": "Measure",
+        "array": true
+      }
+    },
+    "version": "2.2.0 / plugin 0.1.16",
+    "confidence": "contrato do gerador confirmado",
+    "limitation": "Somente o perfil portátil; propriedades adicionais não estão autorizadas.",
+    "requires_extension": true,
+    "human_review": false
+  },
+  {
+    "internal_type": "Grafico Gauge",
+    "native": false,
+    "xml": "CustomItem",
+    "custom_item_type": "Grafico Gauge",
+    "bindings": {
+      "argumentValue": {
+        "type": "Measure",
+        "array": false
+      }
+    },
+    "version": "2.2.0 / plugin 0.1.16",
+    "confidence": "contrato do gerador confirmado",
+    "limitation": "Somente o perfil portátil; propriedades adicionais não estão autorizadas.",
+    "requires_extension": true,
+    "human_review": false
+  }
+]

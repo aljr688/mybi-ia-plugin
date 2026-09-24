@@ -1,5 +1,10 @@
 # Entender o pedido e escolher o componente
 
+Os nomes de bibliotecas e identificadores nesta referência são exclusivamente
+internos. Nas respostas e propostas, siga a linguagem de SKILL.md: Grade,
+Velocímetro, Gráfico de barras, Gráfico de área etc. Explique diferenças funcionais
+entre alternativas sem mostrar marcas ou identificadores de implementação.
+
 Separe conceito visual, implementação e campos necessários. Não diga que o MyBI não
 possui um recurso porque o usuário utilizou um sinônimo ou porque o gerador portátil
 ainda não suporta uma implementação. O catálogo é do gerador, não de todo o produto.

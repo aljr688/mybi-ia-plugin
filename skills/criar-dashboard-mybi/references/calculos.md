@@ -1,7 +1,7 @@
 # Campos calculados no XML
 
 O plano aceita calculatedFields: lista opcional de até 40 objetos {name,type,expression}.
-Nesta versão type é REAL. Os nomes não podem repetir campos da fonte (fields).
+type aceita REAL (Double) ou DECIMAL (Decimal). Os nomes não podem repetir campos da fonte (fields).
 Inclua campos calculados na aprovação dos campos; não marque aprovação automaticamente.
 
 Exemplo:
@@ -30,5 +30,5 @@ Campos calculados por linha podem usar uma agregação normal no binding.
 Outras funções, tipos e dependências exigem ampliação testada, não alteração improvisada.
 
 Serializar em DataSources/SqlDataSource/CalculatedFields/CalculatedField com atributos
-Name, Expression, DataType="Double", DataMember="Dados". Nos DataItems, DataMember
+Name, Expression, DataType="Double" ou "Decimal" conforme o tipo, DataMember="Dados". Nos DataItems, DataMember
 é o nome do campo calculado. O cliente fornece somente os campos físicos da fonte.

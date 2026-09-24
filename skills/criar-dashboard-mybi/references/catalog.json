@@ -1,4 +1,135 @@
 {
+  "pivot": {
+    "xml": "Pivot",
+    "bindings": {
+      "rows": {
+        "type": "Dimension",
+        "array": true
+      },
+      "columns": {
+        "type": "Dimension",
+        "array": true
+      },
+      "measures": {
+        "type": "Measure",
+        "array": true
+      }
+    },
+    "required": [
+      "measures"
+    ]
+  },
+  "comboBox": {
+    "xml": "ComboBox",
+    "bindings": {
+      "dimensions": {
+        "type": "Dimension",
+        "array": true
+      }
+    },
+    "required": [
+      "dimensions"
+    ]
+  },
+  "dateFilter": {
+    "xml": "DateFilter",
+    "bindings": {
+      "dimension": {
+        "type": "Dimension",
+        "array": false
+      }
+    },
+    "required": [
+      "dimension"
+    ]
+  },
+  "DREContabil": {
+    "xml": "CustomItem",
+    "bindings": {
+      "Codigo": {
+        "type": "Dimension",
+        "array": false
+      },
+      "Conta": {
+        "type": "Dimension",
+        "array": false
+      },
+      "TipoLinha": {
+        "type": "Dimension",
+        "array": false
+      },
+      "ValorAtual": {
+        "type": "Measure",
+        "array": false
+      },
+      "ValorAnterior": {
+        "type": "Measure",
+        "array": false
+      },
+      "Ordem": {
+        "type": "Measure",
+        "array": false
+      }
+    },
+    "required": [
+      "Codigo",
+      "Conta",
+      "ValorAtual"
+    ]
+  },
+  "DREVendas": {
+    "xml": "CustomItem",
+    "bindings": {
+      "Data": {
+        "type": "Dimension",
+        "array": false
+      },
+      "PromoProduto": {
+        "type": "Dimension",
+        "array": false
+      },
+      "DimensoesGrupo": {
+        "type": "Dimension",
+        "array": true
+      },
+      "Vendas": {
+        "type": "Measure",
+        "array": false
+      },
+      "CMV": {
+        "type": "Measure",
+        "array": false
+      },
+      "ImpostosValor": {
+        "type": "Measure",
+        "array": false
+      },
+      "InadimpValor": {
+        "type": "Measure",
+        "array": false
+      },
+      "DespesasAdmValor": {
+        "type": "Measure",
+        "array": false
+      },
+      "MetaMesValor": {
+        "type": "Measure",
+        "array": false
+      },
+      "PromoQuantidade": {
+        "type": "Measure",
+        "array": false
+      },
+      "PromoValorUnitario": {
+        "type": "Measure",
+        "array": false
+      }
+    },
+    "required": [
+      "Data",
+      "Vendas"
+    ]
+  },
   "card": {
     "xml": "Card",
     "bindings": {}
@@ -18,9 +149,7 @@
         "type": "Dimension",
         "array": true
       }
-    },
-    "source": "wwwroot/js/EChartsGradientBarItemExtension.js",
-    "sha256": "09a5b40bf3950f58db49a0af265e33601209af9087d269786a87fef2d131a97a"
+    }
   },
   "EChartsAreaSimple": {
     "xml": "CustomItem",
@@ -37,9 +166,7 @@
         "type": "Dimension",
         "array": false
       }
-    },
-    "source": "wwwroot/js/EChartsAreaSimpleItemExtension.js",
-    "sha256": "8c4e82a0a9fba235f1a04a3e106811a9e807b1a6fe35a3fbb5a02ec5e273109d"
+    }
   },
   "EChartsPieLine": {
     "xml": "CustomItem",
@@ -56,9 +183,7 @@
         "type": "Dimension",
         "array": false
       }
-    },
-    "source": "wwwroot/js/EChartsPieLineItemExtension.js",
-    "sha256": "923a9ec327fd73eebdde2242066e7af784cef629bd15c20399571dee90ccb668"
+    }
   },
   "EChartsNestedPie": {
     "xml": "CustomItem",
@@ -79,9 +204,7 @@
         "type": "Dimension",
         "array": false
       }
-    },
-    "source": "wwwroot/js/EChartsNestedPieItemExtension.js",
-    "sha256": "a4a8ba36e99f784350769f42b7cc9491166e1ba86d0babef699e9f0229bacd42"
+    }
   },
   "EChartsBarRace": {
     "xml": "CustomItem",
@@ -98,9 +221,7 @@
         "type": "Dimension",
         "array": false
       }
-    },
-    "source": "wwwroot/js/EChartsBarRaceItemExtension.js",
-    "sha256": "1afc4f13da83acf9f35ddb3c377c3583b12d9442b284b4afc41dbdf9be1d7ad1"
+    }
   },
   "EChartsLineRace": {
     "xml": "CustomItem",
@@ -117,9 +238,7 @@
         "type": "Dimension",
         "array": false
       }
-    },
-    "source": "wwwroot/js/EChartsLineRaceItemExtension.js",
-    "sha256": "ad89a7156b6647fa30a4a3f2a3e0b26d37ad99bac607ca224770ef2ab218d01c"
+    }
   },
   "EChartsBarBrush": {
     "xml": "CustomItem",
@@ -136,9 +255,7 @@
         "type": "Dimension",
         "array": true
       }
-    },
-    "source": "wwwroot/js/EChartsBarBrushItemExtension.js",
-    "sha256": "19962f087953010a6c64430be41fb582f31b62df7d3e51d76ee65ca2f037e689"
+    }
   },
   "EChartsBarNegative": {
     "xml": "CustomItem",
@@ -155,9 +272,7 @@
         "type": "Dimension",
         "array": false
       }
-    },
-    "source": "wwwroot/js/EChartsBarNegativeItemExtension.js",
-    "sha256": "70a3b66ac2c2d603042d163a7ff5f9afa5080a581d5243e1f56a97f32b75297f"
+    }
   },
   "EChartsHorizontalBar": {
     "xml": "CustomItem",
@@ -174,9 +289,7 @@
         "type": "Dimension",
         "array": false
       }
-    },
-    "source": "wwwroot/js/EChartsHorizontalBarItemExtension.js",
-    "sha256": "17d6e1e1c56fe9173022871d005fce16f8bb919d39b54137a3fab908eff6a6a5"
+    }
   },
   "EChartsWaterfall2": {
     "xml": "CustomItem",
@@ -189,9 +302,7 @@
         "type": "Dimension",
         "array": true
       }
-    },
-    "source": "wwwroot/js/EChartsWaterfall2ItemExtension.js",
-    "sha256": "e74769a4048fd84b93fa5d4e7576af14a9cf266b74316687941509d4925fb991"
+    }
   },
   "tabulatorGridItem": {
     "xml": "CustomItem",
@@ -204,9 +315,7 @@
         "type": "Measure",
         "array": true
       }
-    },
-    "source": "wwwroot/js/ECChartsTabulatorGridItemExtension.js",
-    "sha256": "33b150deed075ff09459682fefbc5efff991fa2ca48ae73221515c646d22d8f6"
+    }
   },
   "HtmlTemplate": {
     "xml": "CustomItem",
@@ -219,9 +328,7 @@
         "type": "Measure",
         "array": true
       }
-    },
-    "source": "wwwroot/js/ItensIAHtmltemplateitemextension.js",
-    "sha256": "f0db14797a436476fde0ae56ab05067e4aa997f9625d6ff688f029b722b8a53a"
+    }
   },
   "DashboardAutomatico": {
     "xml": "CustomItem",
@@ -234,9 +341,7 @@
         "type": "Measure",
         "array": true
       }
-    },
-    "source": "wwwroot/js/DashboardAutomaticoItemExtension.js",
-    "sha256": "b9ac3a4872895bbb17e77ff30490ff9a9b83b130f4f26a6fc267093131caac67"
+    }
   },
   "Grafico Gauge": {
     "xml": "CustomItem",
@@ -245,8 +350,6 @@
         "type": "Measure",
         "array": false
       }
-    },
-    "source": "wwwroot/Content/gaugeChartExtension.js",
-    "sha256": "4e40c1bacaa61c5a1d0bba015d014321dc9a0d9f042fe31a3184380f99b9876e"
+    }
   }
 }

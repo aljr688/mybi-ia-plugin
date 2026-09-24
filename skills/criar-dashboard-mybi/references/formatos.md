@@ -3,8 +3,8 @@
 Quando o formato estiver ausente, pergunte antes de gerar ou aprovar componentes:
 
 “Como você quer montar o dashboard?
-1. Componentes separados DevExpress + ECharts.
-2. HTMLTemplate, com layout HTML/CSS personalizado.
+1. Componentes separados, como gráficos, cartões e grades.
+2. Automático, com layout personalizado.
 3. Painel integrado em JavaScript, com toda a tela em um componente.
 4. Componentes prontos do MyBI, como os modelos por segmento e IAComercial
    (DRE, Segmentação de Clientes etc.).
@@ -35,6 +35,8 @@ DRE Contábil. Esclareça qual quando não estiver explícito. Nunca alegue pari
 com o assistente web: o catálogo portátil ainda precisa ser ampliado e validado para
 os componentes prontos de segmentos e IAComercial.
 
-Na proposta, indique formato, componente real, campos, agregações, comportamento
+Na proposta, indique formato e componente com nomes amigáveis conforme SKILL.md,
+sem marcas ou identificadores internos. Para HtmlTemplate, o formato é Automático.
+Descreva campos, agregações, comportamento
 interno e disponibilidade no MyBI do destino. Mantenha as aprovações de campos,
 componentes e aparência e a preservação do XML-base.

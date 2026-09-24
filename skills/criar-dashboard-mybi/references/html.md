@@ -19,6 +19,8 @@ os cards e áreas de gráficos aprovados, com travessão e mensagens locais; nã
 antes de construir a estrutura nem preencher ausência com zero.
 
 `HtmlTemplate` é alternativa estática para HTML/CSS com placeholders `{Campo}`.
+As medidas recebem Name igual ao campo; use esse nome estável sem sufixos de agregação.
+Layout, quantidade de cards e estilos seguem o pedido e a referência aprovada.
 O gerador aceita somente placeholders de campos vinculados, sem `{Campo:raw}`.
 AllowScripts é sempre false; RowMode first e RenderMode single. Não embutir scripts.
 Se for preciso vários gráficos e interações locais, preferir DashboardAutomatico.

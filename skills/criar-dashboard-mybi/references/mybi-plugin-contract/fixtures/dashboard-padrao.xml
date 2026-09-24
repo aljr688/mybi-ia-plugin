@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Dashboard CurrencyCulture="pt-BR">
+  <Title Text="Exemplo" />
+  <DataSources>
+    <SqlDataSource Name="Dados" ComponentName="sqlDataSource1">
+      <Connection Name="CONEXAO_EXEMPLO" FromAppConfig="true" />
+      <Query Type="SelectQuery" Name="Dados">
+        <Tables>
+          <Table Name="Dados" />
+        </Tables>
+        <Columns>
+          <Column Table="Dados" Name="Receita" />
+        </Columns>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="Dados">
+          <View Name="Dados">
+            <Field Name="Receita" Type="Double" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Card ComponentName="cardDashboardItem1" Name="Receita" DataSource="sqlDataSource1" DataMember="Dados">
+      <DataItems>
+        <Measure DataMember="Receita" DefaultId="DataItem0" SummaryType="Sum">
+          <NumericFormat FormatType="Number" Precision="2" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+      </DataItems>
+      <Card>
+        <ActualValue DefaultId="DataItem0" />
+      </Card>
+    </Card>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical" Weight="100">
+      <LayoutGroup Orientation="Horizontal" Weight="100">
+        <LayoutItem DashboardItem="cardDashboardItem1" Weight="50" />
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

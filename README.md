@@ -12,7 +12,9 @@ Siga as propostas e aprovações da Skill antes da geração. Para fonte existen
 forneça também o XML-base conforme solicitado. Não envie senhas ou credenciais.
 O ambiente precisa executar Python 3.10+; JavaScript automático requer Node.js
 para validação de sintaxe. Consulte skills/criar-dashboard-mybi/references/contrato.md
-para limites do catálogo e geração. Consulta aos manuais depende de acesso web.
+para limites do catálogo e geração. Inclui manuais offline; consulta a versões
+mais recentes dos manuais depende de acesso web. Consulte também personalizacao.md
+e componentes-nativos.md para as opções atuais, sem estilos obrigatórios.
 
 ## Teste local do plugin
 

@@ -1,13 +1,15 @@
 # Contrato portátil MyBI v1
 
+Extensão 0.1.18: consultar personalizacao.md para formatting, dashboardFile,
+componentName, dateIntervals, datePeriods, DECIMAL e bases de INI.
+Consultar componentes-nativos.md para tabs, componentUpdates, Pivot, seletores,
+filtro de data, DRE e opções/regras condicionais. Esse contrato prevalece sobre snapshots antigos.
+
 ## Origem das regras
 
-Extraído em 2026-09-12 de `Controllers/DefaultWebController.cs`: newdashIA,
-NormalizarTipoComponente, CriarCard, CriarGrid, CriarCustomItemIA,
-InjetarCustomItemsNoXml, CriarHtmlTemplate e AdicionarVinculosPainelIA;
-`Controllers/DefaultWebController.AutomaticDashboard.cs`; `wwwroot/js/newdashIA-wizard.js`;
-e bindings nas extensões JS listadas com SHA-256 em catalog.json.
-`assets/serializer-reference.xml` foi serializado pelo DevExpress 24.2.5, sem conexão.
+Contrato externo conferido localmente no gerador e nas extensões Web.
+A rastreabilidade de arquivos e métodos permanece na auditoria privada, fora do pacote.
+`assets/serializer-reference.xml` foi serializado pelo motor 24.2.5, sem conexão.
 Não copiar fontes de clientes nem distribuir DLLs proprietárias no plugin.
 
 ## Catálogo
@@ -19,9 +21,10 @@ O gerador aceita apenas os nomes exatos do catálogo, sem aliases ambíguos.
 
 No gerador web atual, chart/bar são aliases de EChartsGradientBar, line de
 EChartsAreaSimple, pie de EChartsPieLine e TabulatorGrid de tabulatorGridItem.
-Apresente ao usuário o componente efetivo antes de confirmar.
-Pivot, Gauge, Treemap, Scatter e filtros nativos aparecem no menu, mas não têm case
-de criação nesse switch. Não prometê-los neste plugin v1.
+Apresente ao usuário o componente efetivo pelo nome amigável antes de confirmar,
+conforme SKILL.md; mantenha o identificador técnico somente no plano e no XML.
+Pivot e filtro de data possuem agora serialização portátil própria, além do switch Web.
+Gauge nativo, Treemap e Scatter continuam fora deste perfil.
 SimpleTable também fica fora: o backend usa SimpleTable, mas a extensão registra
 CustomItemSimpleTable. Os bindings do backend divergem do runtime em alguns ECharts;
 o plugin usa os bindings reais das extensões e testa sua serialização.
@@ -40,11 +43,9 @@ Objeto com somente estas chaves:
   tabela, SQL, procedure, conexão ou parâmetros. Quando `existingSource` é falso/omitido, o gerador cria
   uma fonte lógica completa e aceita `{name,componentName,connectionName,dataMember,tableName}`;
   se o objeto inteiro não for informado, usa Dados/sqlDataSource1/CONEXAO_CLIENTE/Dados/Dados.
-- `appearance`: opcional, objeto {titleColor:"#RRGGBB"}; cor branca quando omitido.
-  A habilidade apresenta a cor na aprovação. O INI aplica fundo SystemImages/back.png,
-  transparência geral dos componentes/títulos e cor dos títulos. A imagem precisa existir
-  no MyBI; não é incluída no ZIP. O valor fixo ../SystemImages/back.png compensa o prefixo
-  /images/ usado pelo leitor do MyBI, sem incluir caminhos do cliente.
+- `appearance`: opcional, objeto {titleColor:"#RRGGBB"}; omitido não aplica cor.
+  Para demais propriedades use formatting, após aprovação, conforme personalizacao.md.
+  Não há imagem, transparência nem tamanho de fonte obrigatório.
 - `mode`: components (nativos e ECharts separados) ou html (HtmlTemplate ou DashboardAutomatico).
   O valor padrão técnico do serializador não autoriza escolher pelo usuário: seguir formatos.md.
 - `numericFormats`: opcional, objeto por nome de campo físico/calculado numérico:
@@ -61,7 +62,7 @@ Objeto com somente estas chaves:
 - `calculatedFields`: opcional; consulte calculos.md para esquema, funções e limites.
 - `fieldsApproved`, `componentsApproved`: true após aprovação no chat.
 - `fields`: 1..100 objetos `{name,type,calculated?}`. Tipos TEXT, INTEGER, REAL, DATETIME,
-  BOOLEAN. No modo de fonte existente, `calculated:true` identifica um campo que já existe
+  DECIMAL, BOOLEAN. No modo de fonte existente, `calculated:true` identifica um campo que já existe
   calculado no MyBI: vincule-o diretamente e não peça sua fórmula nem o copie para
   `calculatedFields`. Cálculos novos só podem ser gerados no modo de fonte livre; para acrescentar
   um cálculo à fonte existente, o usuário deve criá-lo no MyBI e copiar os campos novamente.
@@ -76,7 +77,8 @@ Objeto com somente estas chaves:
   (HtmlTemplate). Não usar código nos outros componentes.
 
 Cada binding escalar (`array:false`) aceita no máximo um item; não descartar os demais.
-Bindings Series são opcionais. Demais bindings publicados são obrigatórios para evitar
+Bindings Series são opcionais. Para os componentes novos, required no catálogo define
+os obrigatórios; consulte componentes-nativos.md. Demais bindings são obrigatórios para evitar
 gráficos incompletos. HTML pode ter somente medidas ou somente dimensões, mas não zero campos.
 Tabulator usa somente dimensionColumn e msrNumberColumn; colunas de link/HTML são excluídas.
 
@@ -114,12 +116,12 @@ DashboardAutomatico guarda AutomaticJavascript e AutomaticFields, mantendo Field
 LayoutTree inclui cada componente exatamente uma vez; padrão duas colunas, peso igual.
 HTML integrado ocupa a linha inteira. Conteúdo escapa via biblioteca XML, sem concatenação.
 Nos cards, a medida preserva o nome real do campo; nunca recebe o nome artificial `Valor`.
-O INI reduz o conteúdo para 26px, evitando truncar rótulos técnicos e valores monetários
-extensos em layouts estreitos.
+O INI mantém os valores existentes e só altera propriedades explicitamente aprovadas.
 
 ZIP UTF-8/deflate contém DashboardWeb/<nome-original.xml> no modo existente ou
 DashboardWeb/dashboard1.xml no modo livre e formatacao.ini na raiz, com seções correspondentes
-ao nome do XML sem extensão. Nenhum outro arquivo. O validador confere também o conteúdo exato do INI.
+ao nome do XML sem extensão. Também preserva INIs individuais informados por
+--base-format-dir. O validador confere o conteúdo exato contra as mesmas bases.
 O script recusa sobrescrever saída existente. Renomeie a nova versão em vez de sobrescrever.
 No modo existente, `build` e `validate` devem receber o mesmo arquivo em `--base-xml`.
 
