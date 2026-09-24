@@ -17,6 +17,7 @@ BASE = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(BASE / 'scripts'))
 from mybi_formatting import validate_formatting, merge_ini
 from mybi_native import EXTENSIONS, decorate, tabs, update_existing
+from mybi_html_grid import grid_markup
 CATALOG = json.loads((BASE / 'references/catalog.json').read_text(encoding='utf-8'))
 CATALOG.update(EXTENSIONS)
 TYPES = {'TEXT', 'INTEGER', 'REAL', 'DECIMAL', 'DATETIME', 'BOOLEAN'}
@@ -217,7 +218,8 @@ def validate_plan(plan):
     items = plan.get('items')
     require(isinstance(items, list) and (0 if existing_source else 1) <= len(items) <= 40, 'Esperados até 40 componentes; fonte livre exige pelo menos um')
     for item in items:
-        keys(item, {'component', 'title', 'bindings', 'javascript', 'html', 'css', 'dateIntervals', 'componentName', 'options', 'interactivity', 'sort', 'customProperties', 'rules', 'parentContainer', 'totals'}, 'Componente')
+        keys(item, {'component', 'title', 'bindings', 'javascript', 'html', 'css', 'dateIntervals', 'componentName', 'options', 'interactivity', 'sort', 'customProperties', 'rules', 'parentContainer', 'totals', 'htmlGrid'}, 'Componente')
+        require('htmlGrid' not in item or item.get('component') == 'HtmlTemplate', 'htmlGrid exige componente Automático do tipo template')
         if 'componentName' in item:
             require(re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', item['componentName']) is not None, 'ComponentName inválido')
         component = item.get('component')
@@ -284,6 +286,8 @@ def validate_plan(plan):
             text(css or ' ', 'css', 50_000) if css.strip() else None
             require(not re.search(r'url\s*\(|@import|expression\s*\(|https?://|javascript:|</?script', css, re.I), 'CSS contém recurso externo/ativo')
             SafeMarkup(convert_charrefs=True).feed(html)
+            if 'htmlGrid' in item:
+                grid_markup(item['htmlGrid'], roles)
             for placeholder in re.findall(r'\{([^{}]+)\}', html):
                 require(placeholder in roles, 'Placeholder não vinculado (ou raw): ' + placeholder)
         else:
@@ -498,8 +502,11 @@ def build_xml(plan, base_xml=None):
                     element(properties, 'AutomaticJavascript').text = item['javascript']
                     element(properties, 'AutomaticFields').text = json.dumps(list(ids), ensure_ascii=False)
                 else:
-                    for key, value in {'HtmlTemplate': item['html'], 'CssStyles': item.get('css', ''),
-                                       'RowMode': 'first', 'RenderMode': 'single', 'AllowScripts': 'false',
+                    template = item['html']
+                    if 'htmlGrid' in item:
+                        template += '\n' + grid_markup(item['htmlGrid'], ids)
+                    for key, value in {'HtmlTemplate': template, 'CssStyles': item.get('css', ''),
+                                       'RowMode': 'first', 'RenderMode': 'single', 'AllowScripts': 'true' if 'htmlGrid' in item else 'false',
                                        'EmptyValueText': 'Sem dados', 'ScrollOverflow': 'true'}.items():
                         element(properties, key).text = value
             else:

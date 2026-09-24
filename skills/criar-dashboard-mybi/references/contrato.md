@@ -75,6 +75,8 @@ Objeto com somente estas chaves:
   código numérico pode ser dimensão, conforme aprovação.
 - HTML permite adicionalmente `javascript` (DashboardAutomatico) ou `html`,`css`
   (HtmlTemplate). Não usar código nos outros componentes.
+  Na versão 0.1.19, HtmlTemplate também aceita htmlGrid (colunas/altura), conforme
+  html.md. Somente o script controlado da grade habilita AllowScripts nesse componente.
 
 Cada binding escalar (`array:false`) aceita no máximo um item; não descartar os demais.
 Bindings Series são opcionais. Para os componentes novos, required no catálogo define

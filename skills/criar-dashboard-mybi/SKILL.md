@@ -30,6 +30,9 @@ Antes de personalizar aparência, datas ou um projeto existente, leia
 opções atuais e prevalece sobre exemplos históricos de formatação do contrato offline.
 Para Matriz, seletores, filtros, abas, DRE e regras condicionais, leia também
 [componentes-nativos.md](references/componentes-nativos.md), incluindo opções e limites.
+Para grade dentro do Automático, consulte htmlGrid em [html.md](references/html.md).
+Esse recurso usa todas as linhas recebidas, mesmo com RowMode=first; não solicitar
+exportação adicional só por esse modo. A versão 0.1.19 implementa o contrato.
 
 ### Aprovação por texto, sem formulário
 
