@@ -3,6 +3,7 @@ import argparse
 import json
 import unicodedata
 from pathlib import Path
+from mybi_references import load_reference
 
 
 def normalized(text):
@@ -11,8 +12,8 @@ def normalized(text):
 
 def search(query, detail=False, include_hidden=False):
     ref=Path(__file__).resolve().parents[1]/'references'
-    catalog=json.loads((ref/'catalog.json').read_text(encoding='utf-8'))
-    inventory=json.loads((ref/'toolbar-inventory.json').read_text(encoding='utf-8'))
+    catalog=load_reference(ref/'catalog.json')
+    inventory=load_reference(ref/'toolbar-inventory.json')
     entries={entry['name']:entry for entry in inventory['captured'].values()}
     result=[]; term=normalized(query)
     for name in sorted(set(catalog)|set(entries)):

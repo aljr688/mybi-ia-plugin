@@ -27,6 +27,9 @@ Antes de enviar uma proposta ou entrega, revise os textos visíveis com essas re
 
 Para selecionar componentes, leia [toolbar.md](references/toolbar.md) e consulte
 o catálogo ampliado; procure o modelo pronto antes de propor uma recriação.
+Nas distribuições, catalog.json e toolbar-inventory.json são índices: consulte
+os arquivos listados em parts ou pesquise com scripts/mybi_catalog.py.
+O carregador local reúne os dados completos; o índice não é um catálogo vazio.
 Para o menu T e ações/ícones, leia [menu-t-e-acoes.md](references/menu-t-e-acoes.md).
 
 Para as seis abas globais do dashboard, leia primeiro

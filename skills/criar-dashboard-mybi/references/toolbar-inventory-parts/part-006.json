@@ -1,0 +1,175 @@
+{
+  "OnlineMapItemExtension": {
+    "constructor": "OnlineMapItemExtension",
+    "source": "wwwroot/Content/online-map-extension.min.js",
+    "name": "OnlineMap",
+    "displayName": "Online Map",
+    "group": "",
+    "bindings": [
+      {
+        "propertyName": "Latitude",
+        "dataItemType": "Dimension",
+        "array": false,
+        "enableInteractivity": true,
+        "displayName": "Latitude",
+        "emptyPlaceholder": "Set Latitude",
+        "selectedPlaceholder": "Configure Latitude",
+        "constraints": {
+          "allowedTypes": [
+            "Integer",
+            "Float",
+            "Double",
+            "Decimal"
+          ]
+        }
+      },
+      {
+        "propertyName": "Longitude",
+        "dataItemType": "Dimension",
+        "array": false,
+        "enableInteractivity": true,
+        "displayName": "Longitude",
+        "emptyPlaceholder": "Set Longitude",
+        "selectedPlaceholder": "Configure Longitude",
+        "constraints": {
+          "allowedTypes": [
+            "Integer",
+            "Float",
+            "Double",
+            "Decimal"
+          ]
+        }
+      },
+      {
+        "propertyName": "Tooltip",
+        "dataItemType": "Dimension",
+        "array": false,
+        "enableInteractivity": true,
+        "displayName": "Tooltip",
+        "emptyPlaceholder": "Set Tooltip",
+        "selectedPlaceholder": "Configure Tooltip",
+        "constraints": {
+          "allowedTypes": [
+            "Text"
+          ]
+        }
+      }
+    ],
+    "customProperties": [
+      {
+        "propertyName": "Provider",
+        "valueType": "string",
+        "defaultValue": "Bing"
+      },
+      {
+        "propertyName": "Type",
+        "valueType": "string",
+        "defaultValue": "RoadMap"
+      },
+      {
+        "propertyName": "DisplayMode",
+        "valueType": "string",
+        "defaultValue": "Markers"
+      }
+    ],
+    "options": [
+      {
+        "title": "Custom Options",
+        "items": [
+          {
+            "dataField": "Provider",
+            "editorOptions": {
+              "items": [
+                {
+                  "text": "Google"
+                },
+                {
+                  "text": "Azure"
+                },
+                {
+                  "text": "Bing"
+                }
+              ]
+            }
+          },
+          {
+            "dataField": "Type",
+            "editorOptions": {
+              "items": [
+                {
+                  "text": "RoadMap"
+                },
+                {
+                  "text": "Satellite"
+                },
+                {
+                  "text": "Hybrid"
+                }
+              ]
+            }
+          },
+          {
+            "dataField": "DisplayMode",
+            "editorOptions": {
+              "keyExpr": "value",
+              "items": [
+                {
+                  "value": "Markers",
+                  "text": "Markers"
+                },
+                {
+                  "value": "Routes",
+                  "text": "Routes"
+                },
+                {
+                  "value": "MarkersAndRoutes",
+                  "text": "All"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "visibility": "registered",
+    "status": "serializable-contract"
+  },
+  "WebPageCustomItem": {
+    "constructor": "WebPageCustomItem",
+    "source": "wwwroot/Content/webpage-extension.min.js",
+    "name": "WebPage",
+    "displayName": "WebPage",
+    "group": "",
+    "bindings": [
+      {
+        "propertyName": "Attribute",
+        "dataItemType": "Dimension",
+        "array": false,
+        "displayName": "Attribute",
+        "emptyPlaceholder": "Set Attribute",
+        "selectedPlaceholder": "Configure Attribute"
+      }
+    ],
+    "customProperties": [
+      {
+        "propertyName": "Url",
+        "valueType": "string",
+        "defaultValue": "https://en.m.wikipedia.org/wiki/{0}"
+      }
+    ],
+    "options": [
+      {
+        "title": "Custom Options",
+        "items": [
+          {
+            "dataField": "Url",
+            "editorType": "dxTextBox"
+          }
+        ]
+      }
+    ],
+    "visibility": "registered",
+    "status": "manual-configuration",
+    "reason": "Requires an explicitly approved external URL; do not generate the runtime default destination with customer data."
+  }
+}

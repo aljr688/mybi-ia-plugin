@@ -19,7 +19,8 @@ from mybi_formatting import validate_formatting, merge_ini
 from mybi_native import EXTENSIONS, decorate, tabs, update_existing, serialize_basic
 from mybi_html_grid import grid_markup
 from mybi_toolbar import apply_properties
-CATALOG = json.loads((BASE / 'references/catalog.json').read_text(encoding='utf-8'))
+from mybi_references import load_reference
+CATALOG = load_reference(BASE / 'references/catalog.json')
 CATALOG.update(EXTENSIONS)
 TYPES = {'TEXT', 'INTEGER', 'REAL', 'DECIMAL', 'DATETIME', 'BOOLEAN'}
 SUMMARIES = {'Sum', 'Count', 'CountDistinct', 'Avg', 'Min', 'Max'}

@@ -1,0 +1,7189 @@
+{
+  "Correlacao": {
+    "xml": "CustomItem",
+    "displayName": "Correlação de Pearson",
+    "group": "customItemGroup",
+    "bindings": {
+      "Dimensao": {
+        "type": "Dimension",
+        "array": true,
+        "label": "Dimensão (linhas)"
+      },
+      "MedidaX": {
+        "type": "Measure",
+        "array": false,
+        "label": "Medida X (1ª variável)"
+      },
+      "MedidaY": {
+        "type": "Measure",
+        "array": false,
+        "label": "Medida Y (2ª variável)"
+      },
+      "GrupoExtra": {
+        "type": "Dimension",
+        "array": true,
+        "label": "Agrupamento extra (drill)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "LimiteForte": {
+        "type": "number",
+        "min": 0,
+        "max": 1,
+        "runtimeDefault": 0.7
+      },
+      "LimiteMod": {
+        "type": "number",
+        "min": 0,
+        "max": 1,
+        "runtimeDefault": 0.4
+      },
+      "MostrarScatter": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "MostrarDetalhes": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#5470C6"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#EE6666"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#91CC75"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IACotacoesEconomia": {
+    "xml": "CustomItem",
+    "displayName": "Mapa de Economia",
+    "group": "IACotacoesOrcamentosGroup",
+    "bindings": {
+      "Categoria": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Categoria"
+      },
+      "Comprador": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Comprador"
+      },
+      "NumeroCotacao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Nº Cotação"
+      },
+      "Periodo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Período"
+      },
+      "EconomiaPotencial": {
+        "type": "Measure",
+        "array": false,
+        "label": "Economia Potencial"
+      },
+      "EconomiaCapturada": {
+        "type": "Measure",
+        "array": false,
+        "label": "Economia Capturada"
+      },
+      "EconomiaPerda": {
+        "type": "Measure",
+        "array": false,
+        "label": "Economia Perdida"
+      },
+      "PercEconomia": {
+        "type": "Measure",
+        "array": false,
+        "label": "% Economia"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaEconomia": {
+        "type": "number",
+        "min": 0,
+        "max": 50,
+        "runtimeDefault": 8
+      },
+      "AlertaPerda": {
+        "type": "number",
+        "min": 0,
+        "max": 100000,
+        "runtimeDefault": 5000
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#7c3aed"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IACotacoesFornecedores": {
+    "xml": "CustomItem",
+    "displayName": "Comparativo de Fornecedores",
+    "group": "IACotacoesOrcamentosGroup",
+    "bindings": {
+      "Fornecedor": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Fornecedor"
+      },
+      "NumeroCotacao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Nº Cotação"
+      },
+      "Categoria": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Categoria"
+      },
+      "UltimaCompra": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Última Compra"
+      },
+      "ScorePreco": {
+        "type": "Measure",
+        "array": false,
+        "label": "Score Preço"
+      },
+      "ScorePrazo": {
+        "type": "Measure",
+        "array": false,
+        "label": "Score Prazo"
+      },
+      "ScoreQualidade": {
+        "type": "Measure",
+        "array": false,
+        "label": "Score Qualidade"
+      },
+      "ScoreResposta": {
+        "type": "Measure",
+        "array": false,
+        "label": "Score Resposta"
+      },
+      "PrazoEntregaDias": {
+        "type": "Measure",
+        "array": false,
+        "label": "Prazo Entrega (dias)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "PesoPreco": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 30
+      },
+      "PesoPrazo": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 25
+      },
+      "PesoQualidade": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 25
+      },
+      "PesoResposta": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 20
+      },
+      "AlertaPrazo": {
+        "type": "number",
+        "min": 0,
+        "max": 60,
+        "runtimeDefault": 10
+      },
+      "ScoreMinimo": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 70
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#185FA5"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IACotacoesHistorico": {
+    "xml": "CustomItem",
+    "displayName": "Histórico de Preços",
+    "group": "IACotacoesOrcamentosGroup",
+    "bindings": {
+      "Item": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Item"
+      },
+      "Fornecedor": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Fornecedor"
+      },
+      "Categoria": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Categoria"
+      },
+      "Periodo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Período"
+      },
+      "PrecoUnitario": {
+        "type": "Measure",
+        "array": false,
+        "label": "Preço Unitário"
+      },
+      "Quantidade": {
+        "type": "Measure",
+        "array": false,
+        "label": "Quantidade"
+      }
+    },
+    "required": [],
+    "properties": {
+      "AlertaAlta": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 10
+      },
+      "AlertaQueda": {
+        "type": "number",
+        "min": 0,
+        "max": 50,
+        "runtimeDefault": 5
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#37474f"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IACotacoesMenorPreco": {
+    "xml": "CustomItem",
+    "displayName": "Menor Preço por Item",
+    "group": "IACotacoesOrcamentosGroup",
+    "bindings": {
+      "Item": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Item"
+      },
+      "Categoria": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Categoria"
+      },
+      "Fornecedor": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Fornecedor"
+      },
+      "Vencedor": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Vencedor (S/N)"
+      },
+      "Quantidade": {
+        "type": "Measure",
+        "array": false,
+        "label": "Quantidade"
+      },
+      "PrecoUnitario": {
+        "type": "Measure",
+        "array": false,
+        "label": "Preço Unitário"
+      },
+      "PrecoTotal": {
+        "type": "Measure",
+        "array": false,
+        "label": "Preço Total"
+      },
+      "EconomiaPct": {
+        "type": "Measure",
+        "array": false,
+        "label": "Economia %"
+      },
+      "ValorMinimoFornecedor": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Mínimo por Fornecedor"
+      }
+    },
+    "required": [],
+    "properties": {
+      "AlertaEconomia": {
+        "type": "number",
+        "min": 0,
+        "max": 50,
+        "runtimeDefault": 5
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IACotacoesResumo": {
+    "xml": "CustomItem",
+    "displayName": "Resumo de Cotações",
+    "group": "IACotacoesOrcamentosGroup",
+    "bindings": {
+      "NumeroCotacao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Nº Cotação"
+      },
+      "Categoria": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Categoria"
+      },
+      "Comprador": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Comprador"
+      },
+      "Status": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Status"
+      },
+      "Periodo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Período"
+      },
+      "ValorCotado": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Cotado"
+      },
+      "ValorAprovado": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Aprovado"
+      },
+      "Economia": {
+        "type": "Measure",
+        "array": false,
+        "label": "Economia"
+      },
+      "SLADias": {
+        "type": "Measure",
+        "array": false,
+        "label": "SLA (dias)"
+      },
+      "QtdFornecedores": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd Fornecedores"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaEconomia": {
+        "type": "number",
+        "min": 0,
+        "max": 50,
+        "runtimeDefault": 8
+      },
+      "AlertaSLA": {
+        "type": "number",
+        "min": 0,
+        "max": 30,
+        "runtimeDefault": 3
+      },
+      "AlertaPendentes": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 20
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#795548"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IACotacoesStatus": {
+    "xml": "CustomItem",
+    "displayName": "Status das Cotações",
+    "group": "IACotacoesOrcamentosGroup",
+    "bindings": {
+      "NumeroCotacao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Nº Cotação"
+      },
+      "Categoria": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Categoria"
+      },
+      "Comprador": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Comprador"
+      },
+      "Status": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Status"
+      },
+      "DiasAberta": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dias em Aberto"
+      },
+      "SLAMeta": {
+        "type": "Measure",
+        "array": false,
+        "label": "SLA Meta (dias)"
+      },
+      "ValorCotado": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Cotado"
+      }
+    },
+    "required": [],
+    "properties": {
+      "SLAPadrao": {
+        "type": "number",
+        "min": 0,
+        "max": 30,
+        "runtimeDefault": 3
+      },
+      "AlertaVencidas": {
+        "type": "number",
+        "min": 0,
+        "max": 50,
+        "runtimeDefault": 5
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IACotacoesVendas": {
+    "xml": "CustomItem",
+    "displayName": "Radar de Cotações",
+    "group": "IAComercialGroup",
+    "bindings": {
+      "DataCotacao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data Cotação"
+      },
+      "NumeroCotacao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Número Cotação"
+      },
+      "StatusCotacao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Status Cotação"
+      },
+      "Cliente": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Cliente"
+      },
+      "DataCadastroCliente": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data Cadastro Cliente"
+      },
+      "Representante": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Representante"
+      },
+      "Potencial": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Potencial"
+      },
+      "StatusCliente": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Status Cliente"
+      },
+      "UltimaCotacaoCliente": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Última Cotação"
+      },
+      "ValorCotacao": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Cotação"
+      },
+      "DiasUltimaCotacao": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dias Últ. Cotação"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MesesSemCotacao": {
+        "type": "number",
+        "min": 1,
+        "max": 36,
+        "runtimeDefault": 6
+      },
+      "AlertaDiasSemCotar": {
+        "type": "number",
+        "min": 1,
+        "max": 365,
+        "runtimeDefault": 90
+      },
+      "AlertaDiasCritico": {
+        "type": "number",
+        "min": 1,
+        "max": 3650,
+        "runtimeDefault": 365
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#2563a8"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c04828"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IACreditoCarteira": {
+    "xml": "CustomItem",
+    "displayName": "Monitoramento de Carteira",
+    "group": "IACreditoGroup",
+    "bindings": {
+      "DataReferencia": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data de Referência"
+      },
+      "TipoPessoa": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo Pessoa (PF/PJ)"
+      },
+      "Produto": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Produto de Crédito"
+      },
+      "FaixaAtraso": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Faixa de Atraso"
+      },
+      "Safra": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Safra de Concessão"
+      },
+      "SaldoCarteira": {
+        "type": "Measure",
+        "array": false,
+        "label": "Saldo da Carteira (R$)"
+      },
+      "QtdContratos": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Contratos"
+      },
+      "SaldoInadimplente": {
+        "type": "Measure",
+        "array": false,
+        "label": "Saldo em Atraso (R$)"
+      },
+      "PDDProvisionado": {
+        "type": "Measure",
+        "array": false,
+        "label": "PDD Provisionado (R$)"
+      },
+      "PDDBaixado": {
+        "type": "Measure",
+        "array": false,
+        "label": "PDD Baixado/Write-off"
+      },
+      "PDDRecuperado": {
+        "type": "Measure",
+        "array": false,
+        "label": "PDD Recuperado (R$)"
+      },
+      "PrazoMedioMeses": {
+        "type": "Measure",
+        "array": false,
+        "label": "Prazo Médio (meses)"
+      },
+      "MetaInadimplencia": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Inadimplência % (bind)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaInadimplencia90": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 4
+      },
+      "AlertaCoberturaPDD": {
+        "type": "number",
+        "min": 0,
+        "max": 200,
+        "runtimeDefault": 100
+      },
+      "AlertaConcentracao": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 40
+      },
+      "ShowFaixas": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowVintage": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowPDD": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowConcentracao": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#185FA5"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#3B6D11"
+      },
+      "WarnColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IACreditoModelo": {
+    "xml": "CustomItem",
+    "displayName": "Performance do Modelo",
+    "group": "IACreditoGroup",
+    "bindings": {
+      "DataReferencia": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data de Referência"
+      },
+      "NomeModelo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Nome do Modelo"
+      },
+      "TipoPessoa": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo Pessoa (PF/PJ)"
+      },
+      "Produto": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Produto"
+      },
+      "Variavel": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Variável (drift)"
+      },
+      "FaixaScore": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Faixa de Score"
+      },
+      "KS": {
+        "type": "Measure",
+        "array": false,
+        "label": "KS (0–100)"
+      },
+      "Gini": {
+        "type": "Measure",
+        "array": false,
+        "label": "Gini (0–1)"
+      },
+      "AUC": {
+        "type": "Measure",
+        "array": false,
+        "label": "AUC (0–1)"
+      },
+      "PSI": {
+        "type": "Measure",
+        "array": false,
+        "label": "PSI atual"
+      },
+      "PSIAnterior": {
+        "type": "Measure",
+        "array": false,
+        "label": "PSI período anterior"
+      },
+      "Acuracia": {
+        "type": "Measure",
+        "array": false,
+        "label": "Acurácia (%)"
+      },
+      "Precisao": {
+        "type": "Measure",
+        "array": false,
+        "label": "Precisão (%)"
+      },
+      "Recall": {
+        "type": "Measure",
+        "array": false,
+        "label": "Recall (%)"
+      },
+      "F1Score": {
+        "type": "Measure",
+        "array": false,
+        "label": "F1-score (0–1)"
+      },
+      "VP": {
+        "type": "Measure",
+        "array": false,
+        "label": "VP — Verdadeiro Positivo (%)"
+      },
+      "FP": {
+        "type": "Measure",
+        "array": false,
+        "label": "FP — Falso Positivo (%)"
+      },
+      "FN": {
+        "type": "Measure",
+        "array": false,
+        "label": "FN — Falso Negativo (%)"
+      },
+      "VN": {
+        "type": "Measure",
+        "array": false,
+        "label": "VN — Verdadeiro Negativo (%)"
+      },
+      "ScoreCorte": {
+        "type": "Measure",
+        "array": false,
+        "label": "Score de Corte"
+      },
+      "QtdBons": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Bons Pagadores"
+      },
+      "QtdMaus": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Maus Pagadores"
+      },
+      "PSIVariavel": {
+        "type": "Measure",
+        "array": false,
+        "label": "PSI da Variável"
+      }
+    },
+    "required": [],
+    "properties": {
+      "AlertaKSMinimo": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 30
+      },
+      "AlertaGiniMinimo": {
+        "type": "number",
+        "min": 0,
+        "max": 1,
+        "runtimeDefault": 0.4
+      },
+      "AlertaPSIAtencao": {
+        "type": "number",
+        "min": 0,
+        "max": 1,
+        "runtimeDefault": 0.1
+      },
+      "AlertaPSICritico": {
+        "type": "number",
+        "min": 0,
+        "max": 1,
+        "runtimeDefault": 0.25
+      },
+      "AlertaDriftPSI": {
+        "type": "number",
+        "min": 0,
+        "max": 1,
+        "runtimeDefault": 0.2
+      },
+      "ShowROC": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowDistribuicao": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowPSI": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowMatriz": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowDrift": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#185FA5"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#3B6D11"
+      },
+      "WarnColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IACreditoPropostas": {
+    "xml": "CustomItem",
+    "displayName": "Painel de Propostas",
+    "group": "IACreditoGroup",
+    "bindings": {
+      "DataProposta": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data da Proposta"
+      },
+      "TipoPessoa": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo Pessoa (PF/PJ)"
+      },
+      "StatusProposta": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Status"
+      },
+      "Analista": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Analista"
+      },
+      "MotivoRecusa": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Motivo de Recusa"
+      },
+      "Produto": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Produto de Crédito"
+      },
+      "QtdPropostas": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Propostas"
+      },
+      "ValorSolicitado": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Solicitado (R$)"
+      },
+      "ValorAprovado": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Aprovado (R$)"
+      },
+      "TempoDecisao": {
+        "type": "Measure",
+        "array": false,
+        "label": "Tempo Decisão (horas)"
+      },
+      "MetaAprovacaoPct": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Aprovação % (bind)"
+      },
+      "MetaTempoDecisao": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Tempo Decisão (bind)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaAprovacaoPct": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 60
+      },
+      "MetaTempoDecisaoH": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 12
+      },
+      "AlertaFilaH": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 24
+      },
+      "AlertaFilaCriticaH": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 48
+      },
+      "AlertaValorAltoK": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 500
+      },
+      "ShowFunil": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowMotivos": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowAnalistas": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowPFPJ": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#185FA5"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#3B6D11"
+      },
+      "WarnColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IACreditoScore": {
+    "xml": "CustomItem",
+    "displayName": "Score e Decisão",
+    "group": "IACreditoGroup",
+    "bindings": {
+      "Data": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data"
+      },
+      "TipoPessoa": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo Pessoa (PF/PJ)"
+      },
+      "FaixaRisco": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Faixa de Risco"
+      },
+      "TipoDecisao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo de Decisão"
+      },
+      "TipoScore": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo de Score"
+      },
+      "ScoreInterno": {
+        "type": "Measure",
+        "array": false,
+        "label": "Score Interno (0–1000)"
+      },
+      "ScoreBureau": {
+        "type": "Measure",
+        "array": false,
+        "label": "Score Bureau (0–1000)"
+      },
+      "QtdPropostas": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Propostas"
+      },
+      "QtdAprovadas": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Aprovadas"
+      },
+      "ValorAprovado": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Aprovado (R$)"
+      },
+      "DecisaoInterna": {
+        "type": "Measure",
+        "array": false,
+        "label": "Decisão Interna (1=ap)"
+      },
+      "DecisaoBureau": {
+        "type": "Measure",
+        "array": false,
+        "label": "Decisão Bureau (1=ap)"
+      },
+      "Override": {
+        "type": "Measure",
+        "array": false,
+        "label": "Override (1=sim)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "ScoreMinA": {
+        "type": "number",
+        "min": 0,
+        "max": 1000,
+        "runtimeDefault": 750
+      },
+      "ScoreMinB": {
+        "type": "number",
+        "min": 0,
+        "max": 1000,
+        "runtimeDefault": 600
+      },
+      "ScoreMinC": {
+        "type": "number",
+        "min": 0,
+        "max": 1000,
+        "runtimeDefault": 450
+      },
+      "ScoreMinD": {
+        "type": "number",
+        "min": 0,
+        "max": 1000,
+        "runtimeDefault": 300
+      },
+      "AlertaDivergenciaPct": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 10
+      },
+      "AlertaExcecaoPct": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 5
+      },
+      "ShowFaixas": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowDivergencia": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowPolitica": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowEvolucao": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#185FA5"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#3B6D11"
+      },
+      "WarnColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "ItensIACurvaAbc": {
+    "xml": "CustomItem",
+    "displayName": "Curva ABC",
+    "group": "IAGroup",
+    "bindings": {
+      "Item": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Item"
+      },
+      "Valor": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor"
+      },
+      "Quantidade": {
+        "type": "Measure",
+        "array": false,
+        "label": "Quantidade (Opcional)"
+      },
+      "GroupBy": {
+        "type": "Dimension",
+        "array": true,
+        "label": "Agrupamento"
+      }
+    },
+    "required": [],
+    "properties": {
+      "LimiteClasseA": {
+        "type": "number",
+        "min": 1,
+        "max": 99,
+        "runtimeDefault": 80
+      },
+      "LimiteClasseB": {
+        "type": "number",
+        "min": 1,
+        "max": 99,
+        "runtimeDefault": 95
+      },
+      "ModoCalculo": {
+        "type": "string",
+        "enum": [
+          "valor",
+          "quantidade"
+        ],
+        "runtimeDefault": "valor"
+      },
+      "TopN": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 0
+      },
+      "ShowGrafico": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowAlertas": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#185FA5"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#3B6D11"
+      },
+      "BackgroundColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#f5f7fa"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "CapitalGiro": {
+    "xml": "CustomItem",
+    "displayName": "Capital de Giro",
+    "group": "IAFinanceiroGroup",
+    "bindings": {
+      "Data": {
+        "type": "Dimension",
+        "array": false,
+        "label": "data (Emissão ou Vencimento)"
+      },
+      "Estoques": {
+        "type": "Measure",
+        "array": false,
+        "label": "Estoques"
+      },
+      "ContasReceber": {
+        "type": "Measure",
+        "array": false,
+        "label": "Contas a Receber"
+      },
+      "ContasPagar": {
+        "type": "Measure",
+        "array": false,
+        "label": "Contas a Pagar"
+      },
+      "ReceitaBruta": {
+        "type": "Measure",
+        "array": false,
+        "label": "Receita Bruta"
+      },
+      "CMV": {
+        "type": "Measure",
+        "array": false,
+        "label": "CMV"
+      }
+    },
+    "required": [],
+    "properties": {
+      "ShowCards": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowGrafico": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowCiclo": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "LimiteAtencao": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 150000
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a237e"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c62828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#2e7d32"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "Endividamento": {
+    "xml": "CustomItem",
+    "displayName": "Endividamento & Alavancagem",
+    "group": "IAFinanceiroGroup",
+    "bindings": {
+      "Data": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data"
+      },
+      "Credor": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Credor"
+      },
+      "TipoCredito": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo de Crédito"
+      },
+      "AnoVencimento": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Ano Vencimento"
+      },
+      "SaldoDevedor": {
+        "type": "Measure",
+        "array": false,
+        "label": "Saldo Devedor"
+      },
+      "JurosPeriodo": {
+        "type": "Measure",
+        "array": false,
+        "label": "Juros no Período"
+      },
+      "EBITDA": {
+        "type": "Measure",
+        "array": false,
+        "label": "EBITDA"
+      },
+      "CaixaEquivalentes": {
+        "type": "Measure",
+        "array": false,
+        "label": "Caixa & Equivalentes"
+      }
+    },
+    "required": [],
+    "properties": {
+      "ShowCards": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowGauges": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowVenc": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "MetaEbitda": {
+        "type": "number",
+        "min": 0,
+        "max": 10,
+        "runtimeDefault": 2.5
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a237e"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c62828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#2e7d32"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "FluxoCaixa": {
+    "xml": "CustomItem",
+    "displayName": "Fluxo de Caixa",
+    "group": "IAFinanceiroGroup",
+    "bindings": {
+      "Data": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data"
+      },
+      "Categoria": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Plano de Contas"
+      },
+      "Tipo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo (Entrada/Saída)"
+      },
+      "ValorRealizado": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Realizado"
+      },
+      "ValorProjetado": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Projetado"
+      },
+      "SaldoInicial": {
+        "type": "Measure",
+        "array": false,
+        "label": "Saldo Inicial"
+      },
+      "Situacao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Situação"
+      },
+      "Cliente": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Cliente / Fornecedor"
+      },
+      "Referencia": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Referência"
+      },
+      "Descricao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Descrição"
+      },
+      "ColunasGrid": {
+        "type": "Dimension",
+        "array": true,
+        "label": "Colunas Adicionais do Grid"
+      }
+    },
+    "required": [
+      "Data",
+      "Tipo",
+      "ValorRealizado"
+    ],
+    "properties": {
+      "Layout": {
+        "type": "string",
+        "enum": [
+          "FluxoCaixa",
+          "Classico"
+        ],
+        "runtimeDefault": "FluxoCaixa"
+      },
+      "ShowCards": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowGrafico": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "HidePlanoContas": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": false
+      },
+      "ModoExibicao": {
+        "type": "string",
+        "enum": [
+          "PeriodoCompleto",
+          "UltimoMes"
+        ],
+        "runtimeDefault": "PeriodoCompleto"
+      },
+      "TipoData": {
+        "type": "string",
+        "enum": [
+          "Emissao",
+          "Vencimento",
+          "Quitacao"
+        ],
+        "runtimeDefault": "Emissao"
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a237e"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c62828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#2e7d32"
+      },
+      "ShowCardsSaldo": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": false
+      },
+      "Granularidade": {
+        "type": "string",
+        "enum": [
+          "Mes",
+          "Dia"
+        ],
+        "runtimeDefault": "Mes"
+      },
+      "ShowDonut": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": false
+      },
+      "ShowLancamentos": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": false
+      },
+      "MaxLancamentos": {
+        "type": "number",
+        "min": 1,
+        "max": 100,
+        "runtimeDefault": 5
+      },
+      "TituloLancamentos": {
+        "type": "string",
+        "runtimeDefault": ""
+      },
+      "ColunasLancamentos": {
+        "type": "string",
+        "runtimeDefault": "[\"data\",\"tipo\",\"cliente\",\"referencia\",\"descricao\",\"extras\",\"situacao\",\"debito\",\"credito\",\"saldo\"]"
+      },
+      "PendingColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#f5a623"
+      }
+    },
+    "contract": "runtime-metadata",
+    "dateBindings": [
+      "Data"
+    ],
+    "notes": [
+      "Tipo: Entrada ou Saída conforme a fonte real.",
+      "ValorProjetado e SaldoInicial são opcionais; não inventar valores.",
+      "Confirmar emissão/vencimento/quitação e granularidade da data.",
+      "SaldoInicial não compõe o card legado Saldo Acumulado.",
+      "Recursos opcionais só devem ser ligados com seus vínculos disponíveis."
+    ]
+  },
+  "OrcadoRealizado": {
+    "xml": "CustomItem",
+    "displayName": "Orçado vs Realizado",
+    "group": "IAFinanceiroGroup",
+    "bindings": {
+      "Data": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data"
+      },
+      "CentroCusto": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Centro de Custo"
+      },
+      "Categoria": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Categoria"
+      },
+      "Tipo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo (Receita/Custo)"
+      },
+      "ValorOrcado": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Orçado"
+      },
+      "ValorRealizado": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Realizado"
+      },
+      "ValorForecast": {
+        "type": "Measure",
+        "array": false,
+        "label": "Forecast (opcional)"
+      },
+      "DimensoesGrupo": {
+        "type": "Dimension",
+        "array": true,
+        "label": "Dimensões extras (drill)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "ShowCards": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowBarras": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "LimiteAtencao": {
+        "type": "number",
+        "min": 1,
+        "max": 50,
+        "runtimeDefault": 10
+      },
+      "LimiteEstouro": {
+        "type": "number",
+        "min": 1,
+        "max": 100,
+        "runtimeDefault": 20
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a237e"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c62828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#2e7d32"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "CentroCirurgico": {
+    "xml": "CustomItem",
+    "displayName": "Centro Cirúrgico",
+    "group": "IAHospitalarGroup",
+    "bindings": {
+      "Sala": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Sala Cirúrgica"
+      },
+      "Especialidade": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Especialidade"
+      },
+      "QtdCirurgias": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Cirurgias"
+      },
+      "HorasDisponiveis": {
+        "type": "Measure",
+        "array": false,
+        "label": "Horas Disponíveis"
+      },
+      "HorasOcupadas": {
+        "type": "Measure",
+        "array": false,
+        "label": "Horas Ocupadas"
+      },
+      "Cancelamentos": {
+        "type": "Measure",
+        "array": false,
+        "label": "Cancelamentos"
+      },
+      "AtrasoMedio": {
+        "type": "Measure",
+        "array": false,
+        "label": "Atraso Médio (min)"
+      },
+      "Complicacoes": {
+        "type": "Measure",
+        "array": false,
+        "label": "Complicações"
+      },
+      "Suspensoes": {
+        "type": "Measure",
+        "array": false,
+        "label": "Suspensões"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaOcupacaoSala": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 85
+      },
+      "MetaAtraso": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 20
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#185FA5"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      },
+      "WarnColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "FarmaciaEstoque": {
+    "xml": "CustomItem",
+    "displayName": "Farmácia & Estoque",
+    "group": "IAHospitalarGroup",
+    "bindings": {
+      "Medicamento": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Medicamento/Insumo"
+      },
+      "Categoria": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Categoria"
+      },
+      "Estoque": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. em Estoque"
+      },
+      "EstoqueMinimo": {
+        "type": "Measure",
+        "array": false,
+        "label": "Estoque Mínimo"
+      },
+      "ConsumoMedioDia": {
+        "type": "Measure",
+        "array": false,
+        "label": "Consumo Médio/Dia"
+      },
+      "ValorUnitario": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Unitário (R$)"
+      },
+      "DiasValidade": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dias p/ Vencimento"
+      }
+    },
+    "required": [],
+    "properties": {
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      },
+      "WarnColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "FaturamentoTISS": {
+    "xml": "CustomItem",
+    "displayName": "Faturamento & TISS",
+    "group": "IAHospitalarGroup",
+    "bindings": {
+      "Convenio": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Convênio"
+      },
+      "TipoGlosa": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo de Glosa"
+      },
+      "Competencia": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Competência"
+      },
+      "ValorProduzido": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Produzido (R$)"
+      },
+      "ValorFaturado": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Faturado (R$)"
+      },
+      "ValorGlosado": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Glosado (R$)"
+      },
+      "ValorRecebido": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Recebido (R$)"
+      },
+      "ValorPendente": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Pendente (R$)"
+      },
+      "QtdGuias": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Guias"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaGlosa": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 5
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a4f8a"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      },
+      "WarnColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      },
+      "ValueUnit": {
+        "type": "string",
+        "enum": [
+          "number",
+          "seconds",
+          "minutes",
+          "hours"
+        ],
+        "runtimeDefault": "number"
+      },
+      "DurationStyle": {
+        "type": "string",
+        "enum": [
+          "short",
+          "full",
+          "clock",
+          "hhmm"
+        ],
+        "runtimeDefault": "clock"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "GestaoLeitos": {
+    "xml": "CustomItem",
+    "displayName": "Gestão de Leitos",
+    "group": "IAHospitalarGroup",
+    "bindings": {
+      "Data": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data"
+      },
+      "Setor": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Setor"
+      },
+      "Ala": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Ala"
+      },
+      "NumeroLeito": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Nº Leito"
+      },
+      "StatusLeito": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Status"
+      },
+      "HorasInternacao": {
+        "type": "Measure",
+        "array": false,
+        "label": "Horas Internação"
+      },
+      "HorasLimpeza": {
+        "type": "Measure",
+        "array": false,
+        "label": "Horas Limpeza"
+      },
+      "AltasPendentes": {
+        "type": "Measure",
+        "array": false,
+        "label": "Altas Pendentes"
+      },
+      "MetaOcupacaoPct": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Ocupação %"
+      },
+      "MetaTempoPerm": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Tempo Perm. (dias)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "DiasAnalise": {
+        "type": "number",
+        "min": 1,
+        "max": 365,
+        "runtimeDefault": 30
+      },
+      "MetaOcupacao": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 85
+      },
+      "AlertaOcupacao": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 90
+      },
+      "AlertaLimpeza": {
+        "type": "number",
+        "min": 0,
+        "max": 24,
+        "runtimeDefault": 2
+      },
+      "ShowMapa": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowGrafico": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowAlertas": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowPrevisao": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#185FA5"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#3B6D11"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IndicadoresAssistenciais": {
+    "xml": "CustomItem",
+    "displayName": "Indicadores Assistenciais",
+    "group": "IAHospitalarGroup",
+    "bindings": {
+      "DataOp": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data (Operacional)"
+      },
+      "AlaOp": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Ala (Operacional)"
+      },
+      "MotivoCancelamento": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Motivo Cancelamento"
+      },
+      "TempoPortaLeito": {
+        "type": "Measure",
+        "array": false,
+        "label": "Tempo Porta-Leito (min)"
+      },
+      "TempoPortaMedico": {
+        "type": "Measure",
+        "array": false,
+        "label": "Tempo Porta-Médico (min)"
+      },
+      "CancelamentoCirurg": {
+        "type": "Measure",
+        "array": false,
+        "label": "Cancelamentos Cirúrgicos"
+      },
+      "TotalCirurgias": {
+        "type": "Measure",
+        "array": false,
+        "label": "Total Cirurgias"
+      },
+      "GiroLeito": {
+        "type": "Measure",
+        "array": false,
+        "label": "Giro de Leito"
+      },
+      "MetaGiroLeito": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Giro Leito (binding)"
+      },
+      "MetaPortaLeito": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Porta-Leito min (bind)"
+      },
+      "DataQual": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data (Qualidade)"
+      },
+      "AlaQual": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Ala (Qualidade)"
+      },
+      "CID": {
+        "type": "Dimension",
+        "array": false,
+        "label": "CID (Reinternação)"
+      },
+      "TipoIRAS": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo IRAS"
+      },
+      "Trimestre": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Trimestre"
+      },
+      "Reinternacao30d": {
+        "type": "Measure",
+        "array": false,
+        "label": "Reinternações 30d"
+      },
+      "TotalAltas": {
+        "type": "Measure",
+        "array": false,
+        "label": "Total de Altas"
+      },
+      "CasosIRAS": {
+        "type": "Measure",
+        "array": false,
+        "label": "Casos IRAS"
+      },
+      "PacientesDia": {
+        "type": "Measure",
+        "array": false,
+        "label": "Pacientes-dia"
+      },
+      "Obitos": {
+        "type": "Measure",
+        "array": false,
+        "label": "Óbitos"
+      },
+      "TotalInternacoes": {
+        "type": "Measure",
+        "array": false,
+        "label": "Total Internações"
+      },
+      "NPS": {
+        "type": "Measure",
+        "array": false,
+        "label": "NPS"
+      },
+      "MetaReinternacao": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Reinternação % (bind)"
+      },
+      "MetaIRAS": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta IRAS p/ mil (bind)"
+      },
+      "MetaMortalidade": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Mortalidade % (bind)"
+      },
+      "MetaNPS": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta NPS (binding)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaPortaLeitoMin": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 120
+      },
+      "MetaPortaMedicoMin": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 30
+      },
+      "MetaCancelamentoPct": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 5
+      },
+      "MetaGiroLeitoDefault": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 5
+      },
+      "MetaReinternacaoPct": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 8
+      },
+      "MetaIRASpMil": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 2
+      },
+      "MetaMortalidadePct": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 2
+      },
+      "MetaNPSDefault": {
+        "type": "number",
+        "min": -100,
+        "max": 100,
+        "runtimeDefault": 60
+      },
+      "PeriodoLabel": {
+        "type": "string",
+        "runtimeDefault": ""
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#185FA5"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#3B6D11"
+      },
+      "WarnColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IRAS": {
+    "xml": "CustomItem",
+    "displayName": "Infecção Hospitalar (IRAS)",
+    "group": "IAHospitalarGroup",
+    "bindings": {
+      "TipoIRAS": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo de IRAS"
+      },
+      "Setor": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Setor/Unidade"
+      },
+      "GermeMultirresistente": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Germe Multirresistente"
+      },
+      "QtdCasos": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Casos"
+      },
+      "PacientesDia": {
+        "type": "Measure",
+        "array": false,
+        "label": "Pacientes-Dia"
+      },
+      "MetaDensidade": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Densidade Inc."
+      }
+    },
+    "required": [],
+    "properties": {
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      },
+      "WarnColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "ProntoSocorro": {
+    "xml": "CustomItem",
+    "displayName": "Pronto-Socorro & Fluxo",
+    "group": "IAHospitalarGroup",
+    "bindings": {
+      "Classificacao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Classificação de Risco"
+      },
+      "QtdAtendimentos": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Atendimentos"
+      },
+      "TempoEspera": {
+        "type": "Measure",
+        "array": false,
+        "label": "Tempo de Espera (min)"
+      },
+      "TempoAtendimento": {
+        "type": "Measure",
+        "array": false,
+        "label": "Tempo Atendimento (min)"
+      },
+      "QtdAltas": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Altas"
+      },
+      "QtdInternacoes": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Internações"
+      },
+      "QtdEvasoes": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Evasões"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaEsperaVermelho": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 5
+      },
+      "MetaEsperaLaranja": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 15
+      },
+      "MetaEsperaAmarelo": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 30
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      },
+      "WarnColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "SatisfacaoPaciente": {
+    "xml": "CustomItem",
+    "displayName": "Satisfação do Paciente",
+    "group": "IAHospitalarGroup",
+    "bindings": {
+      "Setor": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Setor/Unidade"
+      },
+      "CategoriaReclamacao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Categoria Reclamação"
+      },
+      "Promotores": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Promotores (9-10)"
+      },
+      "Neutros": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Neutros (7-8)"
+      },
+      "Detratores": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Detratores (0-6)"
+      },
+      "NotaMedia": {
+        "type": "Measure",
+        "array": false,
+        "label": "Nota Média (1-5)"
+      },
+      "QtdReclamacoes": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Reclamações"
+      },
+      "TempoRespostaOuvidoria": {
+        "type": "Measure",
+        "array": false,
+        "label": "Tempo Resposta Ouv. (h)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaNPS": {
+        "type": "number",
+        "min": -100,
+        "max": 100,
+        "runtimeDefault": 50
+      },
+      "MetaNota": {
+        "type": "number",
+        "min": 1,
+        "max": 5,
+        "runtimeDefault": 4
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#185FA5"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      },
+      "WarnColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "UTIIndicadores": {
+    "xml": "CustomItem",
+    "displayName": "UTI & Indicadores Críticos",
+    "group": "IAHospitalarGroup",
+    "bindings": {
+      "Leito": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Leito UTI"
+      },
+      "Complicacao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Complicação"
+      },
+      "Ventilacao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Ventilação Mecânica"
+      },
+      "ScoreSAPS": {
+        "type": "Measure",
+        "array": false,
+        "label": "Score SAPS II"
+      },
+      "ScoreSOFA": {
+        "type": "Measure",
+        "array": false,
+        "label": "Score SOFA"
+      },
+      "DiasInternacao": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dias de Internação"
+      },
+      "DiaVentilacao": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dias de VM"
+      },
+      "PressaoMedia": {
+        "type": "Measure",
+        "array": false,
+        "label": "PAM (mmHg)"
+      },
+      "SPO2": {
+        "type": "Measure",
+        "array": false,
+        "label": "SpO2 (%)"
+      },
+      "Temperatura": {
+        "type": "Measure",
+        "array": false,
+        "label": "Temperatura (°C)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaDiasVM": {
+        "type": "number",
+        "min": 1,
+        "runtimeDefault": 7
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#7b1fa2"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      },
+      "WarnColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "InadimplenciaRepresentante": {
+    "xml": "CustomItem",
+    "displayName": "Inadimplência do Representante",
+    "group": "IARepresentantesGroup",
+    "bindings": {
+      "Vencimento": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Vencimento"
+      },
+      "RazaoSocial": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Razão Social"
+      },
+      "Titulo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Título"
+      },
+      "Parcela": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Parcela"
+      },
+      "ValorParcela": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Parcela"
+      },
+      "InadimplenciaTotal": {
+        "type": "Measure",
+        "array": false,
+        "label": "Inadimplência Total %"
+      },
+      "InadimplenciaRecente": {
+        "type": "Measure",
+        "array": false,
+        "label": "Inadimplência Recente %"
+      },
+      "MetaInadimplencia": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Inadimplência %"
+      }
+    },
+    "required": [],
+    "properties": {
+      "DiasAlertaVencido": {
+        "type": "number",
+        "min": 1,
+        "max": 180,
+        "runtimeDefault": 30
+      },
+      "DiasAlertaAtencao": {
+        "type": "number",
+        "min": 1,
+        "max": 90,
+        "runtimeDefault": 7
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c04828"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IAJuridicoCompliance": {
+    "xml": "CustomItem",
+    "displayName": "Compliance & Riscos",
+    "group": "IAJuridicoGroup",
+    "bindings": {
+      "Area": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Área"
+      },
+      "TipoRisco": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo de Risco"
+      },
+      "TipoObrigacao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo de Obrigação"
+      },
+      "NivelRisco": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Nível de Risco"
+      },
+      "DescRisco": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Descrição"
+      },
+      "ScoreCompliance": {
+        "type": "Measure",
+        "array": false,
+        "label": "Score Compliance"
+      },
+      "DiasVencObrig": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dias p/ Vencimento"
+      }
+    },
+    "required": [],
+    "properties": {
+      "AlertaScore": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 70
+      },
+      "AlertaObrig": {
+        "type": "number",
+        "min": 0,
+        "max": 90,
+        "runtimeDefault": 15
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IAJuridicoContratos": {
+    "xml": "CustomItem",
+    "displayName": "Dashboard de Contratos",
+    "group": "IAContratosGroup",
+    "bindings": {
+      "Cliente": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Cliente"
+      },
+      "Contrato": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Nº Contrato"
+      },
+      "Status": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Status"
+      },
+      "DataVencimento": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data de Vencimento"
+      },
+      "DataInicio": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data de Início (opcl)"
+      },
+      "Valor": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor (R$) (opcl)"
+      },
+      "Categoria": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Categoria (opcl)"
+      },
+      "Responsavel": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Responsável (opcl)"
+      },
+      "SituacaoRenovacao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Situação da Renovação (opcl)"
+      },
+      "TipoContrato": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo de Contrato (opcl)"
+      },
+      "CentroCusto": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Centro de Custo (opcl)"
+      },
+      "EmpresaFilial": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Empresa / Filial (opcl)"
+      },
+      "DocumentoLink": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Documento / Link (opcl)"
+      },
+      "DiasParaVencer": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dias para Vencer (opcl)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "TituloRelatorio": {
+        "type": "string",
+        "runtimeDefault": "Dashboard de Contratos"
+      },
+      "DiasAlertaVencimento": {
+        "type": "number",
+        "min": 1,
+        "max": 180,
+        "runtimeDefault": 30
+      },
+      "ExibirValor": {
+        "type": "string",
+        "enum": [
+          "Sim",
+          "Não"
+        ],
+        "runtimeDefault": "Sim"
+      },
+      "ExibirContratosCriticos": {
+        "type": "string",
+        "enum": [
+          "Sim",
+          "Não"
+        ],
+        "runtimeDefault": "Sim"
+      },
+      "QtdContratosCriticos": {
+        "type": "number",
+        "min": 1,
+        "max": 20,
+        "runtimeDefault": 5
+      },
+      "ExibirRenovacoes": {
+        "type": "string",
+        "enum": [
+          "Sim",
+          "Não"
+        ],
+        "runtimeDefault": "Sim"
+      },
+      "ExibirLinhaTempo": {
+        "type": "string",
+        "enum": [
+          "Sim",
+          "Não"
+        ],
+        "runtimeDefault": "Não"
+      },
+      "ExibirResponsavelTabela": {
+        "type": "string",
+        "enum": [
+          "Sim",
+          "Não"
+        ],
+        "runtimeDefault": "Sim"
+      },
+      "ExibirResumoAutomatico": {
+        "type": "string",
+        "enum": [
+          "Sim",
+          "Não"
+        ],
+        "runtimeDefault": "Não"
+      },
+      "StatusVisualUrgencia": {
+        "type": "string",
+        "enum": [
+          "Sim",
+          "Não"
+        ],
+        "runtimeDefault": "Sim"
+      },
+      "BackgroundStyle": {
+        "type": "string",
+        "enum": [
+          "Suave",
+          "Claro"
+        ],
+        "runtimeDefault": "Suave"
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#2c5f7c"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1e8449"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c0392b"
+      },
+      "WarningColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#d4a017"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IAJuridicoHonorarios": {
+    "xml": "CustomItem",
+    "displayName": "Honorários & Financeiro",
+    "group": "IAJuridicoGroup",
+    "bindings": {
+      "Socio": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Sócio / Advogado"
+      },
+      "TipoHonorario": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo de Honorário"
+      },
+      "Cliente": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Cliente"
+      },
+      "Competencia": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Competência"
+      },
+      "ReceitaMes": {
+        "type": "Measure",
+        "array": false,
+        "label": "Receita Faturada"
+      },
+      "ValorRecebido": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Recebido"
+      },
+      "ValorInadimplente": {
+        "type": "Measure",
+        "array": false,
+        "label": "Inadimplência"
+      },
+      "ProvisaoExito": {
+        "type": "Measure",
+        "array": false,
+        "label": "Provisão Êxito"
+      }
+    },
+    "required": [],
+    "properties": {
+      "AlertaInadimp": {
+        "type": "number",
+        "min": 0,
+        "max": 500000,
+        "runtimeDefault": 10000
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IAJuridicoPrazos": {
+    "xml": "CustomItem",
+    "displayName": "Prazos & Agenda",
+    "group": "IAJuridicoGroup",
+    "bindings": {
+      "NumProcesso": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Processo"
+      },
+      "TipoPrazo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo de Prazo"
+      },
+      "Advogado": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Advogado"
+      },
+      "TipoAudiencia": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo de Audiência"
+      },
+      "DiasRestantes": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dias Restantes"
+      }
+    },
+    "required": [],
+    "properties": {
+      "AlertaUrgente": {
+        "type": "number",
+        "min": 0,
+        "max": 7,
+        "runtimeDefault": 1
+      },
+      "AlertaAtencao": {
+        "type": "number",
+        "min": 0,
+        "max": 30,
+        "runtimeDefault": 7
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IAJuridicoProcessos": {
+    "xml": "CustomItem",
+    "displayName": "Processos & Litígios",
+    "group": "IAJuridicoGroup",
+    "bindings": {
+      "NumProcesso": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Nº Processo"
+      },
+      "AreaDireito": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Área do Direito"
+      },
+      "Instancia": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Instância"
+      },
+      "Advogado": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Advogado Responsável"
+      },
+      "StatusProc": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Status"
+      },
+      "ValorRisco": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor em Risco"
+      },
+      "ProbPerda": {
+        "type": "Measure",
+        "array": false,
+        "label": "Prob. Perda %"
+      },
+      "DiasJulgamento": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dias p/ Julgamento"
+      },
+      "TaxaExito": {
+        "type": "Measure",
+        "array": false,
+        "label": "Taxa de Êxito %"
+      }
+    },
+    "required": [],
+    "properties": {
+      "AlertaValor": {
+        "type": "number",
+        "min": 0,
+        "max": 10000000,
+        "runtimeDefault": 500000
+      },
+      "AlertaProb": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 60
+      },
+      "AlertaDias": {
+        "type": "number",
+        "min": 0,
+        "max": 90,
+        "runtimeDefault": 7
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#6b1a2a"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IAJuridicoProdutividade": {
+    "xml": "CustomItem",
+    "displayName": "Produtividade da Equipe",
+    "group": "IAJuridicoGroup",
+    "bindings": {
+      "Advogado": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Advogado"
+      },
+      "AreaDireito": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Área do Direito"
+      },
+      "CasosAtivos": {
+        "type": "Measure",
+        "array": false,
+        "label": "Casos Ativos"
+      },
+      "HorasMes": {
+        "type": "Measure",
+        "array": false,
+        "label": "Horas/Mês"
+      },
+      "TaxaExito": {
+        "type": "Measure",
+        "array": false,
+        "label": "Taxa Êxito %"
+      },
+      "SLACumprido": {
+        "type": "Measure",
+        "array": false,
+        "label": "SLA Cumprido %"
+      }
+    },
+    "required": [],
+    "properties": {
+      "AlertaCasos": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 40
+      },
+      "AlertaHoras": {
+        "type": "number",
+        "min": 0,
+        "max": 300,
+        "runtimeDefault": 200
+      },
+      "MetaExito": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 65
+      },
+      "MetaSLA": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 90
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#7c3aed"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "KPIMetasRepresentante": {
+    "xml": "CustomItem",
+    "displayName": "KPI Metas do Representante",
+    "group": "IARepresentantesGroup",
+    "bindings": {
+      "Representante": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Representante"
+      },
+      "ValorVendas": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor de Vendas"
+      },
+      "MetaValorVendas": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Valor de Vendas"
+      },
+      "QtdItens": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Itens Vendidos"
+      },
+      "MetaQtdItens": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Qtd. Itens"
+      },
+      "NovosClientes": {
+        "type": "Measure",
+        "array": false,
+        "label": "Novos Clientes"
+      },
+      "MetaNovosClientes": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Novos Clientes"
+      },
+      "Positivacao": {
+        "type": "Measure",
+        "array": false,
+        "label": "Positivação"
+      },
+      "MetaPositivacao": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Positivação"
+      },
+      "InadimplenciaTotal": {
+        "type": "Measure",
+        "array": false,
+        "label": "Inadimplência Total %"
+      },
+      "InadimplenciaRecente": {
+        "type": "Measure",
+        "array": false,
+        "label": "Inadimplência Recente %"
+      },
+      "MetaInadimplencia": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Inadimplência %"
+      }
+    },
+    "required": [],
+    "properties": {
+      "AlertaInadimplencia": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 5
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#e65c00"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c04828"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "MonitorCRM": {
+    "xml": "CustomItem",
+    "displayName": "Monitor CRM",
+    "group": "IAComercialGroup",
+    "bindings": {
+      "DataMovimentacao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data Movimentação"
+      },
+      "Cliente": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Cliente"
+      },
+      "Representante": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Representante"
+      },
+      "EtapaFunil": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Etapa do Funil"
+      },
+      "StatusOportunidade": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Status Oportunidade"
+      },
+      "DataUltimoContato": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Último Contato"
+      },
+      "ValorOportunidade": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor (R$)"
+      },
+      "DiasNaEtapa": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dias na Etapa"
+      },
+      "DiasUltimoContato": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dias sem Contato"
+      },
+      "CicloDias": {
+        "type": "Measure",
+        "array": false,
+        "label": "Ciclo (dias)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "DiasInatividade": {
+        "type": "number",
+        "min": 1,
+        "max": 365,
+        "runtimeDefault": 60
+      },
+      "DiasRiscoAtencao": {
+        "type": "number",
+        "min": 1,
+        "max": 30,
+        "runtimeDefault": 7
+      },
+      "DiasRiscoCritico": {
+        "type": "number",
+        "min": 1,
+        "max": 60,
+        "runtimeDefault": 14
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#7b1fa2"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c04828"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "ExecucaoOrcamentaria": {
+    "xml": "CustomItem",
+    "displayName": "Execução Orçamentária Municipal",
+    "group": "IAMunicipalGroup",
+    "bindings": {
+      "Exercicio": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Exercício"
+      },
+      "Secretaria": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Secretaria / UG"
+      },
+      "Mes": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Mês"
+      },
+      "Dotacao": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dotação atual"
+      },
+      "Empenhado": {
+        "type": "Measure",
+        "array": false,
+        "label": "Empenhado"
+      },
+      "Liquidado": {
+        "type": "Measure",
+        "array": false,
+        "label": "Liquidado"
+      },
+      "Pago": {
+        "type": "Measure",
+        "array": false,
+        "label": "Pago"
+      },
+      "RAPProcessado": {
+        "type": "Measure",
+        "array": false,
+        "label": "RAP processados"
+      },
+      "RAPNaoProcess": {
+        "type": "Measure",
+        "array": false,
+        "label": "RAP não processados"
+      },
+      "RAPPago": {
+        "type": "Measure",
+        "array": false,
+        "label": "RAP pagos no ano"
+      },
+      "RAPCancelado": {
+        "type": "Measure",
+        "array": false,
+        "label": "RAP cancelados"
+      }
+    },
+    "required": [],
+    "properties": {
+      "ExercicioAtual": {
+        "type": "number",
+        "min": 2000,
+        "max": 2099,
+        "runtimeDefault": 2026
+      },
+      "MesAtual": {
+        "type": "number",
+        "min": 1,
+        "max": 12,
+        "runtimeDefault": 10
+      },
+      "MesesNoAno": {
+        "type": "number",
+        "min": 1,
+        "max": 12,
+        "runtimeDefault": 12
+      },
+      "MetaExecPct": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 90
+      },
+      "AlertaSubExec": {
+        "type": "number",
+        "min": 0,
+        "max": 50,
+        "runtimeDefault": 15
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#185FA5"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#A32D2D"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#3B6D11"
+      },
+      "WarnColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#BA7517"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "ObrasContratos": {
+    "xml": "CustomItem",
+    "displayName": "Obras e Contratos",
+    "group": "IAMunicipalGroup",
+    "bindings": {
+      "NomeContrato": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Nome / Contrato"
+      },
+      "Secretaria": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Secretaria"
+      },
+      "Status": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Status"
+      },
+      "DataVencimento": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data de Vencimento"
+      },
+      "DataInicio": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data de Início"
+      },
+      "MotivoParalisacao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Motivo Paralisação"
+      },
+      "ValorContrato": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Contratado"
+      },
+      "ValorMedido": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Medido"
+      },
+      "ExecFisicaPct": {
+        "type": "Measure",
+        "array": false,
+        "label": "Exec. Física (%)"
+      },
+      "ExecFinanceiraPct": {
+        "type": "Measure",
+        "array": false,
+        "label": "Exec. Financeira (%)"
+      },
+      "QtdAditivos": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Aditivos"
+      },
+      "ValorAditivo": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Aditivos"
+      }
+    },
+    "required": [],
+    "properties": {
+      "AlertaVencimentoDias": {
+        "type": "number",
+        "min": 0,
+        "max": 365,
+        "runtimeDefault": 30
+      },
+      "AlertaGapPct": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 15
+      },
+      "ShowAlertas": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowResumo": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#185FA5"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#3B6D11"
+      },
+      "WarnColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "ReceitasMunicipais": {
+    "xml": "CustomItem",
+    "displayName": "Receitas Municipais",
+    "group": "IAMunicipalGroup",
+    "bindings": {
+      "Data": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data"
+      },
+      "FonteReceita": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Fonte da Receita"
+      },
+      "TipoReceita": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo (categoria)"
+      },
+      "Exercicio": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Exercício (ano)"
+      },
+      "ValorArrecadado": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Arrecadado"
+      },
+      "MetaAnual": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Anual (LOA)"
+      },
+      "ValorAnoAnterior": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Ano Anterior"
+      },
+      "MetaMensal": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Mensal (opcional)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "ExercicioLabel": {
+        "type": "string",
+        "runtimeDefault": ""
+      },
+      "MetaProporcionalMes": {
+        "type": "number",
+        "min": 0,
+        "max": 12,
+        "runtimeDefault": 0
+      },
+      "AlertaDefasagemPct": {
+        "type": "number",
+        "min": 0,
+        "max": 50,
+        "runtimeDefault": 10
+      },
+      "ShowEvolucao": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowComposicao": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowProjecao": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#3B6D11"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#3B6D11"
+      },
+      "WarnColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "ServicosCidadao": {
+    "xml": "CustomItem",
+    "displayName": "Serviços ao Cidadão",
+    "group": "IAMunicipalGroup",
+    "bindings": {
+      "Data": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data abertura"
+      },
+      "Secretaria": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Secretaria"
+      },
+      "TipoServico": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo de Serviço"
+      },
+      "StatusProtocolo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Status"
+      },
+      "Canal": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Canal de Abertura"
+      },
+      "QtdProtocolos": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Protocolos"
+      },
+      "TempoResposta": {
+        "type": "Measure",
+        "array": false,
+        "label": "Tempo Resposta (dias)"
+      },
+      "SLACumprido": {
+        "type": "Measure",
+        "array": false,
+        "label": "SLA Cumprido (1=sim)"
+      },
+      "NPS": {
+        "type": "Measure",
+        "array": false,
+        "label": "NPS"
+      },
+      "MetaSLAPct": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta SLA % (binding)"
+      },
+      "MetaTempoResposta": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Tempo Resp. (bind)"
+      },
+      "MetaNPS": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta NPS (binding)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaSLAPct": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 85
+      },
+      "MetaTempoRespostaDias": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 3
+      },
+      "MetaNPSDefault": {
+        "type": "number",
+        "min": -100,
+        "max": 100,
+        "runtimeDefault": 60
+      },
+      "AlertaSLAPct": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 70
+      },
+      "PeriodoLabel": {
+        "type": "string",
+        "runtimeDefault": ""
+      },
+      "ShowTempoServico": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowNPS": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowCanais": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#185FA5"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#3B6D11"
+      },
+      "WarnColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IAProjetosCronograma": {
+    "xml": "CustomItem",
+    "displayName": "Cronograma & Entregas",
+    "group": "IAProjetosGroup",
+    "bindings": {
+      "NomeProjeto": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Projeto"
+      },
+      "Marco": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Marco"
+      },
+      "Responsavel": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Responsável"
+      },
+      "StatusMarco": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Status Marco"
+      },
+      "DiasAtraso": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dias Atraso"
+      },
+      "PercAvanco": {
+        "type": "Measure",
+        "array": false,
+        "label": "Avanço %"
+      },
+      "PercPlanejado": {
+        "type": "Measure",
+        "array": false,
+        "label": "Planejado %"
+      },
+      "DiasRestantes": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dias Restantes"
+      }
+    },
+    "required": [],
+    "properties": {
+      "AlertaAtraso": {
+        "type": "number",
+        "min": 0,
+        "max": 90,
+        "runtimeDefault": 5
+      },
+      "AlertaProximo": {
+        "type": "number",
+        "min": 0,
+        "max": 30,
+        "runtimeDefault": 7
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#185FA5"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IAProjetosPortfolio": {
+    "xml": "CustomItem",
+    "displayName": "Portfólio de Projetos",
+    "group": "IAProjetosGroup",
+    "bindings": {
+      "NomeProjeto": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Projeto"
+      },
+      "Area": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Área"
+      },
+      "Gestor": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Gestor"
+      },
+      "StatusRAG": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Status RAG"
+      },
+      "PercAvanco": {
+        "type": "Measure",
+        "array": false,
+        "label": "Avanço %"
+      },
+      "PercBudget": {
+        "type": "Measure",
+        "array": false,
+        "label": "Budget Consumido %"
+      },
+      "DiasAtraso": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dias Atraso"
+      },
+      "BudgetTotal": {
+        "type": "Measure",
+        "array": false,
+        "label": "Budget Total"
+      },
+      "BudgetRealizado": {
+        "type": "Measure",
+        "array": false,
+        "label": "Budget Realizado"
+      }
+    },
+    "required": [],
+    "properties": {
+      "AlertaAtrasoMin": {
+        "type": "number",
+        "min": 0,
+        "max": 90,
+        "runtimeDefault": 5
+      },
+      "AlertaAtrasoMax": {
+        "type": "number",
+        "min": 0,
+        "max": 180,
+        "runtimeDefault": 15
+      },
+      "AlertaBudgetPct": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 85
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#006064"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IAProjetosRecursos": {
+    "xml": "CustomItem",
+    "displayName": "Recursos & Alocação",
+    "group": "IAProjetosGroup",
+    "bindings": {
+      "Colaborador": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Colaborador"
+      },
+      "NomeProjeto": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Projeto"
+      },
+      "Area": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Área"
+      },
+      "PercAlocacao": {
+        "type": "Measure",
+        "array": false,
+        "label": "Alocação %"
+      },
+      "HorasPlaneadas": {
+        "type": "Measure",
+        "array": false,
+        "label": "Horas Planejadas"
+      },
+      "HorasConsumidas": {
+        "type": "Measure",
+        "array": false,
+        "label": "Horas Consumidas"
+      }
+    },
+    "required": [],
+    "properties": {
+      "AlertaOver": {
+        "type": "number",
+        "min": 50,
+        "max": 200,
+        "runtimeDefault": 100
+      },
+      "MetaUtil": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 80
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IAProjetosSquads": {
+    "xml": "CustomItem",
+    "displayName": "Squads & Desenvolvimento",
+    "group": "IAProjetosGroup",
+    "bindings": {
+      "Squad": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Squad"
+      },
+      "Sprint": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Sprint"
+      },
+      "TipoItem": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo de Item"
+      },
+      "Velocity": {
+        "type": "Measure",
+        "array": false,
+        "label": "Velocity"
+      },
+      "PercCompletion": {
+        "type": "Measure",
+        "array": false,
+        "label": "Completion %"
+      },
+      "BugsCriticos": {
+        "type": "Measure",
+        "array": false,
+        "label": "Bugs Críticos"
+      },
+      "Deploys": {
+        "type": "Measure",
+        "array": false,
+        "label": "Deploys"
+      },
+      "CycleTime": {
+        "type": "Measure",
+        "array": false,
+        "label": "Cycle Time (dias)"
+      },
+      "PontosPlaneados": {
+        "type": "Measure",
+        "array": false,
+        "label": "Pontos Planejados"
+      },
+      "PontosEntregues": {
+        "type": "Measure",
+        "array": false,
+        "label": "Pontos Entregues"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaVelocity": {
+        "type": "number",
+        "min": 0,
+        "max": 200,
+        "runtimeDefault": 35
+      },
+      "AlertaBugs": {
+        "type": "number",
+        "min": 0,
+        "max": 50,
+        "runtimeDefault": 5
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#7c3aed"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IAProjetosTimesheet": {
+    "xml": "CustomItem",
+    "displayName": "Timesheet & Horas",
+    "group": "IAProjetosGroup",
+    "bindings": {
+      "Colaborador": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Colaborador"
+      },
+      "NomeProjeto": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Projeto"
+      },
+      "TipoAtividade": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo de Atividade"
+      },
+      "Periodo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Período"
+      },
+      "HorasLancadas": {
+        "type": "Measure",
+        "array": false,
+        "label": "Horas Lançadas"
+      },
+      "HorasPlaneadas": {
+        "type": "Measure",
+        "array": false,
+        "label": "Horas Planejadas"
+      },
+      "DesvioHoras": {
+        "type": "Measure",
+        "array": false,
+        "label": "Desvio Horas"
+      }
+    },
+    "required": [],
+    "properties": {
+      "AlertaDesvio": {
+        "type": "number",
+        "min": 0,
+        "max": 200,
+        "runtimeDefault": 20
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#37474f"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "RelatorioComissao": {
+    "xml": "CustomItem",
+    "displayName": "Relatório de Comissão",
+    "group": "IARepresentantesGroup",
+    "bindings": {
+      "Titulo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Título"
+      },
+      "Parcela": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Parcela"
+      },
+      "Cliente": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Cliente"
+      },
+      "DataEmissao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data Emissão"
+      },
+      "DataPagamento": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data Pagamento"
+      },
+      "ValorBruto": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Bruto"
+      },
+      "ComissaoLiquida": {
+        "type": "Measure",
+        "array": false,
+        "label": "Comissão Líquida"
+      },
+      "PctComissaoMedia": {
+        "type": "Measure",
+        "array": false,
+        "label": "% Comissão Média"
+      }
+    },
+    "required": [],
+    "properties": {
+      "FiltroMes": {
+        "type": "string",
+        "enum": [
+          "MesAtual",
+          "MesAnterior",
+          "Todos"
+        ],
+        "runtimeDefault": "MesAtual"
+      },
+      "AlertaPctBaixo": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 10
+      },
+      "AlertaPctAlto": {
+        "type": "number",
+        "min": 0,
+        "max": 1000,
+        "runtimeDefault": 100
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c04828"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IARHClima": {
+    "xml": "CustomItem",
+    "displayName": "Clima & Engajamento",
+    "group": "IARHGroup",
+    "bindings": {
+      "Area": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Área"
+      },
+      "Dimensao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Dimensão do Clima"
+      },
+      "MotivoSaida": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Motivo de Saída"
+      },
+      "Periodo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Período"
+      },
+      "eNPS": {
+        "type": "Measure",
+        "array": false,
+        "label": "eNPS"
+      },
+      "Promotores": {
+        "type": "Measure",
+        "array": false,
+        "label": "Promotores %"
+      },
+      "Neutros": {
+        "type": "Measure",
+        "array": false,
+        "label": "Neutros %"
+      },
+      "Detratores": {
+        "type": "Measure",
+        "array": false,
+        "label": "Detratores %"
+      },
+      "TurnoverPct": {
+        "type": "Measure",
+        "array": false,
+        "label": "Turnover %"
+      },
+      "QtdDesligamentos": {
+        "type": "Measure",
+        "array": false,
+        "label": "Desligamentos"
+      },
+      "NotaClima": {
+        "type": "Measure",
+        "array": false,
+        "label": "Nota do Clima"
+      },
+      "PercParticipacao": {
+        "type": "Measure",
+        "array": false,
+        "label": "Participação %"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaeNPS": {
+        "type": "number",
+        "min": -100,
+        "max": 100,
+        "runtimeDefault": 40
+      },
+      "AlertaTurnover": {
+        "type": "number",
+        "min": 0,
+        "max": 20,
+        "runtimeDefault": 3
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IARHDesempenho": {
+    "xml": "CustomItem",
+    "displayName": "Desempenho & Avaliação",
+    "group": "IARHGroup",
+    "bindings": {
+      "Colaborador": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Colaborador"
+      },
+      "Setor": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Setor"
+      },
+      "Cargo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Cargo"
+      },
+      "CicloAval": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Ciclo de Avaliação"
+      },
+      "NotaAvaliacao": {
+        "type": "Measure",
+        "array": false,
+        "label": "Nota de Avaliação"
+      },
+      "PercMetas": {
+        "type": "Measure",
+        "array": false,
+        "label": "Atingimento de Metas (%)"
+      },
+      "DiasUltAtuPDI": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dias sem atualizar PDI"
+      },
+      "QtdAvaliados": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Avaliados"
+      }
+    },
+    "required": [],
+    "properties": {
+      "NotaMinima": {
+        "type": "number",
+        "min": 1,
+        "max": 5,
+        "runtimeDefault": 2
+      },
+      "NotaCritica": {
+        "type": "number",
+        "min": 1,
+        "max": 5,
+        "runtimeDefault": 1.5
+      },
+      "MetaMetas": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 70
+      },
+      "AlertaPDIDias": {
+        "type": "number",
+        "min": 1,
+        "max": 365,
+        "runtimeDefault": 90
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#7c3aed"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IARHEscalas": {
+    "xml": "CustomItem",
+    "displayName": "Escalas & Cobertura",
+    "group": "IARHGroup",
+    "bindings": {
+      "Setor": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Setor"
+      },
+      "Turno": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Turno"
+      },
+      "Categoria": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Categoria Profissional"
+      },
+      "Data": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data"
+      },
+      "QtdEfetivo": {
+        "type": "Measure",
+        "array": false,
+        "label": "Efetivo Presente"
+      },
+      "QtdEscala": {
+        "type": "Measure",
+        "array": false,
+        "label": "Previsto na Escala"
+      },
+      "HorasExtras": {
+        "type": "Measure",
+        "array": false,
+        "label": "Horas Extras"
+      },
+      "Ausencias": {
+        "type": "Measure",
+        "array": false,
+        "label": "Ausências"
+      },
+      "BancoHoras": {
+        "type": "Measure",
+        "array": false,
+        "label": "Banco de Horas"
+      },
+      "MetaCobertura": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Cobertura %"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaCoberturaGlobal": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 85
+      },
+      "AlertaCoberturaMin": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 70
+      },
+      "AlertaHEMax": {
+        "type": "number",
+        "min": 0,
+        "max": 200,
+        "runtimeDefault": 20
+      },
+      "ShowMapa": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowAlertas": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#0e6655"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IARHFolha": {
+    "xml": "CustomItem",
+    "displayName": "Folha & Custos com Pessoas",
+    "group": "IARHGroup",
+    "bindings": {
+      "Area": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Área"
+      },
+      "Cargo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Cargo"
+      },
+      "Competencia": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Competência"
+      },
+      "Vinculo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Vínculo"
+      },
+      "CustoTotal": {
+        "type": "Measure",
+        "array": false,
+        "label": "Custo Total"
+      },
+      "SalarioBruto": {
+        "type": "Measure",
+        "array": false,
+        "label": "Salário Bruto"
+      },
+      "Encargos": {
+        "type": "Measure",
+        "array": false,
+        "label": "Encargos"
+      },
+      "Beneficios": {
+        "type": "Measure",
+        "array": false,
+        "label": "Benefícios"
+      },
+      "HorasExtras": {
+        "type": "Measure",
+        "array": false,
+        "label": "Custo HE"
+      },
+      "QtdFuncionarios": {
+        "type": "Measure",
+        "array": false,
+        "label": "Funcionários"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaCustoHead": {
+        "type": "number",
+        "min": 0,
+        "max": 50000,
+        "runtimeDefault": 5000
+      },
+      "AlertaVarPct": {
+        "type": "number",
+        "min": 0,
+        "max": 50,
+        "runtimeDefault": 5
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IARHRecrutamento": {
+    "xml": "CustomItem",
+    "displayName": "Recrutamento & Seleção",
+    "group": "IARHGroup",
+    "bindings": {
+      "Cargo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Cargo / Vaga"
+      },
+      "Area": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Área / Departamento"
+      },
+      "Etapa": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Etapa do Funil"
+      },
+      "Fonte": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Fonte de Candidatos"
+      },
+      "Status": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Status da Vaga"
+      },
+      "QtdCandidatos": {
+        "type": "Measure",
+        "array": false,
+        "label": "Candidatos na Etapa"
+      },
+      "DiasAberta": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dias em Aberto"
+      },
+      "TempoContratacao": {
+        "type": "Measure",
+        "array": false,
+        "label": "Tempo de Contratação (dias)"
+      },
+      "QtdContratados": {
+        "type": "Measure",
+        "array": false,
+        "label": "Contratados"
+      },
+      "MetaSLA": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta SLA (dias)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaSLADias": {
+        "type": "number",
+        "min": 1,
+        "max": 180,
+        "runtimeDefault": 15
+      },
+      "AlertaSLADias": {
+        "type": "number",
+        "min": 1,
+        "max": 180,
+        "runtimeDefault": 25
+      },
+      "ShowFunil": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowFontes": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#185FA5"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "SegmentacaoClientes": {
+    "xml": "CustomItem",
+    "displayName": "Segmentação de Clientes",
+    "group": "customItemGroup",
+    "bindings": {
+      "Cliente": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Cliente"
+      },
+      "Data": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data"
+      },
+      "Valor": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor"
+      },
+      "GrupoExtra": {
+        "type": "Dimension",
+        "array": true,
+        "label": "Dimensões extras (drill)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MinMesesPremium": {
+        "type": "number",
+        "min": 1,
+        "max": 24,
+        "runtimeDefault": 3
+      },
+      "PctPremium": {
+        "type": "number",
+        "min": 0,
+        "max": 50,
+        "runtimeDefault": 5
+      },
+      "PctBom": {
+        "type": "number",
+        "min": 0,
+        "max": 30,
+        "runtimeDefault": 2
+      },
+      "RecenciaChurn": {
+        "type": "number",
+        "min": 1,
+        "max": 12,
+        "runtimeDefault": 2
+      },
+      "MesesNovo": {
+        "type": "number",
+        "min": 1,
+        "max": 24,
+        "runtimeDefault": 3
+      },
+      "ShowCards": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowPizza": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#5470C6"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#EE6666"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#91CC75"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "SupermercadosFrenteCaixa": {
+    "xml": "CustomItem",
+    "displayName": "Frente de Caixa",
+    "group": "IASupermercadosGroup",
+    "bindings": {
+      "DataHora": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data/Hora"
+      },
+      "NumeroPDV": {
+        "type": "Dimension",
+        "array": false,
+        "label": "PDV"
+      },
+      "Operador": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Operador"
+      },
+      "FormaPagamento": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Forma Pagamento"
+      },
+      "ValorVenda": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor da Venda"
+      },
+      "QtdItens": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Itens"
+      },
+      "TempoAtendimento": {
+        "type": "Measure",
+        "array": false,
+        "label": "Tempo Atend. (min)"
+      },
+      "Cancelamento": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Cancelamento (S/N)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaTicketMedio": {
+        "type": "number",
+        "min": 0,
+        "max": 1000,
+        "runtimeDefault": 80
+      },
+      "MetaTempoAtendimento": {
+        "type": "number",
+        "min": 0,
+        "max": 30,
+        "runtimeDefault": 4
+      },
+      "AlertaCancelamentos": {
+        "type": "number",
+        "min": 0,
+        "max": 20,
+        "runtimeDefault": 2
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1565C0"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#2e7d32"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c04828"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "SupermercadosPerecivelValidade": {
+    "xml": "CustomItem",
+    "displayName": "Perecíveis & Validade",
+    "group": "IASupermercadosGroup",
+    "bindings": {
+      "Produto": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Produto"
+      },
+      "Categoria": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Categoria"
+      },
+      "DataValidade": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data de Validade"
+      },
+      "Quantidade": {
+        "type": "Measure",
+        "array": false,
+        "label": "Quantidade"
+      },
+      "ValorPerda": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Perda (R$)"
+      },
+      "GiroDias": {
+        "type": "Measure",
+        "array": false,
+        "label": "Giro (dias)"
+      },
+      "DiasVencimento": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dias p/ Vencer"
+      }
+    },
+    "required": [],
+    "properties": {
+      "AlertaVencimento1": {
+        "type": "number",
+        "min": 1,
+        "max": 30,
+        "runtimeDefault": 3
+      },
+      "AlertaVencimento2": {
+        "type": "number",
+        "min": 1,
+        "max": 60,
+        "runtimeDefault": 7
+      },
+      "MetaPerdasPct": {
+        "type": "number",
+        "min": 0,
+        "max": 20,
+        "runtimeDefault": 1.5
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#2e7d32"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a6b3c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "SupermercadosProgramaFidelidade": {
+    "xml": "CustomItem",
+    "displayName": "Programa de Fidelidade",
+    "group": "IASupermercadosGroup",
+    "bindings": {
+      "Cliente": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Cliente"
+      },
+      "SegmentoRFM": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Segmento RFM"
+      },
+      "UltimaCompra": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Última Compra"
+      },
+      "FrequenciaMes": {
+        "type": "Measure",
+        "array": false,
+        "label": "Frequência/Mês"
+      },
+      "TicketMedio": {
+        "type": "Measure",
+        "array": false,
+        "label": "Ticket Médio"
+      },
+      "PontosAcumulados": {
+        "type": "Measure",
+        "array": false,
+        "label": "Pontos Acumulados"
+      },
+      "DiasUltimaCompra": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dias Últ. Compra"
+      }
+    },
+    "required": [],
+    "properties": {
+      "DiasRiscoChurn": {
+        "type": "number",
+        "min": 1,
+        "max": 365,
+        "runtimeDefault": 45
+      },
+      "DiasInativo": {
+        "type": "number",
+        "min": 1,
+        "max": 730,
+        "runtimeDefault": 90
+      },
+      "MetaFrequencia": {
+        "type": "number",
+        "min": 0,
+        "max": 30,
+        "runtimeDefault": 3
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#f9a825"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#2e7d32"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c04828"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "SupermercadosPromotoresMix": {
+    "xml": "CustomItem",
+    "displayName": "Promotores & Mix",
+    "group": "IASupermercadosGroup",
+    "bindings": {
+      "SKU": {
+        "type": "Dimension",
+        "array": false,
+        "label": "SKU"
+      },
+      "Produto": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Produto"
+      },
+      "Categoria": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Categoria"
+      },
+      "Promotor": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Promotor"
+      },
+      "StatusGondola": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Status Gôndola"
+      },
+      "ShareGondola": {
+        "type": "Measure",
+        "array": false,
+        "label": "Share Gôndola %"
+      },
+      "Positivado": {
+        "type": "Measure",
+        "array": false,
+        "label": "Positivado (1/0)"
+      },
+      "MetaPositivacao": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Positivação"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaPositivacao": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 90
+      },
+      "AlertaRuptura": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 10
+      },
+      "MetaShare": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 30
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#7b1fa2"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#2e7d32"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c04828"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "SupermercadosRecebimentoFornecedores": {
+    "xml": "CustomItem",
+    "displayName": "Recebimento & Fornecedores",
+    "group": "IASupermercadosGroup",
+    "bindings": {
+      "DataRecebimento": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data Recebimento"
+      },
+      "Fornecedor": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Fornecedor"
+      },
+      "NumeroNF": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Número NF"
+      },
+      "MotivoDevolvucao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Motivo Devolução"
+      },
+      "EntregaNoPrazo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Entrega no Prazo"
+      },
+      "ValorRecebido": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Recebido"
+      },
+      "ValorDevolvido": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Devolvido"
+      },
+      "ConformidadeNF": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Conformidade NF"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaEntregaPrazo": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 95
+      },
+      "MetaDevolvucao": {
+        "type": "number",
+        "min": 0,
+        "max": 50,
+        "runtimeDefault": 2
+      },
+      "AlertaConformidade": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 98
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1565C0"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#2e7d32"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c04828"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "SupermercadosSecoesProduticas": {
+    "xml": "CustomItem",
+    "displayName": "Seções Produtivas",
+    "group": "IASupermercadosGroup",
+    "bindings": {
+      "Data": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data"
+      },
+      "Secao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Seção"
+      },
+      "Produto": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Produto"
+      },
+      "ValorProducao": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Produção"
+      },
+      "ValorVendido": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Vendido"
+      },
+      "ValorPerda": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Perda"
+      },
+      "CMVSecao": {
+        "type": "Measure",
+        "array": false,
+        "label": "CMV Seção %"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaPerdasPct": {
+        "type": "number",
+        "min": 0,
+        "max": 50,
+        "runtimeDefault": 5
+      },
+      "MetaCMV": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 40
+      },
+      "AlertaPerda": {
+        "type": "number",
+        "min": 0,
+        "max": 50,
+        "runtimeDefault": 8
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#bf360c"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#2e7d32"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c04828"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "TendenciaPrevisao": {
+    "xml": "CustomItem",
+    "displayName": "Previsão de Tendência",
+    "group": "customItemGroup",
+    "bindings": {
+      "Data": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data"
+      },
+      "Medida": {
+        "type": "Measure",
+        "array": false,
+        "label": "Medida (Valor)"
+      },
+      "DimensoesGrupo": {
+        "type": "Dimension",
+        "array": true,
+        "label": "Dimensões para agrupamento"
+      }
+    },
+    "required": [],
+    "properties": {
+      "NumPeriodos": {
+        "type": "number",
+        "min": 2,
+        "max": 24,
+        "runtimeDefault": 6
+      },
+      "NumProximo": {
+        "type": "number",
+        "min": 1,
+        "max": 12,
+        "runtimeDefault": 1
+      },
+      "ShowGrafico": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowTabela": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#5470C6"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#91CC75"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#EE6666"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "UrnaConservacao": {
+    "xml": "CustomItem",
+    "displayName": "Estado de Conservação — Urnas",
+    "group": "IAUrnaEleitoralGroup",
+    "bindings": {
+      "Estado": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Estado (UF)"
+      },
+      "Material": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Material / Modelo"
+      },
+      "EstadoConservacao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Estado de Conservação"
+      },
+      "Quantidade": {
+        "type": "Measure",
+        "array": false,
+        "label": "Quantidade"
+      },
+      "QuantidadeAnterior": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Anterior (opcl)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaBomEstado": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 75
+      },
+      "AlertaCritico": {
+        "type": "number",
+        "min": 0,
+        "max": 50,
+        "runtimeDefault": 2
+      },
+      "AgrupaMenores": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a3a6b"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#0d7c4a"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c8102e"
+      },
+      "BackgroundColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#080f1c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "UrnaDistribuicaoEstado": {
+    "xml": "CustomItem",
+    "displayName": "Distribuição por Estado — Urnas",
+    "group": "IAUrnaEleitoralGroup",
+    "bindings": {
+      "Estado": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Estado (UF)"
+      },
+      "Material": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Material (opcional)"
+      },
+      "EstadoConservacao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Estado de Conservação"
+      },
+      "Quantidade": {
+        "type": "Measure",
+        "array": false,
+        "label": "Quantidade"
+      },
+      "QuantidadeAnterior": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Anterior (opcl)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaBomEstadoPct": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 70
+      },
+      "AlertaCriticoPct": {
+        "type": "number",
+        "min": 0,
+        "max": 50,
+        "runtimeDefault": 5
+      },
+      "TopEstados": {
+        "type": "number",
+        "min": 3,
+        "max": 27,
+        "runtimeDefault": 10
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a3a6b"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#0d7c4a"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c8102e"
+      },
+      "BackgroundColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#080f1c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "UrnaEleitoral": {
+    "xml": "CustomItem",
+    "displayName": "Painel Executivo — Urnas",
+    "group": "IAUrnaEleitoralGroup",
+    "bindings": {
+      "Estado": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Estado (UF)"
+      },
+      "Material": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Material / Modelo"
+      },
+      "EstadoConservacao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Estado de Conservação"
+      },
+      "Status": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Status (Util./Disp.)"
+      },
+      "Quantidade": {
+        "type": "Measure",
+        "array": false,
+        "label": "Quantidade"
+      },
+      "QuantidadeAnterior": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Anterior (opcl)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaBomEstado": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 75
+      },
+      "AlertaInsercivel": {
+        "type": "number",
+        "min": 0,
+        "max": 50,
+        "runtimeDefault": 2
+      },
+      "MetaUtilizacao": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 99
+      },
+      "CustoUnitario": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 0
+      },
+      "TituloRelatorio": {
+        "type": "string",
+        "runtimeDefault": "Patrimônio Eleitoral"
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a3a6b"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#0d7c4a"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c8102e"
+      },
+      "BackgroundColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#080f1c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "UrnaReposicao": {
+    "xml": "CustomItem",
+    "displayName": "Logística & Reposição — Urnas",
+    "group": "IAUrnaEleitoralGroup",
+    "bindings": {
+      "Estado": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Estado (UF)"
+      },
+      "EstadoConservacao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Estado de Conservação"
+      },
+      "Material": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Material (opcional)"
+      },
+      "Quantidade": {
+        "type": "Measure",
+        "array": false,
+        "label": "Quantidade"
+      },
+      "QuantidadeAnterior": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Anterior (opcl)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "CustoUnitario": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 0
+      },
+      "AlertaCriticoPct": {
+        "type": "number",
+        "min": 0,
+        "max": 50,
+        "runtimeDefault": 5
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a3a6b"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#0d7c4a"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c8102e"
+      },
+      "BackgroundColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#080f1c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "UrnaStatusOperacional": {
+    "xml": "CustomItem",
+    "displayName": "Status Operacional — Urnas",
+    "group": "IAUrnaEleitoralGroup",
+    "bindings": {
+      "Estado": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Estado (UF)"
+      },
+      "EstadoConservacao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Estado de Conservação"
+      },
+      "Status": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Status (Util./Disp.)"
+      },
+      "Quantidade": {
+        "type": "Measure",
+        "array": false,
+        "label": "Quantidade"
+      },
+      "QuantidadeAnterior": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Anterior (opcl)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaUtilizacao": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 99
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a3a6b"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#0d7c4a"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c8102e"
+      },
+      "BackgroundColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#080f1c"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IAVeiculosDRE": {
+    "xml": "CustomItem",
+    "displayName": "DRE Automotivo",
+    "group": "IAVeiculosGroup",
+    "bindings": {
+      "Data": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data"
+      },
+      "Linha": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Linha do DRE"
+      },
+      "TipoLinha": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo da Linha"
+      },
+      "TipoVeiculo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo (Novo/Seminovo)"
+      },
+      "Receita": {
+        "type": "Measure",
+        "array": false,
+        "label": "Receita (R$)"
+      },
+      "Custo": {
+        "type": "Measure",
+        "array": false,
+        "label": "Custo/CMV (R$)"
+      },
+      "Meta": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta (R$)"
+      },
+      "QtdVeiculos": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Veículos Vendidos"
+      },
+      "CustoDiario": {
+        "type": "Measure",
+        "array": false,
+        "label": "Custo Diário Estoque"
+      },
+      "DiasEstoque": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dias Médios Estoque"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaMargemBruta": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 9
+      },
+      "MetaMargemLiquida": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 2
+      },
+      "MetaFIPorVeiculo": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 2500
+      },
+      "AlertaCustoEstoque": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 20
+      },
+      "ShowDRE": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowMargem": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowFI": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowEstoque": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#185FA5"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#3B6D11"
+      },
+      "WarnColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IAVeiculosEquipe": {
+    "xml": "CustomItem",
+    "displayName": "Painel de Metas — Equipe",
+    "group": "IAVeiculosGroup",
+    "bindings": {
+      "Data": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data"
+      },
+      "Vendedor": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Vendedor"
+      },
+      "TipoVeiculo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo (Novo/Seminovo)"
+      },
+      "Segmento": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Segmento"
+      },
+      "QtdVendas": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Vendas"
+      },
+      "MetaVendas": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta de Vendas"
+      },
+      "ValorVenda": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Total Vendas"
+      },
+      "QtdLeads": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Leads"
+      },
+      "QtdFI": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Contratos F&I"
+      },
+      "ValorFI": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor F&I (R$)"
+      },
+      "MetaFIPct": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Penetração F&I (bind)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaUnidades": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 12
+      },
+      "MetaTicketMedio": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 85000
+      },
+      "MetaConversaoPct": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 20
+      },
+      "MetaFIPenetracao": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 70
+      },
+      "AlertaAbaixoPct": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 70
+      },
+      "ShowRanking": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowMeta": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowFI": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowConversao": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#185FA5"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#3B6D11"
+      },
+      "WarnColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IAVeiculosEstoque": {
+    "xml": "CustomItem",
+    "displayName": "Estoque e Precificação",
+    "group": "IAVeiculosGroup",
+    "bindings": {
+      "Modelo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Modelo/Versão"
+      },
+      "Segmento": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Segmento"
+      },
+      "TipoVeiculo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo (Novo/Seminovo)"
+      },
+      "AnoModelo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Ano do Modelo"
+      },
+      "QtdEstoque": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. em Estoque"
+      },
+      "ValorEstoque": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Estoque (R$)"
+      },
+      "PrecoVenda": {
+        "type": "Measure",
+        "array": false,
+        "label": "Preço de Venda (R$)"
+      },
+      "PrecoFIPE": {
+        "type": "Measure",
+        "array": false,
+        "label": "Preço FIPE Ref. (R$)"
+      },
+      "DiasEstoque": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dias em Estoque"
+      },
+      "CustoDiario": {
+        "type": "Measure",
+        "array": false,
+        "label": "Custo Diário Estoque"
+      },
+      "DepreciacaoPct": {
+        "type": "Measure",
+        "array": false,
+        "label": "Depreciação Mensal (%)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "AlertaDiasEncalhado": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 45
+      },
+      "AlertaRupturaUnid": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 3
+      },
+      "AlertaAcimaFIPEPct": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 10
+      },
+      "SugestaoReducaoPct": {
+        "type": "number",
+        "min": 0,
+        "max": 50,
+        "runtimeDefault": 8
+      },
+      "ShowTabela": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowAlertas": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowFIPE": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowGiro": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#185FA5"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#3B6D11"
+      },
+      "WarnColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "IAVeiculosFunil": {
+    "xml": "CustomItem",
+    "displayName": "Funil de Vendas e Estoque",
+    "group": "IAVeiculosGroup",
+    "bindings": {
+      "Data": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data"
+      },
+      "Modelo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Modelo/Versão"
+      },
+      "Segmento": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Segmento"
+      },
+      "TipoVeiculo": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tipo (Novo/Seminovo)"
+      },
+      "EtapaFunil": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Etapa do Funil"
+      },
+      "QtdLeads": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Leads"
+      },
+      "QtdContatos": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Contatos"
+      },
+      "QtdVisitas": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Visitas"
+      },
+      "QtdPropostas": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Propostas"
+      },
+      "QtdVendas": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Vendas"
+      },
+      "ValorVenda": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Vendas (R$)"
+      },
+      "QtdEstoque": {
+        "type": "Measure",
+        "array": false,
+        "label": "Qtd. Estoque"
+      },
+      "ValorEstoque": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Estoque (R$)"
+      },
+      "DiasEstoque": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dias em Estoque"
+      },
+      "MetaConversao": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Conversão % (bind)"
+      },
+      "MetaDiasEstoque": {
+        "type": "Measure",
+        "array": false,
+        "label": "Meta Dias Estoque (bind)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "MetaConversaoPct": {
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "runtimeDefault": 20
+      },
+      "MetaDiasEstoqueDefault": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 30
+      },
+      "AlertaDiasEncalhado": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 45
+      },
+      "AlertaDiasRuptura": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 5
+      },
+      "ShowFunil": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowGiro": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowAlertas": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "ShowMix": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ],
+        "runtimeDefault": true
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#185FA5"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#C04828"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#3B6D11"
+      },
+      "WarnColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#B07D00"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "WMS": {
+    "xml": "CustomItem",
+    "displayName": "WMS — Gestão de Armazém",
+    "group": "IAWMSGroup",
+    "bindings": {
+      "Produto": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Produto"
+      },
+      "EstoqueAtual": {
+        "type": "Measure",
+        "array": false,
+        "label": "Estoque Atual (qtd)"
+      },
+      "Localizacao": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Localização (opcl)"
+      },
+      "Categoria": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Categoria (opcl)"
+      },
+      "EstoqueMinimo": {
+        "type": "Measure",
+        "array": false,
+        "label": "Estoque Mínimo (opcl)"
+      },
+      "EstoqueMaximo": {
+        "type": "Measure",
+        "array": false,
+        "label": "Estoque Máximo (opcl)"
+      },
+      "ValorEstoque": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor do Estoque R$ (opcl)"
+      },
+      "Entradas": {
+        "type": "Measure",
+        "array": false,
+        "label": "Entradas no período (opcl)"
+      },
+      "Saidas": {
+        "type": "Measure",
+        "array": false,
+        "label": "Saídas no período (opcl)"
+      },
+      "Recebimentos": {
+        "type": "Measure",
+        "array": false,
+        "label": "Recebimentos (NFs) (opcl)"
+      },
+      "ItensConferidos": {
+        "type": "Measure",
+        "array": false,
+        "label": "Itens Conferidos (opcl)"
+      },
+      "ItensDivergentes": {
+        "type": "Measure",
+        "array": false,
+        "label": "Itens Divergentes (opcl)"
+      },
+      "PedidosSeparacao": {
+        "type": "Measure",
+        "array": false,
+        "label": "Pedidos p/ Separação (opcl)"
+      },
+      "PedidosExpedidos": {
+        "type": "Measure",
+        "array": false,
+        "label": "Pedidos Expedidos (opcl)"
+      },
+      "OcupacaoTotal": {
+        "type": "Measure",
+        "array": false,
+        "label": "Posições Totais (opcl)"
+      },
+      "OcupacaoUsada": {
+        "type": "Measure",
+        "array": false,
+        "label": "Posições Ocupadas (opcl)"
+      },
+      "DiasEstoque": {
+        "type": "Measure",
+        "array": false,
+        "label": "Dias de Estoque/Giro (opcl)"
+      },
+      "DataValidade": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Data de Validade FEFO (opcl)"
+      },
+      "Operador": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Operador (opcl)"
+      },
+      "ProdutividadeOp": {
+        "type": "Measure",
+        "array": false,
+        "label": "Produtividade itens/h (opcl)"
+      },
+      "Divergencias": {
+        "type": "Measure",
+        "array": false,
+        "label": "Divergências/Ajustes (opcl)"
+      },
+      "ValorDivergencia": {
+        "type": "Measure",
+        "array": false,
+        "label": "Valor Divergências R$ (opcl)"
+      }
+    },
+    "required": [],
+    "properties": {
+      "TituloRelatorio": {
+        "type": "string",
+        "runtimeDefault": "WMS — Gestão de Armazém"
+      },
+      "AlertaEstoqueMin": {
+        "type": "string",
+        "enum": [
+          "Sim",
+          "Não"
+        ],
+        "runtimeDefault": "Sim"
+      },
+      "AlertaValidade": {
+        "type": "number",
+        "min": 1,
+        "max": 180,
+        "runtimeDefault": 30
+      },
+      "TopProdutos": {
+        "type": "number",
+        "min": 3,
+        "max": 20,
+        "runtimeDefault": 8
+      },
+      "PrimaryColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1a4f7a"
+      },
+      "AccentColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#2980b9"
+      },
+      "PositiveColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#1e8449"
+      },
+      "NegativeColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#c0392b"
+      },
+      "WarningColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "#d4a017"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "BoxPlot": {
+    "xml": "CustomItem",
+    "displayName": "Box Plot",
+    "group": "",
+    "bindings": {
+      "colunaDimensionValue": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Coluna"
+      },
+      "plotLineDimensioValue": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Plotar Linha"
+      },
+      "minimumMeasureValue": {
+        "type": "Measure",
+        "array": true,
+        "label": "Limite Inferior"
+      },
+      "quartileLowMeasureValue": {
+        "type": "Measure",
+        "array": true,
+        "label": "1º Quartil (Q1)"
+      },
+      "quartileUpperMeasureValue": {
+        "type": "Measure",
+        "array": true,
+        "label": "3º Quartil (Q3)"
+      },
+      "medianMeasureValue": {
+        "type": "Measure",
+        "array": true,
+        "label": "Mediana (Q2)"
+      },
+      "maximumMeasureValue": {
+        "type": "Measure",
+        "array": true,
+        "label": "Limite Superior"
+      }
+    },
+    "required": [],
+    "properties": {},
+    "contract": "runtime-metadata"
+  },
+  "Grafico Spider": {
+    "xml": "CustomItem",
+    "displayName": "Grafico Spider",
+    "group": "chartGroup",
+    "bindings": {
+      "argumentValue": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Pontas da teia"
+      },
+      "pontosValue": {
+        "type": "Measure",
+        "array": true,
+        "label": "Pontos"
+      }
+    },
+    "required": [],
+    "properties": {},
+    "contract": "runtime-metadata"
+  },
+  "HeatMap": {
+    "xml": "CustomItem",
+    "displayName": "Heat Map",
+    "group": "",
+    "bindings": {
+      "valorMeasureValue": {
+        "type": "Measure",
+        "array": true,
+        "label": "Valor"
+      },
+      "linhaDimensionValue": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Linha"
+      },
+      "colunaDimensionValue": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Coluna"
+      }
+    },
+    "required": [],
+    "properties": {
+      "labelPositionProperty": {
+        "type": "string",
+        "runtimeDefault": "Inside"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "PieChart3D": {
+    "xml": "CustomItem",
+    "displayName": "Gráfico Pizza 3D",
+    "group": "customItemGroup",
+    "bindings": {
+      "measureValue": {
+        "type": "Measure",
+        "array": true,
+        "label": "Valor"
+      },
+      "dimensionValue": {
+        "type": "Dimension",
+        "array": true,
+        "label": "Argumento"
+      }
+    },
+    "required": [],
+    "properties": {
+      "labelPositionProperty": {
+        "type": "string",
+        "enum": [
+          "Dentro",
+          "Fora"
+        ],
+        "runtimeDefault": "Inside"
+      },
+      "ShowLegend": {
+        "type": "boolean",
+        "enum": [
+          false,
+          true
+        ],
+        "runtimeDefault": true
+      },
+      "PieHole": {
+        "type": "number",
+        "min": 0,
+        "max": 0.8,
+        "runtimeDefault": 0
+      },
+      "SliceOffset": {
+        "type": "number",
+        "min": 0,
+        "max": 0.5,
+        "runtimeDefault": 0
+      },
+      "BackgroundColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "transparent"
+      },
+      "SeriesColors": {
+        "type": "string",
+        "runtimeDefault": "#5470C6,#91CC75,#EE6666,#FAC858,#73C0DE,#3BA272,#FC8452,#9A60B4,#EA7CCC"
+      },
+      "ShowTitle": {
+        "type": "boolean",
+        "enum": [
+          false,
+          true
+        ],
+        "runtimeDefault": false
+      },
+      "TitleText": {
+        "type": "string",
+        "runtimeDefault": ""
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "CustomItemSimpleTable": {
+    "xml": "CustomItem",
+    "displayName": "Tabela Simples",
+    "group": "gridGroup",
+    "bindings": {
+      "customDimensions": {
+        "type": "Dimension",
+        "array": true,
+        "label": "Custom Dimensions"
+      },
+      "customMeasure": {
+        "type": "Measure",
+        "array": false,
+        "label": "Custom Measure"
+      }
+    },
+    "required": [],
+    "properties": {
+      "showHeaders": {
+        "type": "string",
+        "runtimeDefault": "Auto"
+      },
+      "textColor": {
+        "type": "string",
+        "format": "color",
+        "runtimeDefault": "Dark"
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "MapaCalor": {
+    "xml": "CustomItem",
+    "displayName": "Mapa de calor",
+    "group": "",
+    "bindings": {
+      "Attribute": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Atributo"
+      },
+      "Peso": {
+        "type": "Measure",
+        "array": false,
+        "label": "Peso"
+      }
+    },
+    "required": [],
+    "properties": {},
+    "contract": "runtime-metadata"
+  },
+  "Nuvem de palavras": {
+    "xml": "CustomItem",
+    "displayName": "Nuvem de palavras",
+    "group": "",
+    "bindings": {
+      "palavraValue": {
+        "type": "Dimension",
+        "array": true,
+        "label": "Palavras"
+      },
+      "pesoValue": {
+        "type": "Measure",
+        "array": true,
+        "label": "Peso"
+      }
+    },
+    "required": [],
+    "properties": {},
+    "contract": "runtime-metadata"
+  },
+  "FunnelD3": {
+    "xml": "CustomItem",
+    "displayName": "Funnel D3",
+    "group": "",
+    "bindings": {
+      "Values": {
+        "type": "Measure",
+        "array": true,
+        "label": "Values"
+      },
+      "Arguments": {
+        "type": "Dimension",
+        "array": true,
+        "label": "Arguments"
+      }
+    },
+    "required": [],
+    "properties": {
+      "FillType": {
+        "type": "string",
+        "runtimeDefault": "Solid"
+      },
+      "IsCurved": {
+        "type": "boolean",
+        "enum": [
+          false,
+          true
+        ],
+        "runtimeDefault": false
+      },
+      "IsDynamicHeight": {
+        "type": "boolean",
+        "enum": [
+          false,
+          true
+        ],
+        "runtimeDefault": true
+      },
+      "PinchCount": {
+        "type": "number",
+        "min": 0,
+        "runtimeDefault": 0
+      }
+    },
+    "contract": "runtime-metadata"
+  },
+  "OnlineMap": {
+    "xml": "CustomItem",
+    "displayName": "Online Map",
+    "group": "",
+    "bindings": {
+      "Latitude": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Latitude"
+      },
+      "Longitude": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Longitude"
+      },
+      "Tooltip": {
+        "type": "Dimension",
+        "array": false,
+        "label": "Tooltip"
+      }
+    },
+    "required": [],
+    "properties": {
+      "Provider": {
+        "type": "string",
+        "runtimeDefault": "Bing"
+      },
+      "Type": {
+        "type": "string",
+        "runtimeDefault": "RoadMap"
+      },
+      "DisplayMode": {
+        "type": "string",
+        "enum": [
+          "Markers",
+          "Routes",
+          "MarkersAndRoutes"
+        ],
+        "runtimeDefault": "Markers"
+      }
+    },
+    "contract": "runtime-metadata"
+  }
+}
