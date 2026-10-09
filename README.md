@@ -34,3 +34,9 @@ pela Anthropic. A submissão ao catálogo é feita separadamente. Se o formulár
 exigir repositório, publique somente o conteúdo deste pacote num repositório
 dedicado autorizado, nunca o projeto completo BIWebIA ou dados de clientes.
 Logo para identificação visual: assets/logo-ia.svg.
+
+## Licença
+
+O código e a documentação deste plugin são distribuídos sob a licença MIT
+(arquivo LICENSE). Esta licença não abrange o software MyBI distribuído
+separadamente nem concede direitos sobre marcas e logotipos.
