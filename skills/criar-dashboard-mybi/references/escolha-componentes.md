@@ -11,7 +11,7 @@ ainda não suporta uma implementação. O catálogo é do gerador, não de todo 
 
 | Termos do usuário | Interpretação / decisão |
 |---|---|
-| velocímetro, medidor, gauge, ponteiro | Medida contra escala; considerar `Grafico Gauge` (extensão DevExtreme instalada no MyBI). Perguntar medida, unidade, mínimo, máximo e eventual meta. Gauge nativo DevExpress existe no produto, mas não é serializado neste perfil. Não inventar EChartsGauge. |
+| velocímetro, medidor, gauge, ponteiro | Medida contra escala; considerar Grafico Gauge ou gauge nativo conforme intenção. Perguntar medida, unidade, escala e meta. O tipo nativo possui contrato básico actual/target em toolbar.md; não inventar EChartsGauge nem propriedades de escala. |
 | indicador circular, progresso circular | Pode ser gauge com ponteiro, anel de progresso ou rosca de composição. Perguntar se mostra avanço rumo à meta ou participação de categorias. Não substituir por pizza automaticamente. |
 | grade, grid, tabela, listagem | Propor `grid` DevExpress para tabela padrão integrada. Considerar `tabulatorGridItem` quando o usuário pedir explicitamente Tabulator ou seus recursos específicos; confirmar que a extensão está instalada. Não prometer edição, links ou exportação que este pacote não configura. |
 | pizza, setores, participação | `EChartsPieLine`; rosca/múltiplos níveis pode corresponder a `EChartsNestedPie`, após confirmar o objetivo. |

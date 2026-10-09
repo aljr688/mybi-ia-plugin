@@ -18,6 +18,11 @@ para a cor geral; não combine ambos para a mesma propriedade.
 Com `--base-xml`, sempre prevalece o nome original desse arquivo.
 `componentName`, opcional por item novo, permite identificar precisamente a seção.
 Não reutilize identificadores existentes. Se omitido, o gerador aloca nomes únicos.
+Para itens nativos, deve coincidir com o próximo identificador padrão do tipo
+(por exemplo `gridDashboardItem2` depois de `gridDashboardItem1`). Não use títulos
+de negócio como IDs. A sequência é independente para cada tipo e continua após
+o maior número existente; os IDs da base permanecem intactos. Nomes livres neste
+campo são permitidos somente para componentes personalizados (`CustomItem`).
 
 Seções: [nomeDoXmlSemExtensao] e [nomeDoXmlSemExtensao_ComponentName]. Não presumir N.
 Para manter formatação, peça o formatacao.ini e os INIs individuais da aba.

@@ -32,8 +32,8 @@ combinação, descreva os componentes de cada formato e obtenha aprovação dess
 
 Uma solicitação de “DRE” pode indicar uma análise ou o componente pronto DRE Vendas /
 DRE Contábil. Esclareça qual quando não estiver explícito. Nunca alegue paridade total
-com o assistente web: o catálogo portátil ainda precisa ser ampliado e validado para
-os componentes prontos de segmentos e IAComercial.
+com o assistente web: o catálogo ampliado inclui os modelos setoriais registrados,
+mas a geração offline não executa os serviços interativos do MyBI. Consulte toolbar.md.
 
 Na proposta, indique formato e componente com nomes amigáveis conforme SKILL.md,
 sem marcas ou identificadores internos. Para HtmlTemplate, o formato é Automático.

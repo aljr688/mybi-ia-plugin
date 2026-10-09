@@ -24,11 +24,11 @@ EChartsAreaSimple, pie de EChartsPieLine e TabulatorGrid de tabulatorGridItem.
 Apresente ao usuário o componente efetivo pelo nome amigável antes de confirmar,
 conforme SKILL.md; mantenha o identificador técnico somente no plano e no XML.
 Pivot e filtro de data possuem agora serialização portátil própria, além do switch Web.
-Gauge nativo, Treemap e Scatter continuam fora deste perfil.
-SimpleTable também fica fora: o backend usa SimpleTable, mas a extensão registra
-CustomItemSimpleTable. Os bindings do backend divergem do runtime em alguns ECharts;
-o plugin usa os bindings reais das extensões e testa sua serialização.
-EChartsSpider fica fora: a extensão disponível registra "Grafico Spider", não EChartsSpider.
+Na versão 0.1.20, chart, pie, scatterChart, treemap, gauge, listBox e rangeFilter
+possuem serialização nativa básica. Esses nomes no plano portátil NÃO seguem os
+aliases do gerador web acima: chart e pie são os tipos nativos, nunca aliases.
+SimpleTable usa o nome real CustomItemSimpleTable; Spider usa Grafico Spider.
+Consulte toolbar.md e catalog.json para os contratos ampliados e limites.
 
 ## Plano de entrada
 

@@ -1,0 +1,1673 @@
+{
+  "scope": "Declared UI inventory, not a promise that every control is generated offline. Conditional visibility depends on component and permissions.",
+  "tabs": {
+    "layoutTab": {
+      "title": "Aparência",
+      "controls": [
+        {
+          "element": "input",
+          "type": "text",
+          "id": "alturaDashboard",
+          "context": "Altura da Dashboard:"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "context": "Altura da Dashboard: px"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "DashboardColorBackground",
+          "placeholder": "Selecione a cor",
+          "context": "Limpar Disponível somente em modo cliente Cor do Fundo da Dashboard:"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "paletaoriginal",
+          "context": "Limpar Disponível somente em modo cliente Cor do Fundo da Dashboard:"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "id": "bold",
+          "context": "Utilizar paletas originais? (global) Título da Dashboard: Estilo:"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "id": "italic",
+          "context": "Utilizar paletas originais? (global) Título da Dashboard: Estilo:"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "id": "underline",
+          "context": "Utilizar paletas originais? (global) Título da Dashboard: Estilo:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "FontColor",
+          "placeholder": "Cor",
+          "context": "Título da Dashboard: Estilo: Cor:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "FontColorBackground",
+          "placeholder": "Cor Fundo",
+          "context": "Estilo: Cor: Cor do Fundo:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "FontSize",
+          "placeholder": "Tamanho",
+          "context": "Cor: Cor do Fundo: Tamanho:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "dashboardColorIconTitle",
+          "placeholder": "Cor dos Ícones",
+          "context": "Tamanho: px Cor dos Ícones:"
+        },
+        {
+          "element": "input",
+          "type": "file",
+          "id": "imagemFundoDashboard",
+          "context": "px Cor dos Ícones: Imagem de Fundo:"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "context": "px Cor dos Ícones: Imagem de Fundo:"
+        },
+        {
+          "element": "input",
+          "type": "radio",
+          "name": "modoTamanhoImagemFundoDashboard",
+          "id": "modoTamanhoImagemFundoDashboardPadrao",
+          "value": "default",
+          "context": "Imagem de Fundo: Remover Modo Imagem de Fundo:"
+        },
+        {
+          "element": "input",
+          "type": "radio",
+          "name": "modoTamanhoImagemFundoDashboard",
+          "id": "modoTamanhoImagemFundoDashboardAreaUtil",
+          "value": "areaUtil",
+          "context": "Remover Modo Imagem de Fundo: Padrão"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "aplicarFundoTransparenteMenuDashboard",
+          "context": "Modo Imagem de Fundo: Padrão Área Útil"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "dlimitegrade",
+          "context": "Padrão Área Útil Fundo transparente no menu?"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "leftwidth",
+          "context": "Desativar limite de volumes Aplicar a todas as tabelas do dashboard. Largura menu (modo cliente):"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "menuColor",
+          "placeholder": "Cor",
+          "context": "px Disponível somente em modo cliente Cor Fundo Menu:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "iconsMenuColor",
+          "placeholder": "Cor",
+          "context": "Disponível somente em modo cliente Cor Fundo Menu: Cor Ícones Menu:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "TextMenuColor",
+          "placeholder": "Cor",
+          "context": "Cor Fundo Menu: Cor Ícones Menu: Cor Título Menu:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "TextMenuDashColor",
+          "placeholder": "Cor",
+          "context": "Cor Ícones Menu: Cor Título Menu: Cor Nome Abas:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "TextMenuDashColorMobile",
+          "placeholder": "Cor",
+          "context": "Cor Título Menu: Cor Nome Abas: Cor Nome Abas (Mobile):"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "id": "copiarFormatacaoAbaAparenciaDaDashboard",
+          "context": "Cor Título Menu: Cor Nome Abas: Cor Nome Abas (Mobile):"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "id": "colarFormatacaoAbaAparenciaDaDashboard",
+          "context": "Cor Nome Abas: Cor Nome Abas (Mobile): Copiar Formatação"
+        }
+      ]
+    },
+    "printTab": {
+      "title": "Impressão",
+      "controls": [
+        {
+          "element": "input",
+          "type": "text",
+          "id": "zoomImpressaoDashboard",
+          "placeholder": "Ex.: 100",
+          "context": "Configurações de Impressão Zoom:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "marginTopImpressaoDashboard",
+          "context": "Zoom: % Margem Superior:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "marginBottomImpressaoDashboard",
+          "context": "Margem Superior: mm Margem Inferior:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "marginLeftImpressaoDashboard",
+          "context": "Margem Inferior: mm Margem Esquerda:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "marginRightImpressaoDashboard",
+          "context": "Margem Esquerda: mm Margem Direita:"
+        }
+      ]
+    },
+    "othersTab": {
+      "title": "Outros",
+      "controls": [
+        {
+          "element": "input",
+          "type": "radio",
+          "name": "radioButtonDashboardOrdenacao",
+          "id": "radioButtonAtivarOrdenacao",
+          "value": "S",
+          "context": "Ativar Ordenação de Dashboard?"
+        },
+        {
+          "element": "input",
+          "type": "radio",
+          "name": "radioButtonDashboardOrdenacao",
+          "id": "radioButtonNaoAtivarOrdenacao",
+          "value": "N",
+          "context": "Ativar Ordenação de Dashboard? Sim"
+        },
+        {
+          "element": "input",
+          "type": "radio",
+          "name": "radioButtonDashboardModoProducao",
+          "id": "radioButtonAtivarModoProducao",
+          "value": "S",
+          "context": "Não Arraste as dashboards para suas posições: Ocultar aba em modo cliente?"
+        },
+        {
+          "element": "input",
+          "type": "radio",
+          "name": "radioButtonDashboardModoProducao",
+          "id": "radioButtonNaoAtivarModoProducao",
+          "value": "N",
+          "context": "Arraste as dashboards para suas posições: Ocultar aba em modo cliente? Sim"
+        },
+        {
+          "element": "input",
+          "type": "radio",
+          "name": "ocultarsdados",
+          "id": "ocultarsdadosS",
+          "value": "S",
+          "context": "Não Dashboard não disponível em modo cliente Ocultar gráfico sem dados?"
+        },
+        {
+          "element": "input",
+          "type": "radio",
+          "name": "ocultarsdados",
+          "id": "ocultarsdadosN",
+          "value": "N",
+          "context": "Dashboard não disponível em modo cliente Ocultar gráfico sem dados? Sim"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "tituloMenuDashboard",
+          "context": "Sim Não Título do Menu de Dashboards:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "subtituloDashboard",
+          "context": "Não Título do Menu de Dashboards: SubTítulo da Dashboard:"
+        },
+        {
+          "element": "textarea",
+          "id": "textBotaoInformacao",
+          "context": "Título do Menu de Dashboards: SubTítulo da Dashboard: Texto do Botão de Informações:"
+        }
+      ]
+    },
+    "formatNumTab": {
+      "title": "Formatações Numéricas",
+      "controls": [
+        {
+          "element": "select",
+          "id": "SelectCampoformat",
+          "context": "Formato Unit Decimais",
+          "values": [
+            ""
+          ]
+        },
+        {
+          "element": "select",
+          "id": "SelectTipoformat",
+          "context": "Unit Decimais Selecione o campo...",
+          "values": [
+            "Auto",
+            "General",
+            "Number",
+            "Currency",
+            "Scientific",
+            "Percent"
+          ]
+        },
+        {
+          "element": "select",
+          "id": "SelectUnitformat",
+          "context": "Monetário Científico Percentual",
+          "values": [
+            "Auto",
+            "Ones",
+            "Thousands",
+            "Millions",
+            "Billions"
+          ]
+        },
+        {
+          "element": "input",
+          "id": "InputPrecisaoformat",
+          "type": "number",
+          "min": "0",
+          "max": "4",
+          "value": "2",
+          "context": "Thousands Millions Billions"
+        },
+        {
+          "element": "button",
+          "title": "Adicionar",
+          "context": "Thousands Millions Billions"
+        }
+      ]
+    },
+    "configComponentsTab": {
+      "title": "Configurações Componentes",
+      "controls": [
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "ativarConfiguracaoComponenteGeral",
+          "context": ""
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "id": "boldComponenteGeral",
+          "context": "Ativar configurações dos componentes Título do Componente: Formatação"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "id": "italicComponenteGeral",
+          "context": "Título do Componente: Formatação B"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "id": "underlineComponenteGeral",
+          "context": "Formatação B I"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "fontColorComponenteGeral",
+          "context": "I S Cor do texto"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "fontColorBackgroundComponenteGeral",
+          "context": "S Cor do texto Cor de fundo"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "fontSizeComponenteGeral",
+          "context": "Cor do texto Cor de fundo Tamanho"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "componenteColorIconTitleGeral",
+          "context": "Tamanho px Cor dos ícones"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "id": "centralizarTituloComponenteGeral",
+          "context": "Tamanho px Cor dos ícones"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "aplicarFundoTransparenteComponenteGeral",
+          "context": "px Cor dos ícones Centralizar"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "removerFundoTransparenteTituloGeral",
+          "context": "Cor dos ícones Centralizar Fundo Transparente?"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "colorBackgroundComponenteGeral",
+          "context": "Fundo Transparente? Remover Transp. Título? Cor do fundo"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "id": "copiarFormatacaoAbaConfiguracaoComponenteDaDashboard",
+          "context": "Fundo Transparente? Remover Transp. Título? Cor do fundo"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "id": "colarFormatacaoAbaConfiguracaoComponenteDaDashboard",
+          "context": "Remover Transp. Título? Cor do fundo Copiar"
+        }
+      ]
+    },
+    "iconesTab": {
+      "title": "Ícones",
+      "controls": [
+        {
+          "element": "button",
+          "type": "button",
+          "context": "ou heroicons.com para encontrar ícones SVG. Copie o código SVG e cole no campo do ícone que deseja substituir. Deixe o campo vazio para usar o ícone padrão."
+        }
+      ]
+    },
+    "configurationTab": {
+      "title": "T: Formatação Comum",
+      "controls": [
+        {
+          "element": "button",
+          "type": "button",
+          "name": "formatButton",
+          "id": "boldComponente",
+          "context": "Título do Componente Estilo"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "name": "formatButton",
+          "id": "italicComponente",
+          "context": "Título do Componente Estilo"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "name": "formatButton",
+          "id": "underlineComponente",
+          "context": "Título do Componente Estilo"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "FontColorComponente",
+          "placeholder": "Cor",
+          "context": "Título do Componente Estilo Cor do texto"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "FontColorBackgroundComponente",
+          "placeholder": "Cor Fundo",
+          "context": "Estilo Cor do texto Cor do fundo"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "FontSizeComponente",
+          "placeholder": "Tamanho",
+          "context": "Cor do texto Cor do fundo Tamanho"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "componenteColorIconTitle",
+          "placeholder": "Cor dos Ícones",
+          "context": "Tamanho px Cor dos ícones"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "name": "formatButton",
+          "id": "centralizarTituloComponente",
+          "context": "px Cor dos ícones Alinhamento"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "name": "formatButton",
+          "id": "boldTituloTabela",
+          "context": "Alinhamento Centralizar Configurações de Fonte do Título da Tabela:"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "name": "formatButton",
+          "id": "italicTituloTabela",
+          "context": "Alinhamento Centralizar Configurações de Fonte do Título da Tabela:"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "name": "formatButton",
+          "id": "underlineTituloTabela",
+          "context": "Alinhamento Centralizar Configurações de Fonte do Título da Tabela:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "FontColorTituloTabela",
+          "placeholder": "Cor",
+          "context": "Alinhamento Centralizar Configurações de Fonte do Título da Tabela:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "FontColorBackgroundTituloTabela",
+          "placeholder": "Cor Fundo",
+          "context": "Alinhamento Centralizar Configurações de Fonte do Título da Tabela:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "FontSizeTituloTabela",
+          "placeholder": "Tamanho",
+          "context": "Alinhamento Centralizar Configurações de Fonte do Título da Tabela:"
+        },
+        {
+          "element": "input",
+          "type": "radio",
+          "name": "alignTituloTabela",
+          "id": "alignLeftTituloTabela",
+          "value": "left",
+          "context": "Centralizar Configurações de Fonte do Título da Tabela: pixel"
+        },
+        {
+          "element": "input",
+          "type": "radio",
+          "name": "alignTituloTabela",
+          "id": "alignCenterTituloTabela",
+          "value": "center",
+          "context": "Configurações de Fonte do Título da Tabela: pixel Esquerda"
+        },
+        {
+          "element": "input",
+          "type": "radio",
+          "name": "alignTituloTabela",
+          "id": "alignRightTituloTabela",
+          "value": "right",
+          "context": "pixel Esquerda Centralizar"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "name": "formatButton",
+          "id": "boldComponenteConteudo",
+          "context": "Direita Rótulos de dados - Label Valor Estilo"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "name": "formatButton",
+          "id": "italicComponenteConteudo",
+          "context": "Direita Rótulos de dados - Label Valor Estilo"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "name": "formatButton",
+          "id": "underlineComponenteConteudo",
+          "context": "Direita Rótulos de dados - Label Valor Estilo"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "FontColorComponenteConteudo",
+          "placeholder": "Cor",
+          "context": "Rótulos de dados - Label Valor Estilo Cor do texto"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "FontColorBackgroundComponenteConteudo",
+          "placeholder": "Cor Fundo",
+          "context": "Estilo Cor do texto Cor do fundo"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "FontSizeComponenteConteudo",
+          "placeholder": "Tamanho",
+          "context": "Cor do texto Cor do fundo Tamanho"
+        },
+        {
+          "element": "input",
+          "type": "radio",
+          "name": "alignComponenteConteudoTabela",
+          "id": "alignLeftComponenteConteudoTabela",
+          "value": "left",
+          "context": "Cor do fundo Tamanho px"
+        },
+        {
+          "element": "input",
+          "type": "radio",
+          "name": "alignComponenteConteudoTabela",
+          "id": "alignCenterComponenteConteudoTabela",
+          "value": "center",
+          "context": "Tamanho px Esquerda"
+        },
+        {
+          "element": "input",
+          "type": "radio",
+          "name": "alignComponenteConteudoTabela",
+          "id": "alignRightComponenteConteudoTabela",
+          "value": "right",
+          "context": "px Esquerda Centralizar"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "name": "formatButton",
+          "id": "fontBoldArgumento",
+          "context": "Direita Fonte do Argumento (Eixo X): Estilo"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "name": "formatButton",
+          "id": "fontItalicArgumento",
+          "context": "Direita Fonte do Argumento (Eixo X): Estilo"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "FontColorArgumento",
+          "placeholder": "Cor",
+          "context": "Fonte do Argumento (Eixo X): Estilo Cor"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "FontSizeArgumento",
+          "placeholder": "Tamanho",
+          "context": "Estilo Cor Tamanho"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "colorBackgroundMarcadorComponente",
+          "placeholder": "Cor Fundo",
+          "context": "Tamanho px Cor do Fundo do Marcador"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "name": "formatButton",
+          "id": "fontBoldValor",
+          "context": "Cor do Fundo do Marcador Fonte do Eixo Y: Estilo"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "name": "formatButton",
+          "id": "fontItalicValor",
+          "context": "Cor do Fundo do Marcador Fonte do Eixo Y: Estilo"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "FontColorValor",
+          "placeholder": "Cor",
+          "context": "Fonte do Eixo Y: Estilo Cor"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "FontSizeValor",
+          "placeholder": "Tamanho",
+          "context": "Estilo Cor Tamanho"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "colorBackgroundMolduraChartComponente",
+          "placeholder": "Cor da Moldura",
+          "context": "Tamanho px Cor da Moldura"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "aplicarFundoTransparente",
+          "context": "Cor da Moldura Fundo e Exibição Fundo Transparente?"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "removerFundoTransparenteTitulo",
+          "context": "Fundo e Exibição Fundo Transparente? Remover Fundo Transp. do Título?"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "colorBackgroundComponente",
+          "placeholder": "Cor Fundo",
+          "context": "Fundo Transparente? Remover Fundo Transp. do Título? Cor do Fundo:"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "aplicarCorFundoTitulo",
+          "context": "Remover Fundo Transp. do Título? Cor do Fundo: Extender Cor do Fundo ao Título?"
+        },
+        {
+          "element": "input",
+          "type": "file",
+          "id": "imagemFundoComponente",
+          "context": "Cor do Fundo: Extender Cor do Fundo ao Título? Imagem de Fundo:"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "context": "Cor do Fundo: Extender Cor do Fundo ao Título? Imagem de Fundo:"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "aplicarImagemTitulo",
+          "context": "Imagem de Fundo: Remover Aplicar imagem ao título?"
+        },
+        {
+          "element": "input",
+          "type": "radio",
+          "name": "modoTamanhoImagemFundo",
+          "id": "modoTamanhoImagemFundoPadrao",
+          "value": "default",
+          "context": "Remover Aplicar imagem ao título? Modo Imagem de Fundo:"
+        },
+        {
+          "element": "input",
+          "type": "radio",
+          "name": "modoTamanhoImagemFundo",
+          "id": "modoTamanhoImagemFundoEstendido",
+          "value": "estendido",
+          "context": "Aplicar imagem ao título? Modo Imagem de Fundo: Padrão"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "tamanhoMobile",
+          "placeholder": "ex: 210",
+          "context": "Padrão Estendido Tamanho Componente no Mobile (em px):"
+        },
+        {
+          "element": "textarea",
+          "id": "textBotaoInformacaoComponente",
+          "context": "Tamanho Componente no Mobile (em px): Em px Texto do Botão de Informações (tooltip)"
+        },
+        {
+          "element": "select",
+          "id": "selectConfiguracaoPaletasCoresTable",
+          "context": "Texto do Botão de Informações (tooltip) Caso exista texto, será exibido o botão de informação na barra de ações do componente Selecione a Paleta de Cores:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "tituloMenuDashboard",
+          "context": "Caso exista texto, será exibido o botão de informação na barra de ações do componente Selecione a Paleta de Cores: Título do Menu de Dashboards"
+        }
+      ]
+    },
+    "configurationSecondaryTab": {
+      "title": "T: Configuração",
+      "controls": [
+        {
+          "element": "input",
+          "type": "text",
+          "id": "lineheight",
+          "placeholder": "Altura",
+          "context": "Rolagem da Tabela Altura da linha (opcional):"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "tempoRolagemScrollGrid",
+          "placeholder": "Tempo",
+          "context": "Altura da linha (opcional): px Tempo de rolagem:"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "aplicarRodizioScrollGrid",
+          "context": "px Tempo de rolagem: ms"
+        },
+        {
+          "element": "input",
+          "type": "file",
+          "id": "imagemCardComponente",
+          "context": "ms Aplicar rodízio ao scroll? Imagem do Card (dividir cartão):"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "context": "ms Aplicar rodízio ao scroll? Imagem do Card (dividir cartão):"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "larguraImagemCardComponente",
+          "placeholder": "40",
+          "value": "40",
+          "context": "Imagem do Card (dividir cartão): Remover Largura da imagem (%):"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "name": "formatButton",
+          "id": "boldENVIAR",
+          "context": "% Entre 5 e 80. Imagem à esquerda, texto à direita. Configurações de Fonte do botão ENVIAR:"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "name": "formatButton",
+          "id": "italicENVIAR",
+          "context": "% Entre 5 e 80. Imagem à esquerda, texto à direita. Configurações de Fonte do botão ENVIAR:"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "name": "formatButton",
+          "id": "underlineENVIAR",
+          "context": "% Entre 5 e 80. Imagem à esquerda, texto à direita. Configurações de Fonte do botão ENVIAR:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "FontColorENVIAR",
+          "placeholder": "Cor",
+          "context": "% Entre 5 e 80. Imagem à esquerda, texto à direita. Configurações de Fonte do botão ENVIAR:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "FontColorBackgroundENVIAR",
+          "placeholder": "Cor Fundo",
+          "context": "% Entre 5 e 80. Imagem à esquerda, texto à direita. Configurações de Fonte do botão ENVIAR:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "FontSizeENVIAR",
+          "placeholder": "Tamanho",
+          "context": "% Entre 5 e 80. Imagem à esquerda, texto à direita. Configurações de Fonte do botão ENVIAR:"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "name": "formatButton",
+          "id": "boldLIMPAR",
+          "context": "Configurações de Fonte do botão ENVIAR: pixel Configurações de Fonte do botão LIMPAR:"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "name": "formatButton",
+          "id": "italicLIMPAR",
+          "context": "Configurações de Fonte do botão ENVIAR: pixel Configurações de Fonte do botão LIMPAR:"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "name": "formatButton",
+          "id": "underlineLIMPAR",
+          "context": "Configurações de Fonte do botão ENVIAR: pixel Configurações de Fonte do botão LIMPAR:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "FontColorLIMPAR",
+          "placeholder": "Cor",
+          "context": "Configurações de Fonte do botão ENVIAR: pixel Configurações de Fonte do botão LIMPAR:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "FontColorBackgroundLIMPAR",
+          "placeholder": "Cor Fundo",
+          "context": "Configurações de Fonte do botão ENVIAR: pixel Configurações de Fonte do botão LIMPAR:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "FontSizeLIMPAR",
+          "placeholder": "Tamanho",
+          "context": "Configurações de Fonte do botão ENVIAR: pixel Configurações de Fonte do botão LIMPAR:"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "name": "formatButton",
+          "id": "fontBoldComboboxList",
+          "context": "Configurações de Fonte do botão LIMPAR: pixel Configurações de Fonte da Lista Suspensa:"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "name": "formatButton",
+          "id": "fontItalicComboboxList",
+          "context": "Configurações de Fonte do botão LIMPAR: pixel Configurações de Fonte da Lista Suspensa:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "fontColorComboboxList",
+          "placeholder": "Cor",
+          "context": "Configurações de Fonte do botão LIMPAR: pixel Configurações de Fonte da Lista Suspensa:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "fontColorBackgroundComboboxList",
+          "placeholder": "Cor Fundo",
+          "context": "Configurações de Fonte do botão LIMPAR: pixel Configurações de Fonte da Lista Suspensa:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "fontSizeComboboxList",
+          "placeholder": "Tamanho",
+          "context": "Configurações de Fonte do botão LIMPAR: pixel Configurações de Fonte da Lista Suspensa:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "paddingTopConteudo",
+          "placeholder": "0",
+          "context": "pixel Padding do Conteúdo Top"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "paddingRightConteudo",
+          "placeholder": "0",
+          "context": "Top px Right"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "paddingBottomConteudo",
+          "placeholder": "0",
+          "context": "Right px Bottom"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "paddingLeftConteudo",
+          "placeholder": "0",
+          "context": "Bottom px Left"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "heightConteudo",
+          "placeholder": "Ex: 40",
+          "context": "px Altura do Componente Height"
+        },
+        {
+          "element": "input",
+          "id": "radioButtonMostrarTotalGeralGrafico",
+          "name": "radioButtonTotalGeralGrafico",
+          "type": "radio",
+          "value": "S",
+          "context": "Height px Mostrar Total Geral ?"
+        },
+        {
+          "element": "input",
+          "id": "radioButtonNaoMostrarTotalGeralGrafico",
+          "name": "radioButtonTotalGeralGrafico",
+          "type": "radio",
+          "value": "N",
+          "context": "px Mostrar Total Geral ? Sim"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "sufixoTotalGeralChart",
+          "context": "Sim Não Sufixo Total Geral (Ex.: R$)"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "angulolabel",
+          "context": "Não Sufixo Total Geral (Ex.: R$) Inclinação label argumento (0 a 90)"
+        },
+        {
+          "element": "input",
+          "id": "radioButtonMostrarTotalStackedBarGrafico",
+          "name": "radioButtonTotalStackedBarGrafico",
+          "type": "radio",
+          "value": "S",
+          "context": "Sufixo Total Geral (Ex.: R$) Inclinação label argumento (0 a 90) Stacked Bar - Mostrar Total ?"
+        },
+        {
+          "element": "input",
+          "id": "radioButtonNaoMostrarTotalStackedBarGrafico",
+          "name": "radioButtonTotalStackedBarGrafico",
+          "type": "radio",
+          "value": "N",
+          "context": "Inclinação label argumento (0 a 90) Stacked Bar - Mostrar Total ? Sim"
+        },
+        {
+          "element": "input",
+          "id": "radioButtonMostrarTotalGeralPieChart",
+          "name": "radioButtonTotalGeralPieChart",
+          "type": "radio",
+          "value": "S",
+          "context": "Não Total Geral Mostrar Total Geral ?"
+        },
+        {
+          "element": "input",
+          "id": "radioButtonNaoMostrarTotalGeralPieChart",
+          "name": "radioButtonTotalGeralPieChart",
+          "type": "radio",
+          "value": "N",
+          "context": "Total Geral Mostrar Total Geral ? Sim"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "sufixoTotalGeralPieChart",
+          "context": "Sim Não Sufixo Total Geral (Ex.: R$)"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "colorLegendaChart",
+          "placeholder": "Cor da Legenda",
+          "context": "Sufixo Total Geral (Ex.: R$) Legenda Cor:"
+        },
+        {
+          "element": "input",
+          "id": "radioButtonMostrarLegendaPieChart",
+          "name": "radioButtonLegendaPieChart",
+          "type": "radio",
+          "value": "S",
+          "context": "Cor: Legenda Mostrar Legenda ?"
+        },
+        {
+          "element": "input",
+          "id": "radioButtonNaoMostrarLegendaPieChart",
+          "name": "radioButtonLegendaPieChart",
+          "type": "radio",
+          "value": "N",
+          "context": "Legenda Mostrar Legenda ? Sim"
+        },
+        {
+          "element": "input",
+          "id": "radioButtonFormatoNumeroLegendaPieChart",
+          "name": "radioButtonFormatoLegendaPieChart",
+          "type": "radio",
+          "value": "N",
+          "context": "Sim Não Formatação"
+        },
+        {
+          "element": "input",
+          "id": "radioButtonFormatoMoedaLegendaPieChart",
+          "name": "radioButtonFormatoLegendaPieChart",
+          "type": "radio",
+          "value": "M",
+          "context": "Não Formatação Número"
+        },
+        {
+          "element": "input",
+          "id": "radioButtonFormatoPercentualLegendaPieChart",
+          "name": "radioButtonFormatoLegendaPieChart",
+          "type": "radio",
+          "value": "P",
+          "context": "Formatação Número Moeda"
+        },
+        {
+          "element": "input",
+          "id": "alinhamentoVerticalTopoPieChart",
+          "name": "radioButtonAlinhamentoVerticalPieChart",
+          "type": "radio",
+          "value": "T",
+          "context": "Moeda Percentual Alinhamento Vertical"
+        },
+        {
+          "element": "input",
+          "id": "alinhamentoVerticalCentroPieChart",
+          "name": "radioButtonAlinhamentoVerticalPieChart",
+          "type": "radio",
+          "value": "C",
+          "context": "Percentual Alinhamento Vertical Topo"
+        },
+        {
+          "element": "input",
+          "id": "radioButtonFormatoNumeroHeatMapPieChart",
+          "name": "radioButtonFormatoHeatMap",
+          "type": "radio",
+          "value": "N",
+          "context": "Centro Valor Formatação"
+        },
+        {
+          "element": "input",
+          "id": "radioButtonFormatoMoedaHeatMapPieChart",
+          "name": "radioButtonFormatoHeatMap",
+          "type": "radio",
+          "value": "M",
+          "context": "Valor Formatação Número"
+        },
+        {
+          "element": "input",
+          "id": "radioButtonFormatoPercentualHeatMapPieChart",
+          "name": "radioButtonFormatoHeatMap",
+          "type": "radio",
+          "value": "P",
+          "context": "Formatação Número Moeda"
+        },
+        {
+          "element": "input",
+          "type": "number",
+          "id": "casasDecimaisHeatMap",
+          "name": "casasDecimaisHeatMap",
+          "min": "0",
+          "max": "10",
+          "value": "0",
+          "placeholder": "0",
+          "context": "Moeda Percentual Casas Decimais:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "colorBackgroundDateFilterSelecionado",
+          "placeholder": "Cor Fundo do Item Selecionado",
+          "context": "Casas Decimais: Número de casas decimais (padrão: 0) Cor do Fundo do Item Selecionado:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "ttwidth",
+          "title": "Somente números são permitidos",
+          "context": "Número de casas decimais (padrão: 0) Cor do Fundo do Item Selecionado: Tamanho das abas (opcional)"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "tcolor",
+          "placeholder": "Cor Fundo",
+          "context": "Cor do Fundo do Item Selecionado: Tamanho das abas (opcional) Cor das abas (opcional)"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "tcolorSelecionada",
+          "placeholder": "Cor Fundo",
+          "context": "Tamanho das abas (opcional) Cor das abas (opcional) Cor da aba Selecionada (opcional)"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "ocultarBotaoMaximizarTextbox",
+          "context": "Cor das abas (opcional) Cor da aba Selecionada (opcional) Ocultar Maximizar ?"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "ocultarBotaoExportarTextbox",
+          "context": "Cor da aba Selecionada (opcional) Ocultar Maximizar ? Ocultar Exportar ?"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "ocultarIndicadorSubValorGauge",
+          "context": "Ocultar Maximizar ? Ocultar Exportar ? Ocultar Indicador de Meta"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "igualarmeta",
+          "context": "Ocultar Exportar ? Ocultar Indicador de Meta Igualar máximo à meta"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "corescala",
+          "placeholder": "Cor do label",
+          "context": "Ocultar Indicador de Meta Igualar máximo à meta Cor do label:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "wescala",
+          "placeholder": "Largura da escala",
+          "context": "Igualar máximo à meta Cor do label: Largura da escala:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "margemtop",
+          "context": "Largura da escala: Margens (opcionais): Superior:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "margembottom",
+          "context": "Margens (opcionais): Superior: Inferior:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "margemleft",
+          "context": "Superior: Inferior: Esquerda:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "margemright",
+          "context": "Inferior: Esquerda: Direita:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "valorPaddingGrupoBarrasChart",
+          "context": "Esquerda: Direita: Largura barra series (Entre: 0 e 1, exemplo: 0.2):"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "valorPaddingBarrasChart",
+          "context": "Direita: Largura barra series (Entre: 0 e 1, exemplo: 0.2): Espaço entre os argumentos: (Entre: 0 e 1, exemplo: 0.2)"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "valorInicialEixoYChart",
+          "context": "Largura barra series (Entre: 0 e 1, exemplo: 0.2): Espaço entre os argumentos: (Entre: 0 e 1, exemplo: 0.2) Valor Inicial do Eixo Y"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "valorFinalEixoYChart",
+          "context": "Espaço entre os argumentos: (Entre: 0 e 1, exemplo: 0.2) Valor Inicial do Eixo Y Valor Final do Eixo Y"
+        },
+        {
+          "element": "input",
+          "type": "file",
+          "id": "geoJsonMapaCalor",
+          "context": "Valor Inicial do Eixo Y Valor Final do Eixo Y Carregar GeoJson (.json):"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "title": "Remover Arquivo GeoJson",
+          "context": "Valor Inicial do Eixo Y Valor Final do Eixo Y Carregar GeoJson (.json):"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "latitudePosicaoInicialMapaCalor",
+          "placeholder": "Posição Inicial",
+          "context": "Carregar GeoJson (.json): Remover Latitude - Posição Inicial:"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "title": "Carregar valores de Lat, Lng e Zoom atuais do mapa",
+          "context": "Carregar GeoJson (.json): Remover Latitude - Posição Inicial:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "longitudePosicaoInicialMapaCalor",
+          "placeholder": "Posição Inicial",
+          "context": "Latitude - Posição Inicial: Sincronizar Longitude - Posição Inicial:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "zoomPosicaoInicialMapaCalor",
+          "placeholder": "Zom Inicial",
+          "context": "Sincronizar Longitude - Posição Inicial: Zoom - Posição Inicial:"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "removerCorPreenchimentoMapaCalor",
+          "context": "Longitude - Posição Inicial: Zoom - Posição Inicial: Remover cor do preenchimento ?"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "defaultBackgroundColorMapaCalor",
+          "placeholder": "Cor do Fundo",
+          "context": "Zoom - Posição Inicial: Remover cor do preenchimento ? Cor de Fundo Padrão:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "defaultBorderColorMapaCalor",
+          "placeholder": "Cor da Borda",
+          "context": "Remover cor do preenchimento ? Cor de Fundo Padrão: Cor da Borda Padrão:"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "removerLegendaMapaCalor",
+          "context": "Cor de Fundo Padrão: Cor da Borda Padrão: Remover legenda ?"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "pivotTextoTotalGeral",
+          "placeholder": "Texto Total Geral",
+          "context": "Nome da linha Tamanho da linha (em px) Texto Total Geral:"
+        }
+      ]
+    },
+    "popupTab": {
+      "title": "T: Pop-up",
+      "controls": [
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "habilitarPopupComponente",
+          "context": "Habilitar Pop-up?"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "distinctlinhas",
+          "context": "Habilitar Pop-up? Distinct nas linhas?"
+        }
+      ]
+    },
+    "scaleGaugeTab": {
+      "title": "T: Escala",
+      "controls": [
+        {
+          "element": "select",
+          "id": "scaleGaugeOptions",
+          "context": "Configurar Escala do Gauge Aplicar sobre o valor:",
+          "values": [
+            "max",
+            "meta",
+            "atual"
+          ]
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "valorEscalaInicialGauge",
+          "context": "Meta Atual Valor Inicial:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "valorEscalaFinalGauge",
+          "context": "Atual Valor Inicial: Valor Final:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "corEscalaGauge",
+          "context": "Valor Inicial: Valor Final: Cor:"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "context": "Valor Inicial: Valor Final: Cor:"
+        }
+      ]
+    },
+    "promptsIATab": {
+      "title": "T: Prompts IA",
+      "controls": [
+        {
+          "element": "textarea",
+          "id": "promptsia",
+          "context": "Prompts Perguntas:"
+        }
+      ]
+    },
+    "metaNotificacaoTab": {
+      "title": "T: Alertas",
+      "controls": [
+        {
+          "element": "input",
+          "type": "hidden",
+          "id": "id",
+          "context": "Configurar Alertas"
+        },
+        {
+          "element": "select",
+          "id": "SelectMetaCampoValor1",
+          "context": "Configurar Alertas 1º Campo:"
+        },
+        {
+          "element": "select",
+          "id": "SelectMetaCampoOperador",
+          "context": "Configurar Alertas 1º Campo: Operador:",
+          "values": [
+            ">",
+            "=",
+            ">=",
+            "<",
+            "<="
+          ]
+        },
+        {
+          "element": "select",
+          "id": "SelectMetaCampoValor2",
+          "context": "< <= 2º Campo:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "MetaCampoValorManual",
+          "context": "<= 2º Campo: 2º Campo de Valor:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "MetaNotificacaoWhatsApp",
+          "context": ", new { @class = \"form-control\", style = \"height:300px;\" }) Os usuários dos perfis serão localizados no envio. WhatsApp:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "CampoWhats",
+          "context": "WhatsApp: Informe números com DDD e separados por ,. Ex: 62987777777,62987777778,62987777779 Campo WhatsApp: (opcional)"
+        },
+        {
+          "element": "textarea",
+          "id": "MetaEmails",
+          "context": "Campo WhatsApp: (opcional) Se informado, whatsapp virá do banco de dados. O campo deve estar em dimensão normal, não oculto! Emails"
+        },
+        {
+          "element": "select",
+          "id": "MetaOpcoes",
+          "context": "Emails Emails adicionais (não cadastrados em usuários, separados por ;) Opções de envio:",
+          "values": [
+            "whats",
+            "email",
+            "whatsemail"
+          ]
+        },
+        {
+          "element": "textarea",
+          "id": "MetaNotificacaoMensagem",
+          "context": "Somente email WhatsApp e email Mensagem"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "TriggerTimeInMinutes",
+          "name": "TriggerTimeInMinutes",
+          "context": "Mensagem Caso a condição seja verdadeira, será enviado o texto acima. Para usar o texto livre, adicione o nome do campo entre #. Exemplo: #Venda (Soma)#. Tempo entre envios:"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "TriggerTimeInHours",
+          "name": "TriggerTimeInHours",
+          "context": "Caso a condição seja verdadeira, será enviado o texto acima. Para usar o texto livre, adicione o nome do campo entre #. Exemplo: #Venda (Soma)#. Tempo entre envios: Minutos (1 - 59)"
+        },
+        {
+          "element": "input",
+          "type": "text",
+          "id": "TriggerTimeFixo",
+          "name": "TriggerTimeFixo",
+          "context": "Minutos (1 - 59) Horas (1 - 23) ou Horário Fixo:"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "weekday-mon",
+          "value": "Monday",
+          "context": "Horas (1 - 23) ou Horário Fixo: Dias da Semana"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "weekday-tue",
+          "value": "Tuesday",
+          "context": "ou Horário Fixo: Dias da Semana S"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "weekday-wed",
+          "value": "Wednesday",
+          "context": "Dias da Semana S T"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "weekday-thu",
+          "value": "Thursday",
+          "context": "S T Q"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "weekday-fri",
+          "value": "Friday",
+          "context": "T Q Q"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "weekday-sat",
+          "value": "Saturday",
+          "context": "Q Q S"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "weekday-sun",
+          "value": "Sunday",
+          "context": "Q S S"
+        },
+        {
+          "element": "input",
+          "type": "checkbox",
+          "id": "MetaAtivo",
+          "context": "S D Ativo ?"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "id": "SalvarConfiguracaoMetaNotificacao",
+          "context": "S D Ativo ?"
+        }
+      ]
+    }
+  },
+  "icons": {
+    "segmentacaoIcon": {
+      "label": "Segmentação IA",
+      "svgId": "segmentacaoIcon"
+    },
+    "analisefinanceiraIcon": {
+      "label": "Análise Financeira IA",
+      "svgId": "analisefinanceiraIcon"
+    },
+    "recompraIcon": {
+      "label": "Recompra IA",
+      "svgId": "recompraIcon"
+    },
+    "recomendacaoIcon": {
+      "label": "Recomendação de Ações",
+      "svgId": "recomendacaoIcon"
+    },
+    "estoqueIaIcon": {
+      "label": "Estoque IA",
+      "svgId": "estoqueIaIcon"
+    },
+    "anomaliasIcon": {
+      "label": "Anomalias IA",
+      "svgId": "anomaliasIcon"
+    },
+    "cestaIcon": {
+      "label": "Afinidade Temporal",
+      "svgId": "cestaIcon"
+    },
+    "previsaoIcon": {
+      "label": "Previsão IA",
+      "svgId": "previsaoIcon"
+    },
+    "saudeEmpresaIcon": {
+      "label": "Saúde da Empresa",
+      "svgId": "saudeEmpresaIcon"
+    },
+    "apresentacaoEmpresaIcon": {
+      "label": "Apresentação da Empresa",
+      "svgId": "apresentacaoEmpresaIcon"
+    },
+    "correlacaoicon": {
+      "label": "Correlação",
+      "svgId": "correlacaoicon"
+    },
+    "tendenciaicon": {
+      "label": "Tendência",
+      "svgId": "tendenciaicon"
+    },
+    "chatgpticon": {
+      "label": "ChatGPT / OpenAI",
+      "svgId": "chatgpticon"
+    },
+    "iaicon": {
+      "label": "IA (genérico)",
+      "svgId": "iaicon"
+    },
+    "agentesicon": {
+      "label": "Agentes",
+      "svgId": "agentesicon"
+    },
+    "sugestaoicon": {
+      "label": "Sugestão",
+      "svgId": "sugestaoicon"
+    },
+    "refreshIcon": {
+      "label": "Atualizar",
+      "svgId": "dx-dashboard-refresh-icon"
+    },
+    "printingIcon": {
+      "label": "Imprimir",
+      "svgId": "dx-dashboard-printing-icon"
+    },
+    "maximizeIcon": {
+      "label": "Maximizar",
+      "svgId": "dx-dashboard-maximize-icon"
+    },
+    "colorSchemeIcon": {
+      "label": "Esquema de Cores",
+      "svgId": "colorSchemeIcon"
+    },
+    "emailIcon": {
+      "label": "Enviar por E-mail",
+      "svgId": "dx-dashboard-email-icon"
+    },
+    "filterIcon": {
+      "label": "Filtros",
+      "svgId": "dx-dashboard-filter-icon"
+    },
+    "filterIconconf": {
+      "label": "Opções de Filtro",
+      "svgId": "dx-dashboard-filter-icon-conf"
+    },
+    "configIcon": {
+      "label": "Configurações",
+      "svgId": "dx-dashboard-config-icon"
+    },
+    "formattingIcon": {
+      "label": "Formatação",
+      "svgId": "dx-dashboard-formatting-icon"
+    },
+    "toolBoxListBoxIcon": {
+      "label": "Gerenciar Painel",
+      "svgId": "dx-dashboard-toolbox-listBox"
+    },
+    "helpicon": {
+      "label": "Ajuda",
+      "svgId": "helpicon"
+    },
+    "logicon": {
+      "label": "Log",
+      "svgId": "logicon"
+    },
+    "abrirProjetoIcon": {
+      "label": "Abrir Projeto",
+      "svgId": "dx-dashboard-abrir-projeto-icon"
+    },
+    "infoIcon": {
+      "label": "Informação",
+      "svgId": "dx-dashboard-info-icon"
+    },
+    "copyFormatIcon": {
+      "label": "Copiar Formatação",
+      "svgId": "copyFormatIcon"
+    },
+    "pastFormatIcon": {
+      "label": "Colar Formatação",
+      "svgId": "pastFormatIcon"
+    },
+    "filtericon": {
+      "label": "Limpar Filtros",
+      "svgId": "filtericon"
+    }
+  }
+}

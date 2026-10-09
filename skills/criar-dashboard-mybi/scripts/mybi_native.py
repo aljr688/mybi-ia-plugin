@@ -16,12 +16,44 @@ def el(parent, tag, **attrs):
 def binding(kind, array=True): return {'type': kind, 'array': array}
 
 EXTENSIONS = {
+    'chart': {'xml':'Chart', 'bindings':{'arguments':binding('Dimension'), 'measures':binding('Measure')}, 'required':['arguments','measures']},
+    'pie': {'xml':'Pie', 'bindings':{'arguments':binding('Dimension'), 'measures':binding('Measure')}, 'required':['arguments','measures']},
+    'treemap': {'xml':'Treemap', 'bindings':{'arguments':binding('Dimension'), 'measures':binding('Measure')}, 'required':['arguments','measures']},
+    'scatterChart': {'xml':'ScatterChart', 'bindings':{'arguments':binding('Dimension'), 'x':binding('Measure',False), 'y':binding('Measure',False)}, 'required':['x','y']},
+    'gauge': {'xml':'Gauge', 'bindings':{'actual':binding('Measure',False), 'target':binding('Measure',False)}, 'required':['actual']},
+    'rangeFilter': {'xml':'RangeFilter', 'bindings':{'argument':binding('Dimension',False), 'measures':binding('Measure')}, 'required':['argument','measures']},
+    'listBox': {'xml':'ListBox', 'bindings':{'dimensions':binding('Dimension')}, 'required':['dimensions']},
     'pivot': {'xml':'Pivot', 'bindings':{'rows':binding('Dimension'), 'columns':binding('Dimension'), 'measures':binding('Measure')}, 'required':['measures']},
     'comboBox': {'xml':'ComboBox', 'bindings':{'dimensions':binding('Dimension')}, 'required':['dimensions']},
     'dateFilter': {'xml':'DateFilter', 'bindings':{'dimension':binding('Dimension', False)}, 'required':['dimension']},
     'DREContabil': {'xml':'CustomItem', 'bindings':{**{n:binding('Dimension',False) for n in ['Codigo','Conta','TipoLinha']}, **{n:binding('Measure',False) for n in ['ValorAtual','ValorAnterior','Ordem']}}, 'required':['Codigo','Conta','ValorAtual']},
     'DREVendas': {'xml':'CustomItem', 'bindings':{**{n:binding('Dimension',False) for n in ['Data','PromoProduto']}, 'DimensoesGrupo':binding('Dimension'), **{n:binding('Measure',False) for n in ['Vendas','CMV','ImpostosValor','InadimpValor','DespesasAdmValor','MetaMesValor','PromoQuantidade','PromoValorUnitario']}}, 'required':['Data','Vendas']},
 }
+
+def serialize_basic(node, component, refs):
+    """Contracts checked against native-reference.xml from the local serializer."""
+    if component not in {'chart','pie','treemap','scatterChart','gauge','rangeFilter','listBox'}: return False
+    def group(name, child, values):
+        if values:
+            parent=el(node,name)
+            for uid in values: el(parent,child,DefaultId=uid)
+    if component in {'chart','pie','treemap'}:
+        group('Arguments','Argument',refs.get('arguments',[]))
+        if component=='chart':
+            series=el(el(el(node,'Panes'),'Pane',Name='Painel 1'),'Series')
+            for uid in refs['measures']: el(el(series,'Simple'),'Value',DefaultId=uid)
+        else: group('Values','Value',refs['measures'])
+    elif component=='scatterChart':
+        el(node,'MeasureX',DefaultId=refs['x'][0]); el(node,'MeasureY',DefaultId=refs['y'][0])
+        group('Dimensions','Dimension',refs.get('arguments',[]))
+    elif component=='gauge':
+        gauge=el(node,'GaugeElement'); el(gauge,'ActualValue',DefaultId=refs['actual'][0])
+        if refs.get('target'): el(gauge,'TargetValue',DefaultId=refs['target'][0])
+    elif component=='rangeFilter':
+        el(node,'Argument',DefaultId=refs['argument'][0]); series=el(node,'Series')
+        for uid in refs['measures']: el(el(series,'Simple',SeriesType='Line'),'Value',DefaultId=uid)
+    else: group('FilterDimensions','Dimension',refs['dimensions'])
+    return True
 PIVOT_BOOL = {'ShowColumnGrandTotals','ShowRowGrandTotals','ShowColumnTotals','ShowRowTotals','AutoExpandColumnGroups','AutoExpandRowGroups'}
 COMBO_BOOL = {'ShowAllValue','EnableSearch'}
 DRE_PROPS = {

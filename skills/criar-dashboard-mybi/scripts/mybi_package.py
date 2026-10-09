@@ -16,8 +16,9 @@ from pathlib import Path
 BASE = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(BASE / 'scripts'))
 from mybi_formatting import validate_formatting, merge_ini
-from mybi_native import EXTENSIONS, decorate, tabs, update_existing
+from mybi_native import EXTENSIONS, decorate, tabs, update_existing, serialize_basic
 from mybi_html_grid import grid_markup
+from mybi_toolbar import apply_properties
 CATALOG = json.loads((BASE / 'references/catalog.json').read_text(encoding='utf-8'))
 CATALOG.update(EXTENSIONS)
 TYPES = {'TEXT', 'INTEGER', 'REAL', 'DECIMAL', 'DATETIME', 'BOOLEAN'}
@@ -271,6 +272,12 @@ def validate_plan(plan):
             if component in {'dateFilter','DREVendas'}:
                 prop = 'dimension' if component == 'dateFilter' else 'Data'
                 require(field_types[bindings[prop][0]] == 'DATETIME', 'Filtro/DRE exige campo de data')
+        elif CATALOG[component].get('contract') == 'runtime-metadata':
+            for prop in CATALOG[component].get('required', []):
+                require(bindings.get(prop), 'Binding obrigatório ausente: ' + component + '.' + prop)
+            for prop in CATALOG[component].get('dateBindings', []):
+                require(not bindings.get(prop) or field_types[bindings[prop][0]] == 'DATETIME', 'Binding exige data: ' + prop)
+            apply_properties(ET.Element('CustomItem'), item, CATALOG[component])
         elif component not in {'grid', 'HtmlTemplate', 'DashboardAutomatico', 'tabulatorGridItem'}:
             for prop in spec:
                 if prop.lower() not in {'series'}:
@@ -326,8 +333,16 @@ def component_names(plan, base_root=None):
         tag = CATALOG[item['component']]['xml']
         prefix = tag[0].lower() + tag[1:] + 'DashboardItem'
         number = index
+        if tag != 'CustomItem':
+            suffixes = [int(match.group(1)) for value in used
+                        if (match := re.fullmatch(re.escape(prefix) + r'([1-9][0-9]*)', value))]
+            number = max(suffixes, default=0) + 1
         name = prefix + str(number)
         if 'componentName' in item:
+            if tag != 'CustomItem':
+                require(item['componentName'] == name,
+                        'Componente nativo deve manter a sequência: ' + name +
+                        '. Use title para o nome descritivo.')
             name = item['componentName']
             require(name not in used, 'ComponentName duplicado: ' + name)
             used.add(name)
@@ -484,6 +499,8 @@ def build_xml(plan, base_xml=None):
             for uid in refs['dimensions']: element(parent, 'Dimension', DefaultId=uid)
         elif component == 'dateFilter':
             element(node, 'Dimension', DefaultId=refs['dimension'][0])
+        elif serialize_basic(node, component, refs):
+            pass
         else:
             metadata = element(node, 'CustomMetadata')
             for prop, uids in refs.items():
@@ -519,7 +536,12 @@ def build_xml(plan, base_xml=None):
                     for di in data_items:
                         if di.tag == kind:
                             element(group, kind, DefaultId=di.get('DefaultId'))
-        decorate(node, item, ids)
+        if CATALOG[component].get('contract') == 'runtime-metadata':
+            apply_properties(node, item, CATALOG[component])
+            native_item = {k: v for k, v in item.items() if k != 'customProperties'}
+            decorate(node, native_item, ids)
+        else:
+            decorate(node, item, ids)
         if component == 'DashboardAutomatico':
             html_row = element(layout, 'LayoutGroup', Orientation='Horizontal', Weight='100')
             element(html_row, 'LayoutItem', DashboardItem=name, Weight='100')

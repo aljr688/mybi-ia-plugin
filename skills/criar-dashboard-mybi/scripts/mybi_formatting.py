@@ -9,6 +9,12 @@ for suffix in ('conteudo', 'titulo-tabela'):
     COMPONENT.update('title-font-' + key + '-' + suffix for key in ('bold', 'italic', 'underline', 'color', 'size', 'color-background', 'align'))
 DASHBOARD.update({'dashboard-image-background', 'modo-image-background'})
 COMPONENT.add('componente-image-background')
+PRINT_MARGINS = {'dashboard-print-margin' + side for side in ('top', 'bottom', 'left', 'right')}
+TEXT_VALUES = {'dashboard-menu-text', 'subtitulo-dashboard-text'}
+YES_NO = {'ativarproducao', 'ocultarsdados'}
+DASHBOARD.update(PRINT_MARGINS | TEXT_VALUES | YES_NO | {
+    'dashboard-print-zoom', 'dashboard-menu-text-dash-color-mobile', 'dlimite',
+    'dashboard-menutext-align'})
 
 def validate_values(values, allowed):
     if not isinstance(values, dict) or set(values) - allowed:
@@ -17,7 +23,15 @@ def validate_values(values, allowed):
         if not isinstance(value, str) or len(value) > 128 or re.search(r'[\r\n\x00-\x1f;\[\]]', value):
             raise ValueError('Valor INI inválido: ' + key)
         if value == '': continue  # Explicitly unset/inherit, never fill automatically.
-        if key in ('dashboard-image-background', 'componente-image-background'):
+        if key in TEXT_VALUES:
+            if '<' in value or '>' in value:
+                raise ValueError('Texto deve ser simples, sem HTML: ' + key)
+        elif key in YES_NO:
+            if value not in ('S', 'N'): raise ValueError('Opção deve ser S/N: ' + key)
+        elif key in PRINT_MARGINS or key == 'dashboard-print-zoom':
+            if not re.fullmatch(r'\d+(?:\.\d+)?', value) or (key == 'dashboard-print-zoom' and float(value) <= 0):
+                raise ValueError('Margem deve ser não negativa e zoom positivo: ' + key)
+        elif key in ('dashboard-image-background', 'componente-image-background'):
             if not re.fullmatch(r'(?:\.\./SystemImages/)?[A-Za-z0-9_/-]+\.(?:png|jpg|jpeg|svg|webp)', value) or '..' in value.replace('../SystemImages/', '', 1):
                 raise ValueError('Imagem deve ser um caminho relativo aprovado, sem URL externa')
         elif 'color' in key and key != 'extend-background-color-to-title':
