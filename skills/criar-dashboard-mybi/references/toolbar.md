@@ -2,6 +2,10 @@
 
 ## Escolha primeiro o componente existente
 
+V5: inventário não comprova instalação no cliente. Confirmar extensão/versão no
+destino; DashboardAutomatico é somente legado e nunca pode ser selecionado para
+novos itens. Consulte compatibilidade-v5.md para a distinção e homologação pendente.
+
 Quando o pedido corresponder a um modelo pronto (Fluxo de Caixa, WMS, Monitor CRM,
 estoque, hospitalar, representantes etc.), procure esse modelo em catalog.json.
 Não recrie com Automático/JavaScript nem substitua por gráficos genéricos sem aprovação.

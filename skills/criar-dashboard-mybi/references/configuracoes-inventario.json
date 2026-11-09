@@ -275,7 +275,7 @@
       ]
     },
     "formatNumTab": {
-      "title": "Formatações Numéricas",
+      "title": "Formatações",
       "controls": [
         {
           "element": "select",
@@ -323,6 +323,27 @@
           "element": "button",
           "title": "Adicionar",
           "context": "Thousands Millions Billions"
+        },
+        {
+          "element": "select",
+          "id": "SelectDashboardFormulaOrigem",
+          "context": "Dashboard de origem"
+        },
+        {
+          "element": "select",
+          "id": "SelectDashboardFormulaDestino",
+          "context": "Dashboard de destino"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "context": "Fórmulas disponíveis Marcar todas"
+        },
+        {
+          "element": "button",
+          "type": "button",
+          "id": "btn-copiar-formulas",
+          "context": "Fontes de destino Copiar fórmulas selecionadas"
         }
       ]
     },

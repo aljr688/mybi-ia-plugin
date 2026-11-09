@@ -67,7 +67,9 @@ Ativada, a regra geral pode sobrepor valores individuais no runtime. Não promet
 que uma exceção local prevalece. Apresentar o conflito e propor desativar a regra
 geral ou harmonizar valores, com aprovação. Copiar/colar são ações da interface.
 
-## Formatações Numéricas
+## Formatações
+
+### Numéricas
 
 Interface: campo, formato Auto/General/Number/Currency/Scientific/Percent,
 unidade Auto/Ones/Thousands/Millions/Billions, decimais 0–4.
@@ -75,6 +77,15 @@ Vale **por empresa**, persistida em `FieldFormats`, não no ZIP; exige recarrega
 Pode afetar outros dashboards. O gerador oferece `numericFormats` por medida no XML
 (contrato.md), alternativa local e não equivalente a mudar o padrão da empresa.
 Explicar o alcance e não executar banco nem inventar arquivo para esses padrões.
+
+### Fórmulas
+
+A interface lista os campos calculados agrupados por fonte de dados. É possível
+selecionar fórmulas de um dashboard e copiá-las para uma ou mais fontes do mesmo
+dashboard ou de outro dashboard. A expressão, o nome e o tipo são preservados; o
+`DataMember` é ajustado para a consulta de destino. Fórmulas de mesmo nome já
+existentes no mesmo `DataMember` não são sobrescritas. A estrutura e os campos
+referenciados pela expressão precisam ser compatíveis entre origem e destino.
 
 ## Ícones
 

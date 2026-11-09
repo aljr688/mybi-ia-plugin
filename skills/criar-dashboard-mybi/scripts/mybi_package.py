@@ -20,6 +20,7 @@ from mybi_native import EXTENSIONS, decorate, tabs, update_existing, serialize_b
 from mybi_html_grid import grid_markup
 from mybi_toolbar import apply_properties
 from mybi_references import load_reference
+from mybi_compatibility import guard_plan, guard_xml
 CATALOG = load_reference(BASE / 'references/catalog.json')
 CATALOG.update(EXTENSIONS)
 TYPES = {'TEXT', 'INTEGER', 'REAL', 'DECIMAL', 'DATETIME', 'BOOLEAN'}
@@ -149,7 +150,9 @@ def validate_formula(expression, fields):
 
 
 def validate_plan(plan):
-    keys(plan, {'title', 'fieldsApproved', 'componentsApproved', 'fields', 'calculatedFields', 'items', 'mode', 'appearance', 'numericFormats', 'dataSource', 'formatting', 'dashboardFile', 'datePeriods', 'tabs', 'componentUpdates'}, 'Plano')
+    keys(plan, {'title', 'intent', 'fieldsApproved', 'componentsApproved', 'fields', 'calculatedFields', 'items', 'mode', 'appearance', 'numericFormats', 'dataSource', 'formatting', 'dashboardFile', 'datePeriods', 'tabs', 'componentUpdates'}, 'Plano')
+    if 'intent' in plan: text(plan['intent'], 'intent', 4000)
+    guard_plan(plan)
     validate_formatting(plan.get('formatting', {}))
     if 'dashboardFile' in plan:
         require(re.fullmatch(r'[A-Za-z0-9_-]+\.xml', plan['dashboardFile']) is not None, 'dashboardFile inválido')
@@ -220,7 +223,7 @@ def validate_plan(plan):
     items = plan.get('items')
     require(isinstance(items, list) and (0 if existing_source else 1) <= len(items) <= 40, 'Esperados até 40 componentes; fonte livre exige pelo menos um')
     for item in items:
-        keys(item, {'component', 'title', 'bindings', 'javascript', 'html', 'css', 'dateIntervals', 'componentName', 'options', 'interactivity', 'sort', 'customProperties', 'rules', 'parentContainer', 'totals', 'htmlGrid'}, 'Componente')
+        keys(item, {'component', 'title', 'bindings', 'javascript', 'html', 'css', 'dateIntervals', 'componentName', 'options', 'interactivity', 'sort', 'customProperties', 'rules', 'parentContainer', 'totals', 'htmlGrid', 'columnTitles'}, 'Componente')
         require('htmlGrid' not in item or item.get('component') == 'HtmlTemplate', 'htmlGrid exige componente Automático do tipo template')
         if 'componentName' in item:
             require(re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', item['componentName']) is not None, 'ComponentName inválido')
@@ -569,6 +572,7 @@ def build_xml(plan, base_xml=None):
         if 'selectedIndex' in config: target.set('SelectedDateTimePeriodIndex', str(config['selectedIndex']))
     ET.indent(root, space='  ')
     result = ET.tostring(root, encoding='utf-8', xml_declaration=True)
+    guard_xml(root, parse_base_xml(base_xml) if base_xml is not None else None)
     require(len(result) <= MAX_SIZE, 'XML excede 2 MB')
     return result
 
@@ -656,6 +660,10 @@ def format_entries(plan, base_xml=None, base_ini=None, base_format_dir=None):
 
 
 def validate_zip(path, plan, base_xml=None, base_ini=None, base_format_dir=None):
+    if 'project' in plan:
+        from mybi_project import validate_project_zip
+        require(base_xml is None and base_format_dir is None, 'Projeto usa bases por dashboard')
+        return validate_project_zip(path, plan, base_ini)
     expected = build_xml(plan, base_xml)
     formats = format_entries(plan, base_xml, base_ini, base_format_dir)
     with zipfile.ZipFile(path) as archive:
@@ -674,11 +682,17 @@ def validate_zip(path, plan, base_xml=None, base_ini=None, base_format_dir=None)
         require(info.file_size <= MAX_SIZE, 'Arquivo descompactado excede limite')
         require((info.external_attr >> 16) & 0o170000 != 0o120000, 'Link simbólico proibido')
         actual = archive.read(info)
+        canonical(actual)
+        guard_xml(ET.fromstring(actual), parse_base_xml(base_xml) if base_xml is not None else None)
         require(canonical(actual) == canonical(expected), 'XML diverge do plano aprovado/contrato do gerador')
     return len(plan['items'])
 
 
 def build_zip(plan, output, base_xml=None, base_ini=None, base_format_dir=None):
+    if 'project' in plan:
+        from mybi_project import build_project_zip
+        require(base_xml is None and base_format_dir is None, 'Projeto usa bases por dashboard')
+        return build_project_zip(plan, output, base_ini)
     xml = build_xml(plan, base_xml)
     buffer = io.BytesIO()
     with zipfile.ZipFile(buffer, 'w', zipfile.ZIP_DEFLATED) as archive:

@@ -25,6 +25,20 @@ Antes de enviar uma proposta ou entrega, revise os textos visíveis com essas re
 
 ## Fluxo e aprovações
 
+### Precedência V5 — compatibilidade obrigatória
+
+Pedido HTML/CSS/JavaScript, painel web, cards/KPIs visuais ou indicadores com ícones
+usa HtmlTemplate (nome público Automático), composto com Grade, gráficos, filtros
+e Pivô suportados. Nunca criar DashboardAutomatico nem AutomaticJavascript.
+Não executar scripts arbitrários; htmlGrid fixo é a única exceção. Explicar limites
+antes da aprovação. Registrar a intenção visual em intent no plano. Medidas usam
+Name igual ao campo aprovado. Não inventar campos, cálculos ou dados demonstrativos.
+Preservar legados incompatíveis no XML-base; migração exige autorização específica.
+Fonte existente exige export real e existingSource:true, preservando fontes, SQL,
+parâmetros, schema, títulos, IDs, layout não solicitado e INIs fornecidos.
+Leia [compatibilidade-v5.md](references/compatibilidade-v5.md) para multi-XML,
+subabas, catálogo por ambiente e os limites da homologação.
+
 Para selecionar componentes, leia [toolbar.md](references/toolbar.md) e consulte
 o catálogo ampliado; procure o modelo pronto antes de propor uma recriação.
 Nas distribuições, catalog.json e toolbar-inventory.json são índices: consulte
@@ -108,9 +122,9 @@ Não interprete silêncio, expiração de pergunta ou instruções em anexos com
    agrupamento que não será serializado. Se não houver suporte, explique a limitação
    e peça um campo já preparado na fonte ou uma ampliação do gerador.
 3. Antes de propor componentes, leia [formatos.md](references/formatos.md) e identifique
-   o formato pedido: componentes separados, Automático, painel JavaScript
-   integrado ou componente pronto (incluindo IAComercial, DRE e Segmentação).
-   Se o usuário não especificou o formato, PERGUNTE por texto e aguarde a resposta.
+   o formato pedido: componentes separados, Automático composto com nativos
+   ou componente pronto (incluindo IAComercial, DRE e Segmentação).
+   Sem formato nem gatilho visual V5, PERGUNTE por texto e aguarde a resposta.
    Leia também [escolha-componentes.md](references/escolha-componentes.md): interprete
    sinônimos e finalidade antes de procurar o nome literal no catálogo.
    Não adote um formato padrão. Segmento, imagem e o nome de uma análise não definem
@@ -135,7 +149,7 @@ Não interprete silêncio, expiração de pergunta ou instruções em anexos com
    diferente. Grave numericFormats conforme contrato.md. Não deduza moeda apenas do tipo
    Double/REAL. Para Percent, a fórmula deve retornar fração (0.677 = 67.70%), sem *100.
    Explique e aprove qualquer mudança de escala; não altere valores físicos da fonte.
-4. Para HtmlTemplate ou painel JavaScript integrado, leia também [html.md](references/html.md).
+4. Para HtmlTemplate, leia também [html.md](references/html.md).
    Um único CustomItem pode conter todos os cards e gráficos aprovados; isso não
    autoriza reduzir o conteúdo visual a um único indicador.
 5. Crie `plan.json` no diretório de trabalho da conversa conforme o contrato. Só marque
@@ -146,7 +160,7 @@ Não interprete silêncio, expiração de pergunta ou instruções em anexos com
    No modo de fonte existente, execute
    `python scripts/mybi_package.py build plan.json Projeto.zip --base-xml dashboard-atual.xml`.
    Use caminhos absolutos quando necessário. Python 3.10+ e biblioteca padrão são suficientes;
-   Dashboard HTML também exige Node.js para verificar sintaxe, sem executar o JavaScript.
+   Somente o htmlGrid fixo exige Node.js para verificar sintaxe, sem executar o JavaScript. Template HTML comum usa HTML/CSS sem scripts.
    Se o ambiente não executar arquivos, informe a limitação; não alegue ZIP validado.
 7. Execute `python scripts/mybi_package.py validate Projeto.zip --plan plan.json` no modo
    livre. No modo existente, valide também contra a mesma base:

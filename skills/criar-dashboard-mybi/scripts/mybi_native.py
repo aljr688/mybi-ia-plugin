@@ -134,6 +134,13 @@ def apply_rules(node, rules, ids):
 
 def decorate(node, item, ids):
     options=item.get('options',{}); component=item['component']
+    titles=item.get('columnTitles',{}); obj(titles,ids)
+    check(not titles or component=='grid','columnTitles exige Grade')
+    for field,title in titles.items():
+        check(isinstance(title,str) and 0<len(title)<=200 and not re.search(r'[\x00-\x1f\ud800-\udfff\ufffe\uffff]',title),'Título de coluna inválido')
+        columns=[c for c in node.findall('GridColumns/*') if any(d.get('DefaultId')==ids[field] for d in c if d.tag in {'Dimension','Measure'})]
+        check(len(columns)==1,'Título exige coluna não ambígua')
+        columns[0].set('Name',title)
     allowed=PIVOT_BOOL|{'LayoutType','RowTotalsPosition','ColumnTotalsPosition'} if component=='pivot' else COMBO_BOOL|{'ComboBoxType'} if component=='comboBox' else set()
     obj(options,allowed)
     for key,v in options.items():
@@ -213,7 +220,7 @@ def update_existing(root, updates, approved):
     check(isinstance(updates,dict) and len(updates)<=40,'componentUpdates inválido')
     mapping={'Pivot':'pivot','Grid':'grid','ComboBox':'comboBox','DateFilter':'dateFilter'}
     for name, config in updates.items():
-        obj(config,{'options','interactivity','sort','customProperties','rules','totals'})
+        obj(config,{'options','interactivity','sort','customProperties','rules','totals','columnTitles'})
         matches=[n for n in root.findall('Items/*') if n.get('ComponentName')==name]
         check(len(matches)==1,'Componente existente não encontrado: '+str(name)); node=matches[0]
         component=mapping.get(node.tag,node.get('CustomItemType'))

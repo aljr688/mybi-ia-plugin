@@ -18,7 +18,7 @@ ainda não suporta uma implementação. O catálogo é do gerador, não de todo 
 | evolução, tendência, série temporal | `EChartsAreaSimple` e campo de data/tempo, não gráfico de categorias sem ordem. |
 | ranking, barras, comparação | `EChartsGradientBar` ou `EChartsHorizontalBar`, conforme orientação e rótulos. |
 | cascata, waterfall | `EChartsWaterfall2`; confirmar valores aditivos e significado do saldo. |
-| cartão, KPI, totalizador | `card`; percentual exige escala e agregação aprovadas. |
+| cards, cartões, KPI visual, indicadores com ícones | `HtmlTemplate`, sem JS livre; percentual exige escala/agregação aprovadas. `card` nativo somente se explicitamente escolhido. |
 | DRE, segmentação, restaurante, posto | Análise/modelo de negócio, não uma biblioteca gráfica. Confirmar modelo pronto versus painel personalizado; seguir formatos.md. |
 
 Uma preferência explícita por DevExpress, ECharts, Tabulator ou modelo pronto deve

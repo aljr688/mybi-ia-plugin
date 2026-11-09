@@ -16,7 +16,8 @@ Não copiar fontes de clientes nem distribuir DLLs proprietárias no plugin.
 
 `catalog.json` é a lista fechada de componentes e bindings reais do runtime.
 `card` e `grid` são nativos. ECharts*, tabulatorGridItem, HtmlTemplate e
-DashboardAutomatico são CustomItem e exigem a extensão correspondente no MyBI do destino.
+outras extensões são CustomItem e exigem instalação no destino. DashboardAutomatico
+é histórico: proibido em novos itens pela V5, permitido apenas preservado na base.
 O gerador aceita apenas os nomes exatos do catálogo, sem aliases ambíguos.
 
 No gerador web atual, chart/bar são aliases de EChartsGradientBar, line de
@@ -35,6 +36,8 @@ Consulte toolbar.md e catalog.json para os contratos ampliados e limites.
 Objeto com somente estas chaves:
 
 - `title`: título do negócio, até 200 caracteres.
+- `intent`: texto da intenção aprovada (até 4000 caracteres). HTML/cards usa HtmlTemplate.
+- Para múltiplos XMLs: envelope project.dashboards[], conforme compatibilidade-v5.md.
 - `dataSource`: opcional, com dois modos. `{name,componentName,dataMember,existingSource:true}`
   indica que a fonte já existe no MyBI. Nesse modo, os campos são apenas o catálogo permitido
   para montar DataItems. A compilação exige `--base-xml` com o dashboard atual exportado:
@@ -46,7 +49,7 @@ Objeto com somente estas chaves:
 - `appearance`: opcional, objeto {titleColor:"#RRGGBB"}; omitido não aplica cor.
   Para demais propriedades use formatting, após aprovação, conforme personalizacao.md.
   Não há imagem, transparência nem tamanho de fonte obrigatório.
-- `mode`: components (nativos e ECharts separados) ou html (HtmlTemplate ou DashboardAutomatico).
+- `mode`: components (nativos/especializados separados) ou html (HtmlTemplate e nativos).
   O valor padrão técnico do serializador não autoriza escolher pelo usuário: seguir formatos.md.
 - `numericFormats`: opcional, objeto por nome de campo físico/calculado numérico:
   {"Receita":{"type":"Currency","precision":2},"PercentualMargem":{"type":"Percent","precision":2,"scale":1}}.
@@ -73,8 +76,7 @@ Objeto com somente estas chaves:
   Sum, Count, CountDistinct, Avg, Min, Max. Sum/Avg/Min/Max exigem campo numérico neste perfil.
   Para contar texto/identificador, usar Count ou CountDistinct. Número não implica medida:
   código numérico pode ser dimensão, conforme aprovação.
-- HTML permite adicionalmente `javascript` (DashboardAutomatico) ou `html`,`css`
-  (HtmlTemplate). Não usar código nos outros componentes.
+- HTML permite `html`,`css` (HtmlTemplate), nunca javascript arbitrário.
   Na versão 0.1.19, HtmlTemplate também aceita htmlGrid (colunas/altura), conforme
   html.md. Somente o script controlado da grade habilita AllowScripts nesse componente.
 
@@ -114,7 +116,7 @@ ComponentName único por item. DataSource aponta ao ComponentName da fonte, Data
 ao nome da query. DataItems declara Measure/Dimension com DefaultId único por item;
 CustomMetadata referencia esses ids e respeita ItemType e cardinalidade do catálogo.
 CustomProperties são elementos XML filhos, não atributos nem JSON arbitrário.
-DashboardAutomatico guarda AutomaticJavascript e AutomaticFields, mantendo Fields/Measures.
+AutomaticJavascript não é gerado. Itens históricos só permanecem intactos no XML-base.
 LayoutTree inclui cada componente exatamente uma vez; padrão duas colunas, peso igual.
 HTML integrado ocupa a linha inteira. Conteúdo escapa via biblioteca XML, sem concatenação.
 Nos cards, a medida preserva o nome real do campo; nunca recebe o nome artificial `Valor`.

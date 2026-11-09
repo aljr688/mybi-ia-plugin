@@ -5,8 +5,7 @@ Quando o formato estiver ausente, pergunte antes de gerar ou aprovar componentes
 “Como você quer montar o dashboard?
 1. Componentes separados, como gráficos, cartões e grades.
 2. Automático, com layout personalizado.
-3. Painel integrado em JavaScript, com toda a tela em um componente.
-4. Componentes prontos do MyBI, como os modelos por segmento e IAComercial
+3. Componentes prontos do MyBI, como os modelos por segmento e IAComercial
    (DRE, Segmentação de Clientes etc.).
 Qual opção prefere? Pode responder pelo nome ou número.”
 
@@ -20,9 +19,10 @@ combinação, descreva os componentes de cada formato e obtenha aprovação dess
 - DevExpress/ECharts: `mode: components`, componentes exatos do catálogo.
 - HTMLTemplate: `mode: html`, `component: HtmlTemplate`; HTML/CSS e placeholders,
   sem scripts, conforme html.md. Não confundir com DashboardAutomatico.
-- JavaScript integrado gerado: `mode: html`, `component: DashboardAutomatico`;
-  corpo de render(root, rows, fields), conforme html.md. O código fica no XML;
-  não entregar um arquivo JS solto que o importador não instala.
+- Pedido HTML/CSS/JavaScript, painel web ou cards visuais seleciona HtmlTemplate
+  em composição com nativos. Não perguntar formato novamente quando já explícito.
+  Não gerar DashboardAutomatico nem AutomaticJavascript. JS livre não é suportado;
+  explicar a limitação antes da aprovação. htmlGrid fixo é a única exceção.
 - Modelos prontos e IAComercial: exigem o CustomItemType e bindings reais da extensão
   instalada no MyBI. A extensão continua sendo fornecida pelo MyBI, não pelo ZIP.
   Use somente tipos existentes em catalog.json. Se DRE, Segmentação ou outro modelo

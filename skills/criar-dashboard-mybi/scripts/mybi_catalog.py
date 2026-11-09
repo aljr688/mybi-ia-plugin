@@ -4,6 +4,7 @@ import json
 import unicodedata
 from pathlib import Path
 from mybi_references import load_reference
+from mybi_compatibility import BANNED_NEW_TYPES
 
 
 def normalized(text):
@@ -17,13 +18,14 @@ def search(query, detail=False, include_hidden=False):
     entries={entry['name']:entry for entry in inventory['captured'].values()}
     result=[]; term=normalized(query)
     for name in sorted(set(catalog)|set(entries)):
+        if name in BANNED_NEW_TYPES and not include_hidden: continue
         contract=catalog.get(name); entry=entries.get(name,{})
         if not include_hidden and entry.get('visibility') == 'hidden-by-runtime': continue
         title=(contract or {}).get('displayName',entry.get('displayName',name))
         group=(contract or {}).get('group',entry.get('group',''))
         if term and not any(term in normalized(s) for s in (name,title,group)): continue
         item={'component':name,'displayName':title,'group':group,
-              'generation':'contract' if contract else 'manual-configuration',
+              'generation':'legacy-only' if name in BANNED_NEW_TYPES else 'contract' if contract else 'manual-configuration',
               'visibility':entry.get('visibility','native')}
         if detail: item.update({'contract':contract,'optionsPanel':entry.get('options',[])})
         result.append(item)

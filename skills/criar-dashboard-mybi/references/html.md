@@ -1,22 +1,15 @@
-# Dashboard HTML
+# Automático (Template HTML) — V5
 
-Nome visível Dashboard HTML, CustomItemType exato `DashboardAutomatico`.
-Contrato: corpo de `render(root, rows, fields)` em `javascript`, sem declarar/chamar render.
-`rows` contém objetos por nome de campo, já agregados pelas dimensões do componente.
-`fields` contém a ordem dos campos vinculados. As medidas usam a agregação aprovada.
-Não somar médias/percentuais de grupos distintos como se fossem valores aditivos.
+Identificador exato HtmlTemplate. HTML/CSS e placeholders de campos vinculados.
+Não gerar DashboardAutomatico nem AutomaticJavascript, mesmo no catálogo histórico.
+Não somar médias, percentuais nem acumulados repetidos como valores aditivos.
 
-Usar JS puro, DOM, SVG e CSS local. Sem bibliotecas, CDN ou rede. `root` é o ponto de
-montagem; criar elementos com document.createElement/createElementNS e valores com
-textContent. Nunca interpretar dados como HTML/código. Não usar innerHTML para valores.
-Não usar eval, Function, import, fetch, cookies, storage, navegação, parent/top/opener,
-postMessage, formulários ou SQL. Não chamar insight: essa ação do MyBI pode consumir
-IA do servidor e está fora deste fluxo sem acessarIA.
+Sem scripts livres, CDN, APIs, rede ou dados fictícios. Ícones podem usar CSS local.
+Para interações fora do contrato, explicar a limitação e compor componentes nativos.
 
 Reproduzir hierarquia/layout da referência, adaptando indicadores aos campos aprovados.
-Não copiar dados fictícios nem marcas de fornecedores. Mesmo rows vazio, montar todos
-os cards e áreas de gráficos aprovados, com travessão e mensagens locais; não retornar
-antes de construir a estrutura nem preencher ausência com zero.
+Não copiar dados fictícios nem marcas de fornecedores; não preencher ausência com
+zero. Planejar cards legíveis sem overflow que esconda valores.
 
 `HtmlTemplate` permite HTML/CSS com placeholders `{Campo}` e grade integrada.
 As medidas recebem Name igual ao campo; use esse nome estável sem sufixos de agregação.
@@ -24,7 +17,7 @@ Layout, quantidade de cards e estilos seguem o pedido e a referência aprovada.
 O gerador aceita somente placeholders de campos vinculados, sem `{Campo:raw}`.
 Sem htmlGrid, AllowScripts permanece false; RowMode first e RenderMode single.
 Não embutir scripts livres no campo html.
-Se for preciso vários gráficos e interações locais, preferir DashboardAutomatico.
+Para vários gráficos e interações, compor com gráficos/filtros nativos suportados.
 
 ## Grade dentro do Automático — versão 0.1.19
 
@@ -63,7 +56,7 @@ Medidas continuam usando Name estável e a agregação aprovada, inclusive Sum/M
 Se a biblioteca estiver ausente, o snippet informa indisponibilidade, sem buscar rede.
 Validar visualmente na instalação do cliente; o gerador não testa consultas reais.
 
-Antes de gerar, descrever ao usuário os elementos internos. Um CustomItem com 6 KPIs
-e 3 gráficos tem 9 elementos visuais, embora tenha apenas um item no XML.
-O script verifica sintaxe com `node --check` sem executar o corpo. A qualidade visual
-deve ser revisada separadamente; não confundir sintaxe válida com reprodução fiel.
+Antes de gerar, descrever os elementos internos do Template e os componentes nativos
+separadamente. Não montar gráficos com JavaScript livre dentro do Template.
+Somente o script fixo htmlGrid passa por `node --check`, sem executar seu corpo.
+A qualidade visual deve ser revisada separadamente; sintaxe não prova renderização.
