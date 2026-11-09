@@ -1,6 +1,6 @@
 {
   "name": "mybi-dashboard",
-  "version": "0.1.21",
+  "version": "0.1.23",
   "description": "MyBI IA: cria dashboards MyBI em XML e ZIP com aprovação de campos e componentes.",
   "author": {
     "name": "Intranet Sistemas Ltda.",
