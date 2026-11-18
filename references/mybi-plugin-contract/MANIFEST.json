@@ -1,0 +1,209 @@
+[
+  {
+    "file": "components-catalog.json",
+    "purpose": "referência técnica ou manual público",
+    "security_classification": "público sanitizado",
+    "sha256": "63dc14267542b8be90d88d360b99ea796e0625550d35623c03672fee51ca02a0",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  },
+  {
+    "file": "dashboard-serialization.md",
+    "purpose": "referência técnica ou manual público",
+    "security_classification": "público sanitizado",
+    "sha256": "d7b48bbf87e9308603a9e9e26465f000f2cfa858f42cd1dbf7f205d2d0345abc",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  },
+  {
+    "file": "diffs.md",
+    "purpose": "referência técnica ou manual público",
+    "security_classification": "público sanitizado",
+    "sha256": "e5e3baece7c7a05ae317f5cfed3ad78cb7b574f78536c268267f25517fd2de7c",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  },
+  {
+    "file": "fixtures/dashboard-cor-titulo.ini.md",
+    "purpose": "exemplo sintético",
+    "security_classification": "público sanitizado",
+    "sha256": "c6c34992fb25023c9af98b5dcf16f46d1a2e39c09ae936052ceccb643d70b503",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  },
+  {
+    "file": "fixtures/dashboard-formatacao-numerica.xml.md",
+    "purpose": "exemplo sintético",
+    "security_classification": "público sanitizado",
+    "sha256": "987e8393791d392ffe96b7387af251fe42a4d285a6425eb574949fc4cc5b5ee0",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  },
+  {
+    "file": "fixtures/dashboard-padrao.xml.md",
+    "purpose": "exemplo sintético",
+    "security_classification": "público sanitizado",
+    "sha256": "9a1ab7ac2e9ddddedb6eba4aac4cf9c57ba560d5837b458312bcd0451a4718e2",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  },
+  {
+    "file": "fixtures/formatacao-padrao.ini.md",
+    "purpose": "exemplo sintético",
+    "security_classification": "público sanitizado",
+    "sha256": "8373d0712d1f960ad228aa64000624bcbac2a2caa9a171f51d5fcffe90337503",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  },
+  {
+    "file": "formatting-capabilities.json",
+    "purpose": "referência técnica ou manual público",
+    "security_classification": "público sanitizado",
+    "sha256": "90976eefad4878c332a4e900ba202b0fb8f4282e7e563779323ad29683502d91",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  },
+  {
+    "file": "ini-contract.md",
+    "purpose": "referência técnica ou manual público",
+    "security_classification": "público sanitizado",
+    "sha256": "d746667e70f5f75caba0d51d0506ef0df458cf81f64792089cd7606f6273d098",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  },
+  {
+    "file": "manual-reference/manual-index.json",
+    "purpose": "referência técnica ou manual público",
+    "security_classification": "público sanitizado",
+    "sha256": "af7f040fd361b86937867d506d7b4877745ba6bc1af4a0d553f7c625beb54e6d",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  },
+  {
+    "file": "manual-reference/manual-official.md",
+    "purpose": "referência técnica ou manual público",
+    "security_classification": "público sanitizado",
+    "sha256": "7247427c57c0fe39e23031875a0889ff9bd7618168de675704f6d7b2566b1bff",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  },
+  {
+    "file": "manual-reference/manual-web/componente_cart_o.md",
+    "purpose": "referência técnica ou manual público",
+    "security_classification": "público sanitizado",
+    "sha256": "e6314e5a14e3043bb5a8c68f0b5e34ac20e0a68f4695610832fa8015525349c8",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  },
+  {
+    "file": "manual-reference/manual-web/componente_grafico.md",
+    "purpose": "referência técnica ou manual público",
+    "security_classification": "público sanitizado",
+    "sha256": "e6c07ecf3324c9e1d2b7108876c5a508cdb3d1ea0778567317be84ef4768d59e",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  },
+  {
+    "file": "manual-reference/manual-web/dashboard_componentes.md",
+    "purpose": "referência técnica ou manual público",
+    "security_classification": "público sanitizado",
+    "sha256": "4bb9dc0518cf9f67232c0ea91d09bbd04d918fa203b237ac091629273a41b1a5",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  },
+  {
+    "file": "manual-reference/manual-web/dashboard_filtros_parametros.md",
+    "purpose": "referência técnica ou manual público",
+    "security_classification": "público sanitizado",
+    "sha256": "04a37586c0cef6b5c8cb88c4f51081787378522a1c5f2e78388051c0faac3581",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  },
+  {
+    "file": "manual-reference/manual-web/dashboard_grade.md",
+    "purpose": "referência técnica ou manual público",
+    "security_classification": "público sanitizado",
+    "sha256": "ae4b619ce8b85be01fe436e0717ce19007b6a40ff323c839a57a478ad99ffd44",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  },
+  {
+    "file": "manual-reference/manual-web/dashboard_layout_formatacao.md",
+    "purpose": "referência técnica ou manual público",
+    "security_classification": "público sanitizado",
+    "sha256": "af170e6faa30f027f6262c29865f2c4bb38784a710d67894603baf736fec4f86",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  },
+  {
+    "file": "manual-reference/manual-web/esquema_de_cores.md",
+    "purpose": "referência técnica ou manual público",
+    "security_classification": "público sanitizado",
+    "sha256": "9e6a2e5936615a6441644255426c1eaeebea5f34e1498257c778497e4cbd947e",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  },
+  {
+    "file": "manual-reference/manual-windows/desktop-aparencia.md",
+    "purpose": "referência técnica ou manual público",
+    "security_classification": "público sanitizado",
+    "sha256": "b09573e518778b3574d51ac86ef2a7d6aa8b27e5e29a54868edd7ea49c77ecb1",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  },
+  {
+    "file": "README.md",
+    "purpose": "referência técnica ou manual público",
+    "security_classification": "público sanitizado",
+    "sha256": "3c61fe13f5381e108418d8426d1b49f587c893a0653e7cbda9639a9303d88194",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  },
+  {
+    "file": "SECURITY_REVIEW.md",
+    "purpose": "referência técnica ou manual público",
+    "security_classification": "público sanitizado",
+    "sha256": "5abf45f29be2a16cd838da985dd4c8dcc941c7001d1d1127013e060d5df77f21",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  },
+  {
+    "file": "unknowns.md",
+    "purpose": "referência técnica ou manual público",
+    "security_classification": "público sanitizado",
+    "sha256": "c69437e47fe79b7bfcb292933ca0557323d4d609fe6f0fb51082c83d12c95b9c",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  },
+  {
+    "file": "xml-contract.md",
+    "purpose": "referência técnica ou manual público",
+    "security_classification": "público sanitizado",
+    "sha256": "fbaba3204de32d4aac999ebd8ccd1fbb6ad074095a29b8ab50d88e5c7a377837",
+    "automated_checks_passed": false,
+    "automatically_approved": false,
+    "human_review_required": true
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "url": "https://portal.mybi.com.br/Manuais/dashboard_layout_formatacao.htm",
+    "platform": "Web",
+    "collected_at": "2026-09-18T22:20:43.305544+00:00",
+    "topic": "dashboard e aparência",
+    "title": "Layout e formatação - Dashboard Web - MyBI",
+    "file": "manual-reference/manual-web/dashboard_layout_formatacao.md",
+    "sha256": "4c1310b7dae6f146095f7fa352d1fb629300c1adf4d76a54e112bca9359a0006",
+    "status": "collected",
+    "human_review": true
+  },
+  {
+    "url": "https://portal.mybi.com.br/Manuais/esquema_de_cores.htm",
+    "platform": "Web",
+    "collected_at": "2026-09-18T22:20:43.305544+00:00",
+    "topic": "dashboard e aparência",
+    "title": "Esquema de cores - Mybi Web",
+    "file": "manual-reference/manual-web/esquema_de_cores.md",
+    "sha256": "cd70ad2700548c4d034ce9fe2e3d8b3e40ef0ecfd6d055f7e56e9488d3fc4e0e",
+    "status": "collected",
+    "human_review": true
+  },
+  {
+    "url": "https://portal.mybi.com.br/Manuais/dashboard_grade.htm",
+    "platform": "Web",
+    "collected_at": "2026-09-18T22:20:43.305544+00:00",
+    "topic": "dashboard e aparência",
+    "title": "Componente Grade - MyBI",
+    "file": "manual-reference/manual-web/dashboard_grade.md",
+    "sha256": "df654cd54dffeb3b71ae55902f04fc85a4985f67bc1fb0d0bb5ecc1835e75b00",
+    "status": "collected",
+    "human_review": true
+  },
+  {
+    "url": "https://portal.mybi.com.br/Manuais/dashboard_componentes.htm",
+    "platform": "Web",
+    "collected_at": "2026-09-18T22:20:43.305544+00:00",
+    "topic": "dashboard e aparência",
+    "title": "Componentes - Dashboard Web - MyBI",
+    "file": "manual-reference/manual-web/dashboard_componentes.md",
+    "sha256": "698b7bc7b6dcf6c1658624012e23a3d4c66e2ffc03bb0d67534acab5b3b7e859",
+    "status": "collected",
+    "human_review": true
+  },
+  {
+    "url": "https://portal.mybi.com.br/Manuais/dashboard_filtros_parametros.htm",
+    "platform": "Web",
+    "collected_at": "2026-09-18T22:20:43.305544+00:00",
+    "topic": "dashboard e aparência",
+    "title": "Filtros e parâmetros - Dashboard Web - MyBI",
+    "file": "manual-reference/manual-web/dashboard_filtros_parametros.md",
+    "sha256": "390993a49020586a40393b543a9219851fda90832848aaf286a7747cf42bf74f",
+    "status": "collected",
+    "human_review": true
+  },
+  {
+    "url": "https://portal.mybi.com.br/Manuais/componente_cart_o.htm",
+    "platform": "Web",
+    "collected_at": "2026-09-18T22:20:43.305544+00:00",
+    "topic": "dashboard e aparência",
+    "title": "Componente cartão - Mybi Web",
+    "file": "manual-reference/manual-web/componente_cart_o.md",
+    "sha256": "23bc81e51c4e96589905a5912e8145abe55f55088e02c46092cf9a9fbec4d53b",
+    "status": "collected",
+    "human_review": true
+  },
+  {
+    "url": "https://portal.mybi.com.br/Manuais/componente_grafico.htm",
+    "platform": "Web",
+    "collected_at": "2026-09-18T22:20:43.305544+00:00",
+    "topic": "dashboard e aparência",
+    "title": "Componente Grafico - Mybi Web",
+    "file": "manual-reference/manual-web/componente_grafico.md",
+    "sha256": "93ae45948a35558c11712c515af877bc6e2b3caf84d6edf9bb156543475136b9",
+    "status": "collected",
+    "human_review": true
+  },
+  {
+    "url": "https://portal.mybi.com.br/Manuais/desktop-aparencia.htm",
+    "platform": "Windows",
+    "collected_at": "2026-09-18T22:20:43.305544+00:00",
+    "topic": "dashboard e aparência",
+    "title": "Aparência — Manual Desktop - Mybi Web",
+    "file": "manual-reference/manual-windows/desktop-aparencia.md",
+    "sha256": "f3b9152310ec1f386e83236d4fe39996c980b24035f3a1fb1a69a13200309565",
+    "status": "collected",
+    "human_review": true
+  }
+]
