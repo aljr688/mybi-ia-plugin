@@ -1,0 +1,17 @@
+{
+  "format": "mybi-reference-parts-v1",
+  "collection": "captured",
+  "entryCount": 215,
+  "metadata": {
+    "missing": [],
+    "errors": []
+  },
+  "parts": [
+    "toolbar-inventory-parts/part-001.json",
+    "toolbar-inventory-parts/part-002.json",
+    "toolbar-inventory-parts/part-003.json",
+    "toolbar-inventory-parts/part-004.json",
+    "toolbar-inventory-parts/part-005.json",
+    "toolbar-inventory-parts/part-006.json"
+  ]
+}

@@ -1,42 +1,19 @@
-# MyBI IA
+# MyBI IA — 0.1.25
 
-Plugin de criação de dashboards MyBI. Identificador técnico: mybi-dashboard.
-Contém a mesma Skill criar-dashboard-mybi distribuída para instalação direta.
-Não conecta ao MyBI nem publica dashboards; entrega XML/ZIP para importação.
-Não possui MCP, hooks, autenticação ou chamadas a APIs de modelos.
+Mesmas instruções, exemplos e referências para GPT e Claude. Geração direta de XML
+pelo modelo, sem Python, Node, executáveis, MCP, conexão de banco ou API de IA incluídos.
+Os manifestos e o formato de instalação são específicos de cada plataforma.
 
-## Uso
+Peça um dashboard MyBI, informe campos/referência e aprove a proposta. Para editar
+fonte existente, forneça o XML exportado. O modelo usa as ferramentas de arquivos do
+chat para produzir XML/ZIP; a disponibilidade dessas ferramentas depende do ambiente.
+Consulte skills/criar-dashboard-mybi/SKILL.md e references/geracao-direta.md na skill.
+Não há validador determinístico incluído: teste importação/renderização no MyBI.
+Este ZIP é um plugin, não um dashboard para importar no MyBI.
 
-Peça para criar um dashboard MyBI e informe os campos e o formato desejado.
-Siga as propostas e aprovações da Skill antes da geração. Para fonte existente,
-forneça também o XML-base conforme solicitado. Não envie senhas ou credenciais.
-O ambiente precisa executar Python 3.10+; JavaScript automático requer Node.js
-para validação de sintaxe. Consulte skills/criar-dashboard-mybi/references/contrato.md
-para limites do catálogo e geração. Inclui manuais offline; consulta a versões
-mais recentes dos manuais depende de acesso web. Consulte também personalizacao.md
-e componentes-nativos.md para as opções atuais, sem estilos obrigatórios.
+No Claude Code, extraia o plugin e use `claude --plugin-dir ./mybi-dashboard`.
+O ZIP Skill-MyBI-IA-Claude é a alternativa de instalação direta como skill.
+Não instale ambas as variantes juntas. No GPT, envie o ZIP de plugin no portal.
+A publicação/revisão no catálogo é separada; este pacote não comprova aprovação.
 
-## Teste local do plugin
-
-Depois de extrair este ZIP numa pasta mybi-dashboard:
-
-    claude plugin validate ./mybi-dashboard
-    claude --plugin-dir ./mybi-dashboard
-
-Em Claude Code, a Skill é invocada como /mybi-dashboard:criar-dashboard-mybi.
-A instalação direta como Skill usa o outro ZIP, Skill-MyBI-IA-Claude.
-Não instale as duas variantes simultaneamente no mesmo ambiente sem necessidade.
-
-## Distribuição
-
-Este pacote não é um dashboard para importar no MyBI nem comprova aprovação
-pela Anthropic. A submissão ao catálogo é feita separadamente. Se o formulário
-exigir repositório, publique somente o conteúdo deste pacote num repositório
-dedicado autorizado, nunca o projeto completo BIWebIA ou dados de clientes.
-Logo para identificação visual: assets/logo-ia.svg.
-
-## Licença
-
-O código e a documentação deste plugin são distribuídos sob a licença MIT
-(arquivo LICENSE). Esta licença não abrange o software MyBI distribuído
-separadamente nem concede direitos sobre marcas e logotipos.
+Licença MIT (LICENSE), sem conceder direitos sobre o software MyBI ou suas marcas.
