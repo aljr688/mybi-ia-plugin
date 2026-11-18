@@ -1,0 +1,14 @@
+{
+  "title": "Análise de vendas",
+  "fieldsApproved": false,
+  "componentsApproved": false,
+  "fields": [
+    {"name": "categoria", "type": "TEXT"},
+    {"name": "valor", "type": "REAL"}
+  ],
+  "items": [
+    {"component": "card", "title": "Receita", "bindings": {"measures": [{"field": "valor", "summary": "Sum"}]}},
+    {"component": "EChartsGradientBar", "title": "Receita por categoria", "bindings": {"Arguments": ["categoria"], "Values": [{"field": "valor", "summary": "Sum"}]}},
+    {"component": "grid", "title": "Detalhamento", "bindings": {"dimensions": ["categoria"], "measures": [{"field": "valor", "summary": "Sum"}]}}
+  ]
+}
